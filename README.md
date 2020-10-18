@@ -128,9 +128,9 @@ class HomeContent extends StatelessWidget{
 }
 ```
 ####  引入本地图片
-[引入本地图片](http://chuantu.xyz/t6/741/1603031544x1700392639.png)
+![引入本地图片](http://chuantu.xyz/t6/741/1603031544x1700392639.png)
 然后，打开 pubspec.yaml 声明一下添加的图片文件，注意要配置对  
-[上传图片](http://chuantu.xyz/t6/741/1603031736x992239403.png)
+![上传图片](http://chuantu.xyz/t6/741/1603031736x992239403.png)
 #### 示例代码
 ```
 class HomeContent extends StatelessWidget{
