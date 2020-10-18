@@ -196,6 +196,34 @@ class HomeContent extends StatelessWidget{
   }
 }
 ```
+### ListView实现动态列表
+```
+class HomeContent extends StatelessWidget{
+  List<Widget> _getData() {
+    List<Widget> list = new List();
+    for(var i=0;i < 100;i++) {
+      list.add(
+          ListTile(
+          leading: Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg'),
+          title: Text('新闻标题${i}'),
+          subtitle: Text('新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容'),
+        ),
+      );
+    }
+    return list;
+  }
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return ListView(
+      children: this._getData()
+    );
+  }
+}
+
+```
+
+
 
 
 
