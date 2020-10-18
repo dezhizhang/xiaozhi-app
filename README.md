@@ -39,7 +39,7 @@
 ### 图片组件
 Image.asset， 本地图片   
 Image.network 远程图片  
-##### Image 组件的常用属性:
+### Image 组件的常用属性:
 |  名称   | 类型  | 说明 | 
 |  ----  | ----  | ----  | 
 | alignment | Alignment | 图片的对齐方式 | 
@@ -48,6 +48,64 @@ Image.network 远程图片
 | repeat | 平铺 |  ImageRepeat.repeat : 横向和纵向都进行重复，直到铺满整 个画布。 ImageRepeat.repeatX: 横向重复，纵向不重复。 | 
 | width | | 宽度一般结合 ClipOval 才能看到效果 | 
 | height | | 高度一般结合 ClipOval 才能看到效果 |
+```
+
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+   return Center(
+     child: Container(
+       width: 300,
+       height: 300,
+       decoration: BoxDecoration(
+         color: Colors.pink,
+         border: Border.all(
+           color:Colors.yellow,
+           width:2
+         )
+       ),
+       child: Image.network(
+         'http://tugua.oss-cn-hangzhou.aliyuncs.com/16006151939994201.jpeg',
+         fit: BoxFit.cover,
+         alignment: Alignment.center,
+         color: Colors.yellow,
+         colorBlendMode: BlendMode.multiply,
+
+       ),
+     ),
+     
+   );
+  }
+}
+```
+### 实现圆角图片
+```
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Center(
+      child: Container(
+        width: 300,
+        height: 300,
+        decoration: BoxDecoration(
+          color: Colors.pink,
+        ++image: DecorationImage( //重点是这二行代码
+            image:  NetworkImage('http://tugua.oss-cn-hangzhou.aliyuncs.com/16006151939994201.jpeg'),
+            fit: BoxFit.cover
+          ),
+          borderRadius: BorderRadius.circular(150)
+        ),
+      ),
+    );
+  }
+}
+```
+
+
+
+
 
 
 
