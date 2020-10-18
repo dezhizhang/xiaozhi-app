@@ -2,7 +2,8 @@
 
 
 
-### Container组件
+### Center组件 
+2020-10-17
 |  名称   | 或能  |
 |  ----  | ----  |
 | alignment | topCenter：顶部居中对齐 |
