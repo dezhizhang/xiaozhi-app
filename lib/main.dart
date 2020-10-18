@@ -10,38 +10,15 @@ class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('晓智商城'),
-        ),
-        body: HomeContent(),
-      ),
-      theme: ThemeData(
-        primarySwatch: Colors.pink
-      ),
-    );
+   return MaterialApp(
+     home: Scaffold(
+       appBar: AppBar(
+         title: Text('贵彩办公'),
+       ),
+       body: Center(
+         child: Text('贵彩办公'),
+       ),
+     ),
+   );
   }
 }
-
-class HomeContent extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Center(
-      child: Text(
-        '晓智商城',
-        textDirection: TextDirection.ltr,
-        style: TextStyle(
-          fontSize: 40.0,
-          color: Colors.pink
-        ),
-      ),
-    );
-  }
-}
-
-
-
-
-

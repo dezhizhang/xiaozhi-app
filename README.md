@@ -1,5 +1,17 @@
 # xiaozhi
 
+
+
+### Container组件办胡的忏悔
+|  名称   | 或能  |
+|  ----  | ----  |
+| alignment  | topCenter：顶部居中对齐 |
+|            | topLeft：顶部左对齐 |
+
+
+
+
+
 A new Flutter project.
 
 ## Getting Started
