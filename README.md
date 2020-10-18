@@ -22,6 +22,22 @@
 |           | Container 边缘与 Child 之间的距离 padding: EdgeInsets.all(10.0) |
 | transform | 让 Container 容易进行一些旋转之类的 |
 
+### Text 组件
+|  名称   | 或能  |
+|  ----  | ----  |
+| textAlign | 文本对齐方式（center 居中，left 左 对齐，right 右对齐，justfy 两端对齐） |
+| textDirection | 文本方向（ltr 从左至右，rtl 从右至 左）| 
+| overflow | 文字超出屏幕之后的处理方式（clip 裁剪，fade 渐隐，ellipsis 省略号）| 
+| textScaleFactor | 字体显示倍率 | 
+| maxLines | 文字显示最大行数 | 
+| style | 字体的样式设置 |
+| decoration | 文字装饰线（none 没有线，lineThrough 删 除线，overline 上划线，underline 下划线）| 
+| decorationColor | 文字装饰线颜色 | 
+| decorationStyle | 文字装饰线风格（[dashed,dotted]虚线， double 两根线，solid 一根实线，wavy 波浪 线） | 
+| wordSpacing | 单词间隙（如果是负值，会让单词变得更紧凑 | 
+ 
+
+
 
 
                                     
