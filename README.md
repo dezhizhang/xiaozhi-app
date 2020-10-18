@@ -128,9 +128,10 @@ class HomeContent extends StatelessWidget{
 }
 ```
 ####  引入本地图片
-![引入本地图片](http://chuantu.xyz/t6/741/1603031544x1700392639.png)
+![引入本地图片](http://chuantu.xyz/t6/741/1603031544x1700392639.png)   
+
 然后，打开 pubspec.yaml 声明一下添加的图片文件，注意要配置对  
-![上传图片](http://chuantu.xyz/t6/741/1603031736x992239403.png)
+![上传图片](http://chuantu.xyz/t6/741/1603031736x992239403.png)   
 #### 示例代码
 ```
 class HomeContent extends StatelessWidget{
@@ -145,6 +146,61 @@ class HomeContent extends StatelessWidget{
   }
 }
 ```
+### Flutter 列表组件概述
+列表布局是我们项目开发中最常用的一种布局方式。Flutter 中我们可以通过 ListView 来定义 列表项，支持垂直和水平方向展示。通过一个属性就可以控制列表的显示方向。列表有一下 分类： 
+
+1、垂直列表   
+2、垂直图文列表   
+3、水平列表   
+4、动态列表   
+5、矩阵式列表 
+### Flutter 列表参数
+|  名称   | 类型  | 说明 | 
+|  ----  | ----  | ----  | 
+| scrollDirection | Axis | Axis.horizontal 水平列表 Axis.vertical 垂直列表 | 
+| padding | EdgeInsetsGeometry | 内边距 | 
+| resolve | bool | 组件反向排序 | 
+| children | List<Widget> | 列表元素 | 
+### Flutter 基本列表
+```
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return ListView(
+      padding: EdgeInsets.all(10),
+      children: <Widget>[
+        ListTile(
+          leading: Icon(Icons.search,color: Colors.pink,size: 60),
+          title: Text(
+            '新闻标题1',
+            style: TextStyle(
+              fontSize: 18,
+              color:Colors.pink
+            ),
+          ),
+          subtitle: Text('新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容'),
+        ),
+        ListTile(
+          leading: Icon(Icons.home,color: Colors.yellow,size: 60),
+          title: Text('新闻标题1'),
+          subtitle: Text('新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容'),
+        ),
+        ListTile(
+          leading: Icon(Icons.settings,color: Colors.green,size: 60),
+          title: Text('新闻标题1'),
+          subtitle: Text('新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容'),
+        )
+      ],
+    );
+  }
+}
+```
+
+
+
+
+
 
 
 
