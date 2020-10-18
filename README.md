@@ -104,6 +104,30 @@ class HomeContent extends StatelessWidget{
   }
 }
 ```
+### 实现圆解图片的第二种方式
+```
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Center(
+      child: Container(
+        width: 300,
+        height: 300,
+        child: ClipOval(
+          child: Image.network(
+            'http://tugua.oss-cn-hangzhou.aliyuncs.com/16006151939994201.jpeg',
+            width: 150,
+            height: 150,
+            fit: BoxFit.cover,
+            ),
+        ),
+      ),
+    );
+  }
+}
+```
+
 
 
 
