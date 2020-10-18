@@ -92,7 +92,9 @@ class HomeContent extends StatelessWidget{
         decoration: BoxDecoration(
           color: Colors.pink,
         ++image: DecorationImage( //重点是这二行代码
-            image:  NetworkImage('http://tugua.oss-cn-hangzhou.aliyuncs.com/16006151939994201.jpeg'),
+            image:  NetworkImage(
+                'http://tugua.oss-cn-hangzhou.aliyuncs.com/16006151939994201.jpeg'
+            ),
             fit: BoxFit.cover
           ),
           borderRadius: BorderRadius.circular(150)
