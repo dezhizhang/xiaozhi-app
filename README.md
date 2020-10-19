@@ -235,6 +235,62 @@ class HomeContent extends StatelessWidget{
 | children | | <Widget>[ ] | 
 | gridDelegate | SliverGridDelegateWithFix | 控制布局主要用在 GridView.builder 里面|
 
+### Padding组件
+|  属性   | 说明  | 
+|  ----  | ----  |
+| padding| padding 值, EdgeInsetss 设置填充的值 |
+| child | 子组件 |
+### 示例代码
+```
+lass HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+   return GridView.count(
+     crossAxisCount: 2,
+     childAspectRatio: 1.5,
+     children: <Widget>[
+        Padding(
+          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          child:  Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg',fit: BoxFit.cover),
+        ),
+        Padding(
+          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          child: Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg',fit: BoxFit.cover),
+        ),
+        Padding(
+          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          child:  Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg',fit: BoxFit.cover),
+        ),
+        Padding(
+          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          child: Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg',fit: BoxFit.cover),
+        ),
+          Padding(
+          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          child:  Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg',fit: BoxFit.cover),
+        ),
+        Padding(
+          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          child: Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg',fit: BoxFit.cover),
+        ),
+        Padding(
+          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          child:  Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg',fit: BoxFit.cover),
+        ),
+        Padding(
+          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+          child: Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg',fit: BoxFit.cover),
+        )
+     ],
+   );
+  }
+}
+````
+
+
+ 
+
 
 
 
