@@ -29,14 +29,27 @@ class HomeContent extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return 
+    return IconContainer(Icons.home,color: Colors.red,size: 100);
   }
 }
 
 class IconContainer extends StatelessWidget{
+  double size = 32.0;
+  Color color;
+  IconData icon;
+  IconContainer(this.icon,{this.color,this.size});
+  
   @override
   Widget build(BuildContext context) {
+    print(this.icon);
     // TODO: implement build
-    throw UnimplementedError();
+    return Container(
+      width: 100,
+      height: 100,
+      color:this.color,
+      child: Center(
+        child: Icon(Icons.home,color: Colors.white,size:this.size),
+      ),
+    );
   }
 }
