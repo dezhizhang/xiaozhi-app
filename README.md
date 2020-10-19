@@ -222,6 +222,20 @@ class HomeContent extends StatelessWidget{
 }
 
 ```
+### GridView组件
+|  名称   | 类型  | 说明 | 
+|  ----  | ----  | ----  | 
+| scrollDirection | Axis | 滚动方法 | 
+| padding | EdgeInsetsGeometry | 内边距 |
+| resolve | bool | 组件反向排序 | 
+| crossAxisSpacing | double | 水平子 Widget 之间间距 |
+| mainAxisSpacing | double | 垂直子 Widget 之间间距 | 
+| crossAxisCount | int | 一行的 Widget 数量 |
+| childAspectRatio | double | 子 Widget 宽高比例 | 
+| children | | <Widget>[ ] | 
+| gridDelegate | SliverGridDelegateWithFix | 控制布局主要用在 GridView.builder 里面|
+
+
 
 
 
