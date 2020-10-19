@@ -252,41 +252,24 @@ lass HomeContent extends StatelessWidget{
      children: <Widget>[
         Padding(
           padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-          child:  Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg',fit: BoxFit.cover),
+          child:  Image.network(
+            'http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg'
+            ,fit: BoxFit.cover
+          ),
         ),
         Padding(
           padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-          child: Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg',fit: BoxFit.cover),
+          child: Image.network(
+            'http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg',
+            fit: BoxFit.cover
+          ),
         ),
-        Padding(
-          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-          child:  Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg',fit: BoxFit.cover),
-        ),
-        Padding(
-          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-          child: Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg',fit: BoxFit.cover),
-        ),
-          Padding(
-          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-          child:  Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg',fit: BoxFit.cover),
-        ),
-        Padding(
-          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-          child: Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg',fit: BoxFit.cover),
-        ),
-        Padding(
-          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-          child:  Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg',fit: BoxFit.cover),
-        ),
-        Padding(
-          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-          child: Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg',fit: BoxFit.cover),
-        )
      ],
    );
   }
 }
-````
+```
+### 
 
 
  
