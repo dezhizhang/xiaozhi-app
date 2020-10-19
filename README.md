@@ -269,7 +269,14 @@ lass HomeContent extends StatelessWidget{
   }
 }
 ```
-### 
+### Row 水平布局组件
+|  属性   | 说明  | 
+|  ----  | ----  |
+| mainAxisAlignment| 主轴的排序方式 |
+| crossAxisAlignment | 次轴的排序方式 |
+| children | 组件子元素 |
+ 
+
 
 
  
