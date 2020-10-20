@@ -342,6 +342,46 @@ Card 是卡片组件块，内容可以由大多数类型的 Widget 构成，Card
 | child  | 子组件 | 
 | Shape  | Card 的阴影效果，默认的阴影效果为圆角的 长方形边 | 
 ### 示例代码
+```
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+   return ListView(
+     children: <Widget>[
+       Card(
+         margin: EdgeInsets.all(10),
+         child: Column(
+           children: <Widget>[
+             AspectRatio(
+               aspectRatio: 16/9,
+               child:  Image.network(
+                 'http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371921474207.jpeg',
+                 fit: BoxFit.cover,
+                ),
+             ),
+             ListTile(
+              //  leading: ClipOval(
+              //    child: Image.network(
+              //      'http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371921474207.jpeg',
+              //      fit: BoxFit.cover,
+              //     ),
+              //  ),
+              leading: CircleAvatar(
+                backgroundImage: NetworkImage('http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371921474207.jpeg'),
+              ),
+               title: Text('晓智商城'),
+               subtitle: Text('hello'),
+             )
+           ],
+         ),
+       )
+     ],
+   );
+  }
+}
+```
+
 
 
 
