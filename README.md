@@ -275,6 +275,82 @@ lass HomeContent extends StatelessWidget{
 | mainAxisAlignment| 主轴的排序方式 |
 | crossAxisAlignment | 次轴的排序方式 |
 | children | 组件子元素 |
+### 示例代码
+```
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      width: 750,
+      height: 800,
+      color: Colors.green,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          IconContent(Icons.home,color:Colors.pink),
+          IconContent(Icons.search,color: Colors.yellow),
+          IconContent(Icons.settings,color: Colors.blue),
+        ],
+      ),
+    );
+  }
+  ```
+  ### Stack 组件
+|  属性   | 说明  | 
+|  ----  | ----  |
+| alignment | 配置所有子元素的显示位置 | 
+| children | 子组件 | 
+### 示例代码
+```
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Center(
+      child: Container(
+        width: 300,
+        height: 400,
+        color: Colors.red,
+        child: Stack(
+          children: <Widget>[
+            Align(
+              alignment:Alignment.topLeft,
+              child: Icon(Icons.home,size: 40,color: Colors.white),
+            ),
+            Align(
+              alignment:Alignment.center,
+              child: Icon(Icons.search,size: 40,color: Colors.white),
+            ),
+            Align(
+              alignment:Alignment.bottomRight,
+              child: Icon(Icons.settings,size: 40,color: Colors.white),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+### Card 组件  
+Card 是卡片组件块，内容可以由大多数类型的 Widget 构成，Card 具有圆角和阴影，这让它 看起来有立体感。 
+|  属性   | 说明  | 
+|  ----  | ----  |
+| margin | 外边距 | 
+| child  | 子组件 | 
+| Shape  | Card 的阴影效果，默认的阴影效果为圆角的 长方形边 | 
+### 示例代码
+
+
+
+
+
+
+
+
+
  
 
 
