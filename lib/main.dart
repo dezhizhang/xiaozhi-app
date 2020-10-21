@@ -24,17 +24,26 @@ class MyApp extends StatelessWidget{
   }
 }
 
-
-class HomeContent extends StatefulWidget{
-  HomeContent({Key key}):super(key:key);
-  _HomeContent createState() => _HomeContent();
-}
-
-class _HomeContent extends State<HomeContent>{
+class HomeContent extends StatelessWidget{
   @override
-  Widget build(BuildContext context) {
+  Widget build(Object context) {
     // TODO: implement build
-    throw UnimplementedError();
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        FlatButton(
+          child: Text('打开一个新页面'),
+          textColor: Colors.pink,
+          onPressed: () {
+            // Navigator.push(context,
+            //   MaterialPageRoute(builder: (context){
+            //     return NewRouter()
+            //   })
+            // )
+          },
+        )
+      ],
+    );
   }
-
+  
 }
