@@ -11,51 +11,30 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-      home: Tabs(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('晓智商城'),
+        ),
+        body: HomeContent(),
+      ),
       theme: ThemeData(
-        primarySwatch: Colors.pink
+        primarySwatch: Colors.blueGrey
       ),
     );
   }
 }
 
-class Tabs extends StatefulWidget{
-  Tabs({Key key}):super(key:key);
-  _Tabs createState() =>_Tabs();
+
+class HomeContent extends StatefulWidget{
+  HomeContent({Key key}):super(key:key);
+  _HomeContent createState() => _HomeContent();
 }
 
-class _Tabs extends State<Tabs>{
-  int _currentIndex = 0;
+class _HomeContent extends State<HomeContent>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('晓智商城'),
-      ),
-      body: Text('晓智商城'),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: this._currentIndex,
-        onTap: (index) {
-          setState(() {
-            this._currentIndex = index;
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('首页')
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.category),
-            title: Text('分类')
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            title: Text('搜索')
-          )
-        ],
-      ),
-    );
+    throw UnimplementedError();
   }
+
 }
