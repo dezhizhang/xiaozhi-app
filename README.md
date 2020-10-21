@@ -424,6 +424,41 @@ class HomeContent extends StatelessWidget{
   }
 }
 ```
+### 有状态组件
+```
+class HomeContent extends StatefulWidget{
+  @override
+  HomeContent({Key key}):super(key:key);
+  _HomeContent createState() => _HomeContent();
+  
+}
+
+class _HomeContent extends State<HomeContent>{
+  int count = 0;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Column(
+      children: <Widget>[
+        SizedBox(height: 200),
+        Chip(
+          label: Text('${this.count}'),
+        ),
+        SizedBox(height: 20),
+        RaisedButton(
+          child: Text('按钮'),
+          onPressed: () {
+            setState(() {
+              this.count++;
+            });
+          },
+        )
+      ],
+    );
+  }
+}
+```
+
 
 
 
