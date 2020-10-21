@@ -24,18 +24,47 @@ class MyApp extends StatelessWidget{
   }
 }
 
+// class HomeContent extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context) {
+//     // TODO: implement build
+//     return RaisedButton(
+//       child: Text('第一季'),
+//       textColor: Colors.pink,
+//       onPressed: (){
+//         print('hello');
+//       },
+//     );
+//   }
+// }
+
 class HomeContent extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return RaisedButton(
-      child: Text('第一季'),
-      textColor: Colors.pink,
-      onPressed: (){
-        print('hello');
-      },
+    return Wrap(
+      spacing: 10,
+      runSpacing: 10,
+      children: <Widget>[
+        RaisedButton(
+          child: Text('第一集'),
+          onPressed: () {
+            print('第一集');
+          },
+        ),
+        RaisedButton(
+          child: Text('第二集'),
+          onPressed: () {
+            print('第二集');
+          },
+        ),
+        RaisedButton(
+          child: Text('第三集'),
+          onPressed: () {
+            print('第三集');
+          },
+        )
+      ],
     );
   }
 }
-
-
