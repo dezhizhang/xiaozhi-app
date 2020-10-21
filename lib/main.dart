@@ -11,48 +11,51 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('晓智商城'),
-        ),
-        body: HomeContent(),
-      ),
+      home: Tabs(),
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey
+        primarySwatch: Colors.pink
       ),
     );
   }
 }
 
-class HomeContent extends StatefulWidget{
-  @override
-  HomeContent({Key key}):super(key:key);
-  _HomeContent createState() =>_HomeContent();
-
+class Tabs extends StatefulWidget{
+  Tabs({Key key}):super(key:key);
+  _Tabs createState() =>_Tabs();
 }
 
-class _HomeContent extends State<HomeContent>{
-  int count = 0;
+class _Tabs extends State<Tabs>{
+  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Column(
-      children: <Widget>[
-        SizedBox(height: 200),
-        Chip(
-          label: Text("${this.count}"),
-        ),
-        SizedBox(height:20),
-        RaisedButton(
-          child: Text('按钮'),
-          onPressed: (){
-            setState(() {
-              this.count++;
-            });
-          },
-        )
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('晓智商城'),
+      ),
+      body: Text('晓智商城'),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: this._currentIndex,
+        onTap: (index) {
+          setState(() {
+            this._currentIndex = index;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text('首页')
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.category),
+            title: Text('分类')
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            title: Text('搜索')
+          )
+        ],
+      ),
     );
   }
-
 }
