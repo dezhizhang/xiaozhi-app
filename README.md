@@ -391,6 +391,40 @@ class HomeContent extends StatelessWidget{
 | verticalDirection | 定义了 children 摆放顺序，默认是 down，见 Flex 相关属性介绍。| 
 | runAlignment | run 的对齐方式。run 可以理解为新的行或者 列，如果是水平方向布局的话，run 可以理解 为新的一行 | 
 | runSpacing | run 的间距 | 
+### 示例代码
+```
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Wrap(
+      spacing: 10,
+      runSpacing: 10,
+      children: <Widget>[
+        RaisedButton(
+          child: Text('第一集'),
+          onPressed: () {
+            print('第一集');
+          },
+        ),
+        RaisedButton(
+          child: Text('第二集'),
+          onPressed: () {
+            print('第二集');
+          },
+        ),
+        RaisedButton(
+          child: Text('第三集'),
+          onPressed: () {
+            print('第三集');
+          },
+        )
+      ],
+    );
+  }
+}
+```
+
 
 
 
