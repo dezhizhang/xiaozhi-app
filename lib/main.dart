@@ -27,8 +27,8 @@ class MyApp extends StatelessWidget{
 class HomeContent extends StatefulWidget{
   @override
   HomeContent({Key key}):super(key:key);
-  _HomeContent createState() => _HomeContent();
-  
+  _HomeContent createState() =>_HomeContent();
+
 }
 
 class _HomeContent extends State<HomeContent>{
@@ -40,12 +40,12 @@ class _HomeContent extends State<HomeContent>{
       children: <Widget>[
         SizedBox(height: 200),
         Chip(
-          label: Text('${this.count}'),
+          label: Text("${this.count}"),
         ),
-        SizedBox(height: 20),
+        SizedBox(height:20),
         RaisedButton(
           child: Text('按钮'),
-          onPressed: () {
+          onPressed: (){
             setState(() {
               this.count++;
             });
@@ -54,4 +54,5 @@ class _HomeContent extends State<HomeContent>{
       ],
     );
   }
+
 }
