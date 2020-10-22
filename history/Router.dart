@@ -26,17 +26,24 @@ class MyApp extends StatelessWidget{
 
 class HomeContent extends StatelessWidget{
   @override
-  Widget build(BuildContext context) {
+  Widget build(Object context) {
     // TODO: implement build
-   return Center(
-     child: Text(
-       '晓智商城',
-       textDirection: TextDirection.ltr,
-       style: TextStyle(
-         fontSize: 40.0,
-         color: Colors.pink
-       ),
-     ),
-   );
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        FlatButton(
+          child: Text('打开一个新页面'),
+          textColor: Colors.pink,
+          onPressed: () {
+            // Navigator.push(context,
+            //   MaterialPageRoute(builder: (context){
+            //     return NewRouter()
+            //   })
+            // )
+          },
+        )
+      ],
+    );
   }
+  
 }
