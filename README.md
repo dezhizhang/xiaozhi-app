@@ -501,6 +501,26 @@ class _Tabs extends State<Tabs>{
   }
 }
 ```
+### 进度条
+```
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.all(10),
+        child: LinearProgressIndicator(
+          backgroundColor: Colors.pink,
+          valueColor: AlwaysStoppedAnimation(Colors.green),
+        ),
+      ),
+    );
+  }
+}
+```
+
+
 
 
 

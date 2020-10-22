@@ -26,14 +26,31 @@ class MyApp extends StatelessWidget{
 
 
 
+// class HomeContent extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context) {
+//     // TODO: implement build
+//     return Center(
+//       child: LinearProgressIndicator(
+//         backgroundColor: Colors.pink,
+//         valueColor: AlwaysStoppedAnimation(Colors.green),
+//       ),
+//     );
+//   }
+// }
+
+
 class HomeContent extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Center(
-      child: LinearProgressIndicator(
-        backgroundColor: Colors.pink,
-        valueColor: AlwaysStoppedAnimation(Colors.green),
+      child: Padding(
+        padding: EdgeInsets.all(10),
+        child: CircularProgressIndicator(
+          backgroundColor: Colors.grey[200],
+          valueColor: AlwaysStoppedAnimation(Colors.blue),
+        ),
       ),
     );
   }
