@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('晓智商城'),
+          title:Text('晓知商城')
         ),
         body: HomeContent(),
       ),
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget{
         '/form':(context) => FormPage()
       },
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey
+        primarySwatch: Colors.pink
       ),
     );
   }
@@ -35,12 +35,12 @@ class HomeContent extends StatelessWidget{
     // TODO: implement build
     return Center(
       child: RaisedButton(
+        child: Text('跳转到表单页'),
         color: Colors.pink,
-        child: Text('跳转到form表单页'),
         onPressed: () {
           Navigator.pushNamed(context, '/form');
         },
       ),
-    );
+    );   
   }
 }
