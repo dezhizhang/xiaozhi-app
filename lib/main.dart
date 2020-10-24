@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import './pages/appbar.dart';
 import './pages/topBar.dart';
 import './pages/topBarCon.dart';
+import './pages/darw.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget{
       routes: {
         '/appbar':(context) => AppBarPage(),
         '/topbar':(context) => TopBarPage(),
-        '/topcon':(context) => AppBarController()
+        '/topcon':(context) => AppBarController(),
+        '/draw':(context) => DrawerPage()
       },
       theme: ThemeData(
         primarySwatch: Colors.blueGrey
@@ -43,7 +45,7 @@ class HomeContent extends StatelessWidget{
         color: Colors.pink,
         child: Text('跳转到appBar'),
         onPressed: (){
-          Navigator.pushNamed(context, '/topcon');
+          Navigator.pushNamed(context, '/draw');
         },
       ),
     );
