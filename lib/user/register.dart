@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SearchPage extends StatelessWidget{
+class RegisterPage extends StatelessWidget{
   final arguments;
   SearchPage({this.arguments});
   @override

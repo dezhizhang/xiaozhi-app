@@ -641,34 +641,46 @@ class HomeContent extends StatelessWidget{
   }
 }
 ```
+### AppBar 自定义顶部按钮图 标、颜色
+|  属性   | 描述  | 
+|  ----  | ----  |
+| leading | 在标题前面显示的一个控件，在首页通常显示应用 的 logo；在其他界面通常显示为返回按钮 | 
+| title | 标题，通常显示为当前界面的标题文字，可以放组 件 | 
+| actions | 通常使用 IconButton 来表示，可以放按钮组 | 
+| bottom | 通常放 tabBar，标题下面显示一个 Tab 导航栏 | 
+| backgroundColor |  导航背景颜色 | 
+| iconTheme | 图标样式 | 
+| textTheme | 文字样式 | 
+| centerTitle | 标题是否居中显示 | 
+### 示例代码
+```
+import 'package:flutter/material.dart';
+class AppBarPage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('表单页面'),
+          centerTitle: true,
+          backgroundColor: Colors.pink,
+          leading: IconButton(
+            icon: Icon(Icons.backup_sharp),
+            onPressed: () {
+
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
- 
 
 
 

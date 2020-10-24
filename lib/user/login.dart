@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 
-class FormPage extends StatelessWidget{
+class LoginPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
