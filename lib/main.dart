@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import './date.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,14 +21,7 @@ class MyApp extends StatelessWidget{
         body: HomeContent(),
       ),
       routes: {
-        // '/appbar':(context) => AppBarPage(),
-        // '/topbar':(context) => TopBarPage(),
-        // '/topcon':(context) => AppBarController(),
-        // '/draw':(context) => DrawerPage(),
-        // '/button':(context) => ButtonPage(),
-        // '/textFile':(context) => TextFieldPage(),
-        // '/checkbox':(context) => CheckBoxPage(),
-        // '/checkboxtitle':(context) => CheckBoxListTilePage()
+       '/date':(context) => DatePage()
       },
       theme: ThemeData(
         primarySwatch: Colors.blueGrey
@@ -46,22 +40,10 @@ class HomeContent extends StatelessWidget{
           RaisedButton(
             child: Text('单行文本'),
             onPressed: () {
-              Navigator.pushNamed(context, '/textFile');
+              Navigator.pushNamed(context, '/date');
             },
           ),
-          RaisedButton(
-            child: Text('多选按钮'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/checkbox');
-            },
-          ),
-          RaisedButton(
-            child: Text('多选按钮组'),
-            color: Colors.pink,
-            onPressed: () {
-              Navigator.pushNamed(context, '/checkboxtitle');
-            },
-          )
+        
         ],
       )
     );
