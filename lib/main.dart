@@ -8,6 +8,7 @@ import './pages/darw.dart';
 import './pages/button.dart';
 import './pages/textField.dart';
 import './pages/checkbox.dart';
+import './pages/checkboxlist.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget{
         '/draw':(context) => DrawerPage(),
         '/button':(context) => ButtonPage(),
         '/textFile':(context) => TextFieldPage(),
-        '/checkbox':(context) => CheckBoxPage()
+        '/checkbox':(context) => CheckBoxPage(),
+        '/checkboxtitle':(context) => CheckBoxListTilePage()
       },
       theme: ThemeData(
         primarySwatch: Colors.blueGrey
@@ -59,6 +61,13 @@ class HomeContent extends StatelessWidget{
             child: Text('多选按钮'),
             onPressed: () {
               Navigator.pushNamed(context, '/checkbox');
+            },
+          ),
+          RaisedButton(
+            child: Text('多选按钮组'),
+            color: Colors.pink,
+            onPressed: () {
+              Navigator.pushNamed(context, '/checkboxtitle');
             },
           )
         ],

@@ -958,7 +958,7 @@ class _HomeContent extends State<HomeContent>{
   }
 }
 ```
-### 、Checkbox组件
+### Checkbox组件
 |  属性   | 描述  | 
 |  ----  | ----  |
 | value | true 或者 false | 
@@ -1024,6 +1024,68 @@ class _HomeContent extends State<HomeContent>{
   }
 }
 ```
+### CheckboxListTile组件
+|  属性   | 描述  | 
+|  ----  | ----  |
+| value | true 或者 false | 
+| onChanged | 改变的时候触发的事件 | 
+| title | 标题 | 
+| subtitle | 二级标题 | 
+| secondary | 配置图标或者图片 | 
+| selected |  选中的时候文字颜色是否跟着改变 | 
+### 示例代码
+```
+import 'package:flutter/material.dart';
+
+class CheckBoxListTilePage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('多选接钮组'),
+        ),
+        body: HomeContent(),
+      ),
+    );
+  }
+}
+
+class HomeContent extends StatefulWidget{
+  _HomeContent createState() =>_HomeContent();
+}
+
+class _HomeContent extends State<HomeContent>{
+  bool _isSelected = false;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Padding(
+      padding: EdgeInsets.all(10),
+      child: Column(
+        children: <Widget>[
+          CheckboxListTile(
+            value: this._isSelected,
+            title: Text('flutter'),
+            subtitle: Text('flutter学习'),
+            activeColor: Colors.red,
+            onChanged: (value) {
+              setState(() {
+                this._isSelected = value;
+              });
+            },
+          )
+        ],
+      ),
+    );
+  }
+}
+```
+
+
+
+
 
 
 
