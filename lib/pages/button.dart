@@ -29,12 +29,46 @@ class HomeContent extends StatelessWidget{
     return Center(
       child: Column(
         children: <Widget>[
-          RaisedButton(
+          Container(
+            width: 100,
+            height: 32,
+            child:  RaisedButton(
             child: Text('按钮'),
+            color: Colors.green,
+            elevation: 100,
             onPressed: () {
               print('hello');
             },
+          ),
+          ),
+         
+          OutlineButton(
+            child: Text('线框按钮'),
+            color:Colors.pink,
+            onPressed: () {
+              print('线框');
+            },
+          ),
+          RaisedButton(
+            child: Text('圆角按钮'),
+            elevation: 20,
+            color: Colors.pink,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10)
+            ),
+            onPressed: (){
+
+            },
+          ),
+          FlatButton(
+            child: Text('浮动按钮'),
+            color: Colors.yellow,
+            textColor: Colors.white,
+            onPressed: () {
+              
+            },
           )
+
         ],
       ),
     );
