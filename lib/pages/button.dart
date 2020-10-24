@@ -16,6 +16,15 @@ class ButtonPage extends StatelessWidget{
         drawer: Drawer(
           child: Text('Drawer'),
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () {
+            print('hello');
+          },
+         
+          backgroundColor: Colors.yellow,
+        ),
         body: HomeContent(),
       ),
     );

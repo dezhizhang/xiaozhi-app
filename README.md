@@ -856,6 +856,68 @@ class DrawerPage extends StatelessWidget{
   }
 }
 ```
+### TextField 文本框组件
+|  属性   | 描述  | 
+|  ----  | ----  |
+| maxLines | 设置此参数可以把文本框改为多行文本框 | 
+| onChanged | 文本框改变的时候触发的事件 | 
+| decoration | hintText 类似 html 中的 placeholder border 配置文本框边框 OutlineInputBorder 配合使用 labelText lable 的名称 labelStyle 配置 lable 的样式 |
+| obscureText | 把文本框框改为密码框 | 
+| controller | controller 结合 TextEditingController()可以配置表单默认显示的内容 | 
+### 示例代码
+```
+class TextFieldPage extends  StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('表单页'),
+        ),
+        body: HomeContent(),
+      )
+    );
+  }
+}
+
+
+class HomeContent extends StatefulWidget{
+  _HomeContent createState() => _HomeContent();
+}
+
+class _HomeContent extends State<HomeContent>{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Padding(
+      padding:  EdgeInsets.all(20),
+      child: Column(
+        children: <Widget>[
+          TextField(),
+          SizedBox(height: 10),
+          TextField(
+            maxLines: 4,
+            decoration: InputDecoration(
+              hintText: '请输入姓名',
+              border: OutlineInputBorder()
+            ),
+          ),
+          TextField(
+            obscureText: true,
+            decoration: InputDecoration(
+              hintText: '请输入',
+              labelText: '用户名',
+              icon: Icon(Icons.people)
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+```
+
+
 
 
 
