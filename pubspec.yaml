@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_cupertino_date_picker: ^1.0.26+2
+  flutter_swiper: ^1.1.6
 
 
   # The following adds the Cupertino Icons font to your application.

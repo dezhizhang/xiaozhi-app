@@ -1,8 +1,6 @@
 
 import 'package:flutter/material.dart';
 
-
-
 class DatePage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -34,7 +32,7 @@ class _HomeContent extends State<HomeContent>{
         padding: EdgeInsets.all(10),
         child: Column(
           children: <Widget>[
-            
+
           ],
         ),
       ),
