@@ -1,40 +1,23 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget{
+class DrawerPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('晓智商城'),
+          title: Text('组件'),
+          centerTitle: true,
+          backgroundColor: Colors.pink,
+
+        ),
+        drawer: Drawer(
+          child: Text('Drawer'),
         ),
         body: HomeContent(),
       ),
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey
-      ),
     );
   }
-}
-
-
-class HomeContent extends StatefulWidget{
-  HomeContent({Key key}):super(key:key);
-  _HomeContent createState() => _HomeContent();
-}
-
-class _HomeContent extends State<HomeContent>{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
-  }
-
 }

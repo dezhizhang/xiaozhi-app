@@ -1,14 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import './pages/appbar.dart';
-import './pages/topBar.dart';
-import './pages/topBarCon.dart';
-import './pages/darw.dart';
-import './pages/button.dart';
-import './pages/textField.dart';
-import './pages/checkbox.dart';
-import './pages/checkboxlist.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,14 +20,14 @@ class MyApp extends StatelessWidget{
         body: HomeContent(),
       ),
       routes: {
-        '/appbar':(context) => AppBarPage(),
-        '/topbar':(context) => TopBarPage(),
-        '/topcon':(context) => AppBarController(),
-        '/draw':(context) => DrawerPage(),
-        '/button':(context) => ButtonPage(),
-        '/textFile':(context) => TextFieldPage(),
-        '/checkbox':(context) => CheckBoxPage(),
-        '/checkboxtitle':(context) => CheckBoxListTilePage()
+        // '/appbar':(context) => AppBarPage(),
+        // '/topbar':(context) => TopBarPage(),
+        // '/topcon':(context) => AppBarController(),
+        // '/draw':(context) => DrawerPage(),
+        // '/button':(context) => ButtonPage(),
+        // '/textFile':(context) => TextFieldPage(),
+        // '/checkbox':(context) => CheckBoxPage(),
+        // '/checkboxtitle':(context) => CheckBoxListTilePage()
       },
       theme: ThemeData(
         primarySwatch: Colors.blueGrey
