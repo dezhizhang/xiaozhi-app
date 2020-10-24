@@ -23,6 +23,7 @@ class HomeContent extends StatefulWidget{
 }
 
 class _HomeContent extends State<HomeContent>{
+  String _description = '';
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -36,7 +37,25 @@ class _HomeContent extends State<HomeContent>{
               hintText: '请输入',
               border: OutlineInputBorder()
             ),
+           onChanged: (value) {
+             setState(() {
+               this._description = value;
+             });
+           },
+          ),
+          SizedBox(height: 10),
+          Container(
+            width: double.infinity,
+            child:RaisedButton(
+            color: Colors.pink,
+            textColor: Colors.white,
+            child: Text('登录'),
+            onPressed: () {
+              print(this._description);
+            },
+          ),
           )
+         
         ],
       ),
     );
