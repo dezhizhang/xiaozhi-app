@@ -7,6 +7,7 @@ import './pages/topBarCon.dart';
 import './pages/darw.dart';
 import './pages/button.dart';
 import './pages/textField.dart';
+import './pages/checkbox.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,7 +32,8 @@ class MyApp extends StatelessWidget{
         '/topcon':(context) => AppBarController(),
         '/draw':(context) => DrawerPage(),
         '/button':(context) => ButtonPage(),
-        '/textFile':(context) => TextFieldPage()
+        '/textFile':(context) => TextFieldPage(),
+        '/checkbox':(context) => CheckBoxPage()
       },
       theme: ThemeData(
         primarySwatch: Colors.blueGrey
@@ -51,6 +53,12 @@ class HomeContent extends StatelessWidget{
             child: Text('单行文本'),
             onPressed: () {
               Navigator.pushNamed(context, '/textFile');
+            },
+          ),
+          RaisedButton(
+            child: Text('多选按钮'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/checkbox');
             },
           )
         ],

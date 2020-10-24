@@ -958,6 +958,77 @@ class _HomeContent extends State<HomeContent>{
   }
 }
 ```
+### 、Checkbox组件
+|  属性   | 描述  | 
+|  ----  | ----  |
+| value | true 或者 false | 
+| onChanged | 改变的时候触发的事件 | 
+| activeColor | 选中的颜色、背景颜色 | 
+| checkColor | 选中的颜色、Checkbox 里面对号的颜色 | 
+### 示例代码
+```
+import 'package:flutter/material.dart';
+
+class CheckBoxPage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('多选按钮'),
+        ),
+        body: HomeContent(),
+      ),
+    );
+  }
+}
+
+class HomeContent extends StatefulWidget{
+  _HomeContent createState() => _HomeContent();
+}
+
+class _HomeContent extends State<HomeContent>{
+  bool _flag = false;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Padding(
+      padding: EdgeInsets.all(10),
+      child:  Column(
+        children: <Widget>[
+          Checkbox(
+            value: this._flag,
+            onChanged: (value) {
+              setState(() {
+                this._flag = value;
+              });
+            } ,
+          ),
+          SizedBox(height: 10),
+          Container(
+            width: double.infinity,
+            child: RaisedButton(
+            child: Text('登录'),
+            color: Colors.pink,
+            textColor: Colors.white,
+            onPressed: () {
+              print(this._flag);
+            },
+          ),
+          )
+         
+        ],
+      )
+    );
+  }
+}
+```
+
+
+
+
+
 
 
 
