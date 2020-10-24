@@ -679,6 +679,88 @@ class AppBarPage extends StatelessWidget{
 }
 
 ```
+### 自定义TabBar实现顶部Tab切换
+|  属性   | 描述  | 
+|  ----  | ----  |
+| tabs | 显示的标签内容，一般使用Tab对象,也可以是其他的Widget | 
+| controller | TabController对象 | 
+| isScrollable | 是否可滚动 | 
+| indicatorColor | 指示器颜色 | 
+| indicatorWeight | 指示器高度 |
+| indicatorPadding | 底部指示器的 Padding | 
+| indicator | 指示器 decoration，例如边框等 | 
+| indicatorSize | 指示器大小计算方式，TabBarIndicatorSize.label 跟文 字等宽,TabBarIndicatorSize.tab 跟每个 tab 等宽 |
+| labelColor | 选中 label 颜色 | 
+| labelStyle | 选中 label 的 Style | 
+| labelPadding | 每个 label 的 padding 值 | 
+| unselectedLabelColor | 未选中 label 颜色 | 
+| unselectedLabelStyle | 未选中 label 的 Style | 
+
+### 示例代码
+```
+import 'package:flutter/material.dart';
+
+
+class TopBarPage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: DefaultTabController(
+        length: 4,
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text('晓智商城'),
+            bottom: TabBar(
+              // isScrollable: true,
+              tabs: <Widget>[
+                Tab(text: '热门'),
+                Tab(text: '推荐'),
+                Tab(text: '好卖'),
+                Tab(text: '好评'),
+              
+              ],
+            ),
+          ),
+          body: TabBarView(
+            children: <Widget>[
+              ListView(
+                children: <Widget>[
+                  ListTile(title: Text('这是热门')),
+                
+                ],
+              ),
+               ListView(
+                children: <Widget>[
+                  ListTile(title: Text('这是推荐')),
+                 
+                ],
+              ),
+               ListView(
+                children: <Widget>[
+                  ListTile(title: Text('这是好卖')),
+                 
+                ],
+              ), 
+              ListView(
+                children: <Widget>[
+                  ListTile(title: Text('这是好评')),
+                
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+
+    );
+  }
+}
+
+```
+
+
+
 
 
 
