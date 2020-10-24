@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import './pages/form.dart';
+import './pages/search.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget{
         body: HomeContent(),
       ),
       routes: {
-        '/form':(context) => FormPage()
+        '/form':(context) => FormPage(),
+        '/search':(context) => SearchPage()
       },
       theme: ThemeData(
         primarySwatch: Colors.pink
@@ -34,13 +36,24 @@ class HomeContent extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return Center(
-      child: RaisedButton(
-        child: Text('跳转到表单页'),
-        color: Colors.pink,
-        onPressed: () {
-          Navigator.pushNamed(context, '/form');
-        },
+      child: Column(
+        children: <Widget>[
+          RaisedButton(
+            child: Text('跳到表单'),
+            color: Colors.pink,
+            onPressed: () {
+              Navigator.pushNamed(context, '/form');
+            },
+          ),
+          RaisedButton(
+            child: Text('跳到搜索'),
+            color: Colors.yellow,
+            onPressed: () {
+              Navigator.pushNamed(context, '/search');
+            },
+          )
+        ],
       ),
-    );   
+    );
   }
 }
