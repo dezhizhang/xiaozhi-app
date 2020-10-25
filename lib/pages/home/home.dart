@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:xiaozhi/pages/home/category.dart';
 import './swiper.dart';
+import './category.dart';
 
 
 class Home extends StatefulWidget{
@@ -14,6 +16,8 @@ class _Home extends State<Home>{
       child: ListView(
         children: <Widget>[
           SwiperCompt(),
+          SizedBox(height: 10),
+          CategoryCompt()
         ],
       ),
     );
