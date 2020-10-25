@@ -1272,6 +1272,14 @@ simpleDialog () async {
   }
 
 ```
+### Flutter JSON 字符串和 Map 类型的 转换
+```
+var mapData={"name":"张三","age":"20"}; 
+var strData='{"name":"张三","age":"20"}';
+print(json.encode(mapData)); //Map 转换成 Json 字符串 
+print(json.decode(strData)); //Json 字符串转化成 Map 类型
+```
+
 
 
 

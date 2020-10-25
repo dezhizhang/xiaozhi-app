@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import './date.dart';
 import './swiper.dart';
 import './dialog.dart';
+import './http.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget{
       routes: {
        '/date':(context) => DatePage(),
        '/swiper':(context) => SwierPage(),
-       '/dialog':(context) => DialogPage()
+       '/dialog':(context) => DialogPage(),
+       '/http':(context) => HttpPage()
       },
       theme: ThemeData(
         primarySwatch: Colors.blueGrey
@@ -56,6 +58,12 @@ class HomeContent extends StatelessWidget{
             child: Text('dialog'),
             onPressed: () {
               Navigator.pushNamed(context, '/dialog');
+            },
+          ),
+          RaisedButton(
+            child: Text('network'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/http');
             },
           )
         
