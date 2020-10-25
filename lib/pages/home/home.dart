@@ -8,6 +8,13 @@ class Home extends StatefulWidget{
 class _Home extends State<Home>{
   @override
   Widget build(BuildContext context) {
-    return Text('home');
+    return  Padding(
+      padding: EdgeInsets.all(10),
+      child: ListView(
+        children: <Widget>[
+          Text('hello'),
+        ],
+      ),
+    );
   }
 }

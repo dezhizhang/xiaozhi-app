@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import '../home/home.dart';
+import '../category/category.dart';
+import '../cart/cart.dart';
+import '../people/people.dart';
 
 class Tabs extends StatefulWidget{
   _Tabs createState() => _Tabs();
@@ -6,13 +10,19 @@ class Tabs extends StatefulWidget{
 
 class _Tabs extends State<Tabs>{
   int currentIndex = 0;
+  List pageList = [
+    Home(),
+    Category(),
+    Cart(),
+    People(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('贵彩办公'),
       ),
-      body: Text('贵彩办公'),
+      body: this.pageList[this.currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: this.currentIndex,
         type: BottomNavigationBarType.fixed,
