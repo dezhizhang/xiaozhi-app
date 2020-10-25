@@ -23,7 +23,7 @@ class _Home extends State<Home>{
       child: ListView(
         children: <Widget>[
           SwiperCompt(),
-          SizedBox(height: ScreenAdapter.setHeight(1000)),
+          SizedBox(height:ScreenAdapter.setHeight(10)),
           CategoryCompt()
         ],
       ),
