@@ -24,31 +24,18 @@ class MyApp extends StatelessWidget{
   }
 }
 
-
-class HomeContent extends StatelessWidget{
+class  HomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Center(
-      child: Container(
-        width: 300,
-        height: 400,
-        color: Colors.red,
-        child: Stack(
-          children: <Widget>[
-            Align(
-              alignment:Alignment.topLeft,
-              child: Icon(Icons.home,size: 40,color: Colors.white),
-            ),
-            Align(
-              alignment:Alignment.center,
-              child: Icon(Icons.search,size: 40,color: Colors.white),
-            ),
-            Align(
-              alignment:Alignment.bottomRight,
-              child: Icon(Icons.settings,size: 40,color: Colors.white),
-            )
-          ],
+    return Container(
+      width: 120,
+      height: 120,
+      color: Colors.pink[50],
+      child: Align(
+        alignment: Alignment.topRight,
+        child: FlutterLogo(
+          size: 60,
         ),
       ),
     );
