@@ -1,12 +1,30 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
+
+// void main() {
+//   runApp(MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     // TODO: implement build
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('晓智商城'),
+//         ),
+//         body: HomeContent(),
+//       ),
+//     );
+//   }
+// }
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget  {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -17,14 +35,11 @@ class MyApp extends StatelessWidget{
         ),
         body: HomeContent(),
       ),
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey
-      ),
     );
   }
 }
 
-class HomeContent extends StatelessWidget{
+class HomeContent extends StatelessWidget  {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -32,7 +47,15 @@ class HomeContent extends StatelessWidget{
       delegate: TestFlowDelegate(margin: EdgeInsets.all(10.0)),
       children: <Widget>[
         Container(width: 80,height: 80,color: Colors.red),
-        Container(width: 80,height: 80,color: Colors.pink)
+        Container(width: 80,height: 80,color: Colors.red),
+        Container(width: 80,height: 80,color: Colors.red),
+        Container(width: 80,height: 80,color: Colors.red),
+        Container(width: 80,height: 80,color: Colors.red),
+        Container(width: 80,height: 80,color: Colors.red),
+        Container(width: 80,height: 80,color: Colors.red),
+        Container(width: 80,height: 80,color: Colors.green),
+        
+
       ],
     );
   }
