@@ -2,9 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import './pages/form.dart';
-import './pages/search.dart';
-
 void main() {
   runApp(MyApp());
 }

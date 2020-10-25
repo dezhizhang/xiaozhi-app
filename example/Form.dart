@@ -16,7 +16,7 @@ class DrawerPage extends StatelessWidget{
         drawer: Drawer(
           child: Text('Drawer'),
         ),
-        body: HomeContent(),
+        body: Text('hello')
       ),
     );
   }
