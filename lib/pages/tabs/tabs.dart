@@ -31,7 +31,7 @@ class _Tabs extends State<Tabs>{
             title: Text('分类')
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.car_rental),
+            icon: Icon(Icons.shopping_cart),
             title: Text('购物车')
           ),
           BottomNavigationBarItem(
