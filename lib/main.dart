@@ -4,6 +4,8 @@ import './date.dart';
 import './swiper.dart';
 import './dialog.dart';
 import './http.dart';
+import './diao.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -26,7 +28,8 @@ class MyApp extends StatelessWidget{
        '/date':(context) => DatePage(),
        '/swiper':(context) => SwierPage(),
        '/dialog':(context) => DialogPage(),
-       '/http':(context) => HttpPage()
+       '/http':(context) => HttpPage(),
+       '/diao':(context) => DiaoPage()
       },
       theme: ThemeData(
         primarySwatch: Colors.blueGrey
@@ -64,6 +67,12 @@ class HomeContent extends StatelessWidget{
             child: Text('network'),
             onPressed: () {
               Navigator.pushNamed(context, '/http');
+            },
+          ),
+          RaisedButton(
+            child: Text('diao'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/diao');
             },
           )
         
