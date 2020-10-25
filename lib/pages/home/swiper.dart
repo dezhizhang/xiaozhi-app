@@ -1,5 +1,9 @@
+/**
+ * @author:zhangdezhi
+ * @date:2020-10-23
+ * @desc:轮播图组件
+*/
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
@@ -27,7 +31,6 @@ class _SwiperCompt extends State<SwiperCompt>{
             return Image.network(
               this.list[index]['url'],
               fit: BoxFit.cover,
-              
             );
           },
           itemCount: this.list.length,
