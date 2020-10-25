@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import './date.dart';
+import './swiper.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget{
         body: HomeContent(),
       ),
       routes: {
-       '/date':(context) => DatePage()
+       '/date':(context) => DatePage(),
+       '/swiper':(context) => SwierPage()
       },
       theme: ThemeData(
         primarySwatch: Colors.blueGrey
@@ -43,11 +45,19 @@ class HomeContent extends StatelessWidget{
               Navigator.pushNamed(context, '/date');
             },
           ),
+          RaisedButton(
+            child: Text('轮播图'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/swiper');
+            },
+          )
         
         ],
       )
     );
   }
 }
+
+
 
 
