@@ -5,6 +5,7 @@
 */
 import 'package:flutter/material.dart';
 import 'package:xiaozhi/pages/home/category.dart';
+import 'package:xiaozhi/pages/home/product.dart';
 import 'package:xiaozhi/pages/home/swiper.dart';
 import '../../utils/utils.dart';
 
@@ -19,12 +20,14 @@ class _Home extends State<Home>{
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
     return  Padding(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.all(ScreenAdapter.height(10)),
       child: ListView(
         children: <Widget>[
           SwiperCompt(),
-          SizedBox(height:ScreenAdapter.setHeight(10)),
-          CategoryCompt()
+          SizedBox(height:ScreenAdapter.height(10)),
+          CategoryCompt(),
+          SizedBox(height:ScreenAdapter.height(10)),
+          ProductCompt(),
         ],
       ),
     );
