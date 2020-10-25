@@ -5,6 +5,7 @@ import './swiper.dart';
 import './dialog.dart';
 import './http.dart';
 import './diao.dart';
+import './news.dart';
 
 
 void main() {
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget{
        '/swiper':(context) => SwierPage(),
        '/dialog':(context) => DialogPage(),
        '/http':(context) => HttpPage(),
-       '/diao':(context) => DiaoPage()
+       '/diao':(context) => DiaoPage(),
+       '/news':(context) => NewsPage(),
       },
       theme: ThemeData(
         primarySwatch: Colors.blueGrey
@@ -73,6 +75,12 @@ class HomeContent extends StatelessWidget{
             child: Text('diao'),
             onPressed: () {
               Navigator.pushNamed(context, '/diao');
+            },
+          ),
+          RaisedButton(
+            child: Text('news'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/news');
             },
           )
         
