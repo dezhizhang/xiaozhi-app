@@ -1,12 +1,5 @@
 
 import 'package:flutter/material.dart';
-import './date.dart';
-import './swiper.dart';
-import './dialog.dart';
-import './http.dart';
-import './diao.dart';
-import './news.dart';
-
 
 void main() {
   runApp(MyApp());
@@ -26,12 +19,12 @@ class MyApp extends StatelessWidget{
         body: HomeContent(),
       ),
       routes: {
-       '/date':(context) => DatePage(),
-       '/swiper':(context) => SwierPage(),
-       '/dialog':(context) => DialogPage(),
-       '/http':(context) => HttpPage(),
-       '/diao':(context) => DiaoPage(),
-       '/news':(context) => NewsPage(),
+      //  '/date':(context) => DatePage(),
+      //  '/swiper':(context) => SwierPage(),
+      //  '/dialog':(context) => DialogPage(),
+      //  '/http':(context) => HttpPage(),
+      //  '/diao':(context) => DiaoPage(),
+      //  '/news':(context) => NewsPage(),
       },
       theme: ThemeData(
         primarySwatch: Colors.blueGrey
