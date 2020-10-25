@@ -1,7 +1,11 @@
+/**
+ * @author:zhangdezhi
+ * @date:2020-10-25
+ * @desc:首页列表
+*/
 import 'package:flutter/material.dart';
 import 'package:xiaozhi/pages/home/category.dart';
-import './swiper.dart';
-import './category.dart';
+import 'package:xiaozhi/pages/home/swiper.dart';
 
 
 class Home extends StatefulWidget{
