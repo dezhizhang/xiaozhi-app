@@ -23,18 +23,28 @@ class HomeContent extends StatefulWidget{
 }
 
 class _HomeContent extends State<HomeContent>{
+  int page = 1;
   List list = [];
+  ScrollController _scrollController = new ScrollController();
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     this._getData();
+    _scrollController.addListener(() {
+      if(_scrollController.position.pixels >= _scrollController.position.maxScrollExtent - 50) {
+        print('hello');
+        this._getData();
+      }
+     
+    });
   }
   _getData() async {
-    var apiURL = 'http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20&page=1';
+    var apiURL = 'http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20&page=${this.page}';
     Response response = await Dio().get(apiURL);
     setState(() {
-      this.list = json.decode(response.data)['result'];
+      this.list.addAll(json.decode(response.data)['result']); 
+      this.page++;
     });
   }
   Future<void> _onRefresh() async{
@@ -48,6 +58,7 @@ class _HomeContent extends State<HomeContent>{
       RefreshIndicator(
         onRefresh: _onRefresh,
         child:ListView.builder(
+          controller: this._scrollController,
           itemCount: this.list.length,
           itemBuilder: (context,index) {
             return ListTile(
