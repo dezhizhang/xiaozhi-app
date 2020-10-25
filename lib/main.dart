@@ -1,8 +1,8 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import './date.dart';
 import './swiper.dart';
+import './dialog.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,7 +23,8 @@ class MyApp extends StatelessWidget{
       ),
       routes: {
        '/date':(context) => DatePage(),
-       '/swiper':(context) => SwierPage()
+       '/swiper':(context) => SwierPage(),
+       '/dialog':(context) => DialogPage()
       },
       theme: ThemeData(
         primarySwatch: Colors.blueGrey
@@ -49,6 +50,12 @@ class HomeContent extends StatelessWidget{
             child: Text('轮播图'),
             onPressed: () {
               Navigator.pushNamed(context, '/swiper');
+            },
+          ),
+          RaisedButton(
+            child: Text('dialog'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/dialog');
             },
           )
         
