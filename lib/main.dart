@@ -82,8 +82,8 @@ class HomeContent extends StatelessWidget{
             onPressed: () {
               Navigator.pushNamed(context, '/news');
             },
-          )
-        
+          ),
+         
         ],
       )
     );
