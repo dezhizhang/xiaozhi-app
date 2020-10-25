@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import './pages/tabs/tabs.dart';
+import './routers/router.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +17,8 @@ class _MyApp extends State<MyApp>{
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:Tabs(),
+      onGenerateRoute: onGenerateRoute,
+      initialRoute: '/',
       theme: ThemeData(
         primarySwatch: Colors.pink
       ),
