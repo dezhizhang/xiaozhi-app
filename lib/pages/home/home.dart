@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './swiper.dart';
 
 
 class Home extends StatefulWidget{
@@ -12,7 +13,7 @@ class _Home extends State<Home>{
       padding: EdgeInsets.all(10),
       child: ListView(
         children: <Widget>[
-          Text('hello'),
+          SwiperCompt(),
         ],
       ),
     );
