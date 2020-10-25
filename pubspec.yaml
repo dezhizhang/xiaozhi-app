@@ -27,6 +27,7 @@ dependencies:
   flutter_swiper: ^1.1.6
   http: ^0.12.2
   dio: ^3.0.10
+  flutter_screenutil: ^3.1.0
  
 
 
