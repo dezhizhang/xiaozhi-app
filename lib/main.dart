@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import './pages/tabs/tabs.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,12 +16,7 @@ class _MyApp extends State<MyApp>{
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('贵彩办公'),
-        ),
-        body: Text('hello'),
-      ),
+      home:Tabs(),
       theme: ThemeData(
         primarySwatch: Colors.pink
       ),
