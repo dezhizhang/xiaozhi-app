@@ -32,7 +32,7 @@ class _SwiperCompt extends State<SwiperCompt>{
     var list = await Service().getFocuInfo();
     
     print('+++');
-    print(json.decode(list));
+    print(list);
     print('++++');
   }
   @override

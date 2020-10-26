@@ -1,8 +1,9 @@
 
-import '../utils/request.dart';
+
+import 'package:dio/dio.dart';
 
 class Service {
-  getFocuInfo() {
-    return Request().get('https://www.guicaioa.com/api/focu', {});
+  getFocuInfo() async{
+    return  await Dio().get('https://www.guicaioa.com/api/focu');
   }
 }
