@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import './storage.dart';
+import './web.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget{
       ),
       routes: {
         '/storage':(context) => StoragePage(),
+        '/web':(context) => WebPage()
       },
       theme: ThemeData(
         primarySwatch: Colors.blue
@@ -40,6 +42,12 @@ class HomeContent extends StatelessWidget {
             child: Text('缓存数据'),
             onPressed: () {
               Navigator.pushNamed(context, '/storage');
+            },
+          ),
+          RaisedButton(
+            child: Text('外部应用'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/web');
             },
           )
         ],
