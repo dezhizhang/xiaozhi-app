@@ -4,8 +4,10 @@
  * @desc:轮播图组件
 */
 import 'dart:ui';
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import '../../services/service.dart';
 
 class SwiperCompt extends StatefulWidget{
   _SwiperCompt createState()=> _SwiperCompt();
@@ -20,6 +22,19 @@ class _SwiperCompt extends State<SwiperCompt>{
       'url':'http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371921474207.jpeg'
     }
   ];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    this.getFousData();
+  }
+  getFousData() async{
+    var list = await Service().getFocuInfo();
+    
+    print('+++');
+    print(json.decode(list));
+    print('++++');
+  }
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
