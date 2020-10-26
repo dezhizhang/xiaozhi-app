@@ -1477,6 +1477,77 @@ class _HomeContent extends State<HomeContent>{
 }
 ```
 ### 设置信息
+### 本地数据的保存与获取
+```
+import 'package:shared_preferences/shared_preferences.dart';
+
+class Storage{
+  static Future<void> setString(key,value) async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    sp.setString(key, value);
+  }
+  static Future<String> getString(key) async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    return sp.getString(key);
+  }
+}
+```
+```
+import 'package:flutter/material.dart';
+import './utils/storage.dart';
+
+class StoragePage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('本地存储'),
+        ),
+        body: HomeContent(),
+      ),
+    );
+  }
+}
+
+
+class HomeContent extends StatefulWidget{
+  _HomeContent createState() =>_HomeContent();
+}
+
+class _HomeContent extends State<HomeContent> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Center(
+      child: Column(
+        children: <Widget>[
+          RaisedButton(
+            child: Text('保存数据'),
+            color: Colors.pink,
+            onPressed: () async{
+              await Storage.setString('username', 'hello');
+            },
+          ),
+          RaisedButton(
+            child: Text('获取数据'),
+            color: Colors.yellow,
+            onPressed: () async{
+              var username = await Storage.getString('username');
+              print(username);
+            },
+          )
+        ],
+      ),
+    );
+  }
+}
+```
+
+
+
+
 
 
 
