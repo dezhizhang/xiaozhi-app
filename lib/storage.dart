@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
-
-
-class Drivinfo extends StatelessWidget{
+class StoragePage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('drivinfo'),
+          title: Text('本地存储'),
         ),
         body: HomeContent(),
       ),
@@ -17,20 +15,15 @@ class Drivinfo extends StatelessWidget{
   }
 }
 
+
 class HomeContent extends StatefulWidget{
-  _HomeContent createState() => _HomeContent();
+  _HomeContent createState() =>_HomeContent();
 }
 
-class _HomeContent extends State<HomeContent>{
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    // this.getDevice();
-  }
- 
+class _HomeContent extends State<HomeContent> {
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return Text('hello');
   }
 }

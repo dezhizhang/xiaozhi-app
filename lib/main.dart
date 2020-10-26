@@ -1,32 +1,50 @@
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import './routers/router.dart';
+import './storage.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget{
-  MyApp({Key key}):super(key:key);
-  _MyApp createState() => _MyApp();
-}
-
-
-class _MyApp extends State<MyApp>{
+class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      onGenerateRoute: onGenerateRoute,
-      initialRoute: '/',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('晓智商城'),
+        ),
+        body: HomeContent(),
+      ),
+      routes: {
+        '/storage':(context) => StoragePage(),
+      },
       theme: ThemeData(
-        primarySwatch: Colors.pink
+        primarySwatch: Colors.blue
       ),
     );
   }
 }
 
 
-
-
+class HomeContent extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        children: <Widget>[
+          RaisedButton(
+            child: Text('缓存数据'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/storage');
+            },
+          )
+        ],
+      ),
+    );
+  }
+}
 
