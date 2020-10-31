@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 
@@ -49,24 +51,22 @@ class MyApp extends StatelessWidget{
 class HomeContent extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return Center(
-      child: RaisedButton(
-        child: Text('按钮'),
-        onPressed: ()async{
-          var result = await Navigator.push(context,
-            MaterialPageRoute(
-              @override
-              builder: (context) {
-                TipRoutrer(
-                  
-                )
-              }
-            )
-          );
-        },
+      child: Text(
+      'hello world',
+      style: TextStyle(
+        color: Colors.blue,
+        fontSize: 18.0,
+        height: 1.2,
+        fontFamily: '微软雅黑',
+        decoration: TextDecoration.underline,
+        decorationStyle: TextDecorationStyle.dashed,
       ),
+      ) ,
     );
   }
 }
+
 
 
