@@ -25,39 +25,21 @@ class MyApp extends StatelessWidget{
   }
 }
 
-// class HomeContent extends StatelessWidget{
-//   @override
-//   Widget build(BuildContext context) {
-//     // TODO: implement build
-//     return  Center(
-//       child:DecoratedBox(
-//       decoration: BoxDecoration(
-//         color: Colors.red
-//       ),
-//       child: Transform.translate(
-//         offset: Offset(-20.0,-5.0),
-//         child: Text('hello world'),
-//       ),
-//     ),
-//     );
-//   }
-// }
-
 class HomeContent extends StatelessWidget{
+  Widget divider1 = Divider(color: Colors.blue);
+  Widget divider2 = Divider(color: Colors.red);
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Center(
-      child: DecoratedBox(
-      decoration: BoxDecoration(
-        color: Colors.red,
-      ),
-      child: Transform.rotate(
-        angle: 160,
-        child: Text('hello'),
-      ),
-
-    )
+    return ListView.separated(
+      itemBuilder: (BuildContext context,int index) {
+        return ListTile(title: Text('${index}'));
+      }, 
+      separatorBuilder: (BuildContext context,int index) {
+        return index % 2 == 0 ? divider1:divider2;
+      }, 
+      itemCount: 100
     );
   }
 }
+
