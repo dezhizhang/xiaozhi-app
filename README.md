@@ -1644,6 +1644,50 @@ class _HomeContent extends State<HomeContent>{
   }
 }
 ```
+### 进度条
+```
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Padding(
+      padding: EdgeInsets.all(10),
+      child: Column(
+      children: <Widget>[
+        LinearProgressIndicator(
+          backgroundColor: Colors.grey[200],
+          valueColor: AlwaysStoppedAnimation(Colors.blue),
+        ),
+        SizedBox(height: 100),
+        LinearProgressIndicator(
+          backgroundColor:Colors.pink[100],
+          valueColor: AlwaysStoppedAnimation(Colors.pink),
+        )
+      ],
+    )
+    );
+  }
+}
+
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Padding(
+      padding: EdgeInsets.all(10),
+      child: Column(
+        children: <Widget>[
+          CircularProgressIndicator(
+            backgroundColor: Colors.grey[200],
+            valueColor: AlwaysStoppedAnimation(Colors.pink),
+          )
+        ],
+      ),
+    );
+  }
+}
+```
+
 
 
 
