@@ -48,22 +48,43 @@ class MyApp extends StatelessWidget{
   }
 }
 
+// class HomeContent extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context) {
+//     // TODO: implement build
+//     return Center(
+//       child: Text(
+//       'hello world',
+//       style: TextStyle(
+//         color: Colors.blue,
+//         fontSize: 18.0,
+//         height: 1.2,
+//         fontFamily: '微软雅黑',
+//         decoration: TextDecoration.underline,
+//         decorationStyle: TextDecorationStyle.dashed,
+//       ),
+//       ) ,
+//     );
+//   }
+// }
+
 class HomeContent extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Center(
-      child: Text(
-      'hello world',
-      style: TextStyle(
-        color: Colors.blue,
-        fontSize: 18.0,
-        height: 1.2,
-        fontFamily: '微软雅黑',
-        decoration: TextDecoration.underline,
-        decorationStyle: TextDecorationStyle.dashed,
+      child: GridView.extent(
+        maxCrossAxisExtent: 120,
+        childAspectRatio: 2.0,
+        children: <Widget>[
+          Icon(Icons.ac_unit),
+          Icon(Icons.airport_shuttle),
+          Icon(Icons.all_inclusive),
+          Icon(Icons.beach_access),
+          Icon(Icons.cake),
+          Icon(Icons.free_breakfast),
+        ],
       ),
-      ) ,
     );
   }
 }
