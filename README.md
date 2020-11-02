@@ -1733,6 +1733,28 @@ class HomeContent extends StatelessWidget{
   }
 }
 ```
+### 固定头布局
+```
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Column(
+      children: <Widget>[
+        ListTile(title: Text('商品列表')),
+        Expanded(
+          child: ListView.builder(
+            itemBuilder: (BuildContext context,int index) {
+              return ListTile(title: Text("${index}"));
+            }
+          ),
+        )
+      ],
+    );
+  }
+}
+```
+
 
 
 

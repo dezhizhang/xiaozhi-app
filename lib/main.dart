@@ -26,20 +26,20 @@ class MyApp extends StatelessWidget{
 }
 
 class HomeContent extends StatelessWidget{
-  Widget divider1 = Divider(color: Colors.blue);
-  Widget divider2 = Divider(color: Colors.red);
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return ListView.separated(
-      itemBuilder: (BuildContext context,int index) {
-        return ListTile(title: Text('${index}'));
-      }, 
-      separatorBuilder: (BuildContext context,int index) {
-        return index % 2 == 0 ? divider1:divider2;
-      }, 
-      itemCount: 100
+    return Column(
+      children: <Widget>[
+        ListTile(title: Text('商品列表')),
+        Expanded(
+          child: ListView.builder(
+            itemBuilder: (BuildContext context,int index) {
+              return ListTile(title: Text("${index}"));
+            }
+          ),
+        )
+      ],
     );
   }
 }
-
