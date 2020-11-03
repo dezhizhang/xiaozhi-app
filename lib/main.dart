@@ -6,6 +6,7 @@ import './logding.dart';
 import './dateinfo.dart';
 import './dateinfo2.dart';
 import './constrom.dart';
+import './bottomBar.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget{
         '/loading':(context) => LoadingSheetPage(),
         '/dateinfo2':(context) => DateInfoPage2(),
         '/custom':(context) => ConstomPage(),
+        '/bottombar':(context) => BottomBarPage(),
       },
       // routes: {
       //   "/alertDialog":(context) => AlertDialogPage(),
@@ -87,6 +89,12 @@ class HomeContent extends StatelessWidget{
             color: Colors.yellow,
             onPressed: () {
               Navigator.pushNamed(context, '/local');
+            },
+          ),
+          RaisedButton(
+            child: Text('bottomBar'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/bottombar');
             },
           )
         ],
