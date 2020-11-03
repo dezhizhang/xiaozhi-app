@@ -5,6 +5,7 @@ import './bottomsheet.dart';
 import './logding.dart';
 import './dateinfo.dart';
 import './dateinfo2.dart';
+import './constrom.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,8 +25,8 @@ class MyApp extends StatelessWidget{
       routes: {
         '/bottomsheet':(context) => BottomSheetPage(),
         '/loading':(context) => LoadingSheetPage(),
-        '/dateinfo':(context) => DateInfoPage(),
-        '/dateinfo2':(context) => DateInfoPage2()
+        '/dateinfo2':(context) => DateInfoPage2(),
+        '/custom':(context) => ConstomPage(),
       },
       // routes: {
       //   "/alertDialog":(context) => AlertDialogPage(),
@@ -73,6 +74,12 @@ class HomeContent extends StatelessWidget{
             child: Text('date2'),
             onPressed: () {
               Navigator.pushNamed(context, '/dateinfo2');
+            },
+          ),
+          RaisedButton(
+            child: Text('custrom'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/custom');
             },
           )
         ],
