@@ -1832,6 +1832,39 @@ class HomeContent extends StatelessWidget{
   }
 }
 ```
+### 日期组件
+```
+class HomeContent extends StatelessWidget{
+  Future<DateTime> _showDatePicker(context) {
+    var date = DateTime.now();
+    return showDatePicker(
+      context: context, 
+      initialDate: date, 
+      firstDate: date,
+      lastDate: date.add(
+        Duration(days: 30)
+      )
+    );
+  }
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Center(
+      child: Column(
+        children: <Widget>[
+          RaisedButton(
+            child: Text('date'),
+            onPressed: () async{
+              await _showDatePicker(context);
+            },
+          )
+        ],
+      ),
+    );
+  }
+}
+```
+
 
 
 
