@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import './bottomsheet.dart';
 import './logding.dart';
 import './dateinfo.dart';
+import './dateinfo2.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget{
         '/bottomsheet':(context) => BottomSheetPage(),
         '/loading':(context) => LoadingSheetPage(),
         '/dateinfo':(context) => DateInfoPage(),
+        '/dateinfo2':(context) => DateInfoPage2()
       },
       // routes: {
       //   "/alertDialog":(context) => AlertDialogPage(),
@@ -65,6 +67,12 @@ class HomeContent extends StatelessWidget{
             child: Text('date'),
             onPressed: () {
               Navigator.pushNamed(context, '/dateinfo');
+            },
+          ),
+          RaisedButton(
+            child: Text('date2'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/dateinfo2');
             },
           )
         ],
