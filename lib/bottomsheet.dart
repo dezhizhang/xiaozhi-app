@@ -1,13 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import './bottomsheet.dart';
 
-void main() {
-  runApp(MyApp());
-}
 
-class MyApp extends StatelessWidget{
+
+class BottomSheetPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -18,9 +15,6 @@ class MyApp extends StatelessWidget{
         ),
         body: HomeContent(),
       ),
-      routes: {
-        '/bottomsheet':(context) => BottomSheetPage(),
-      },
       // routes: {
       //   "/alertDialog":(context) => AlertDialogPage(),
       // },
@@ -31,8 +25,23 @@ class MyApp extends StatelessWidget{
   }
 }
 
-
 class HomeContent extends StatelessWidget{
+  Future<int> _showModalBottomSheet(context) {
+    return showModalBottomSheet<int>(
+      context: context,
+      builder: (BuildContext context) {
+        return ListView.builder(
+          itemCount: 30,
+          itemBuilder: (BuildContext context,int index) {
+            return ListTile(
+              title: Text('${index}'),
+              onTap: () => Navigator.of(context).pop(),
+            );
+          },
+        );
+      }
+    );
+  }
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -40,15 +49,9 @@ class HomeContent extends StatelessWidget{
       child: Column(
         children: <Widget>[
           RaisedButton(
-            child: Text('alertAialog'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/alertDialog');
-            },
-          ),
-          RaisedButton(
-            child: Text('bottomsheet'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/bottomsheet');
+            child: Text('hello'),
+            onPressed: () async{
+              int type = await _showModalBottomSheet(context);
             },
           )
         ],
