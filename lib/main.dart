@@ -81,6 +81,13 @@ class HomeContent extends StatelessWidget{
             onPressed: () {
               Navigator.pushNamed(context, '/custom');
             },
+          ),
+          RaisedButton(
+            child: Text('国际化'),
+            color: Colors.yellow,
+            onPressed: () {
+              Navigator.pushNamed(context, '/local');
+            },
           )
         ],
       ),
