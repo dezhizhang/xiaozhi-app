@@ -22,6 +22,28 @@ class MyApp extends StatelessWidget{
           title: Text('晓智商城'),
         ),
         body: HomeContent(),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              title: Text('首页'),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.category),
+              title: Text('分类')
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              title: Text('搜索')
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              title: Text('我的')
+            )
+          ]
+        ),
+      
       ),
       routes: {
         '/bottomsheet':(context) => BottomSheetPage(),

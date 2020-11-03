@@ -11,6 +11,7 @@ class BottomBarPage extends StatelessWidget{
         ),
         body: HomeContent(),
         bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
