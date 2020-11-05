@@ -2083,6 +2083,27 @@ class _SearchPage extends State<SearchPage>{
   }
 }
 ```
+### tooltip
+```
+class _ToolTipPage extends State<ToolTipPage> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('toolTip'),
+      ),
+      body: Center(
+        child: Tooltip(
+          message: '请别点击我',
+          child: Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/1600737225621499.jpeg'),
+        ),
+      ),
+    );
+  }
+}
+```
+
 
 
 
