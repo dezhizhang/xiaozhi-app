@@ -8,6 +8,7 @@ import './dateinfo2.dart';
 import './constrom.dart';
 import './bottomBar.dart';
 import './navigator.dart';
+import './search.dart';
 
 void main() {
   runApp(MyApp());
@@ -53,6 +54,7 @@ class MyApp extends StatelessWidget{
         '/custom':(context) => ConstomPage(),
         '/bottombar':(context) => BottomBarPage(),
         '/navbar':(context) => NavigatorPage(),
+        '/search':(context) => SearchPage(),
       },
       // routes: {
       //   "/alertDialog":(context) => AlertDialogPage(),
@@ -125,6 +127,12 @@ class HomeContent extends StatelessWidget{
             child: Text('navbar'),
             onPressed: () {
               Navigator.pushNamed(context, '/navbar');
+            },
+          ),
+          RaisedButton(
+            child: Text('search'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/search');
             },
           )
         ],
