@@ -2,10 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-
-
-
-
 class NavigatorPage  extends StatefulWidget{
   _NavigatorPage createState() =>_NavigatorPage();
 }
@@ -36,6 +32,14 @@ class _NavigatorPage extends State<NavigatorPage> with SingleTickerProviderState
             Tab(icon: Icon(Icons.directions_bike)),
           ],
         ),
+      ),
+      body: TabBarView(
+        controller: _controller,
+        children: <Widget>[
+          Text('1'),
+          Text('2'),
+          Text('3'),
+        ],
       ),
     );
   }
