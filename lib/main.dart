@@ -7,6 +7,7 @@ import './dateinfo.dart';
 import './dateinfo2.dart';
 import './constrom.dart';
 import './bottomBar.dart';
+import './navigator.dart';
 
 void main() {
   runApp(MyApp());
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget{
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
               title: Text('我的')
-            )
+            ),
           ]
         ),
       
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget{
         '/dateinfo2':(context) => DateInfoPage2(),
         '/custom':(context) => ConstomPage(),
         '/bottombar':(context) => BottomBarPage(),
+        '/navbar':(context) => NavigatorPage(),
       },
       // routes: {
       //   "/alertDialog":(context) => AlertDialogPage(),
@@ -117,6 +119,12 @@ class HomeContent extends StatelessWidget{
             child: Text('bottomBar'),
             onPressed: () {
               Navigator.pushNamed(context, '/bottombar');
+            },
+          ),
+          RaisedButton(
+            child: Text('navbar'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/navbar');
             },
           )
         ],
