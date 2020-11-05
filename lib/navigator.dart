@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import './Increment.dart';
 
 class NavigatorPage  extends StatefulWidget{
   _NavigatorPage createState() =>_NavigatorPage();
@@ -36,9 +37,9 @@ class _NavigatorPage extends State<NavigatorPage> with SingleTickerProviderState
       body: TabBarView(
         controller: _controller,
         children: <Widget>[
-          Text('1'),
-          Text('2'),
-          Text('3'),
+          IncreatePage(),
+          IncreatePage(),
+          IncreatePage(),
         ],
       ),
     );
