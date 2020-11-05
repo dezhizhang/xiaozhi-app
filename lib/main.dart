@@ -9,6 +9,7 @@ import './constrom.dart';
 import './bottomBar.dart';
 import './navigator.dart';
 import './search.dart';
+import './toolTip.dart';
 
 void main() {
   runApp(MyApp());
@@ -56,6 +57,7 @@ class MyApp extends StatelessWidget{
         '/bottombar':(context) => BottomBarPage(),
         '/navbar':(context) => NavigatorPage(),
         '/search':(context) => SearchPage(),
+        '/tooltio':(context) => ToolTipPage(),
       },
       // routes: {
       //   "/alertDialog":(context) => AlertDialogPage(),
@@ -134,6 +136,12 @@ class HomeContent extends StatelessWidget{
             child: Text('search'),
             onPressed: () {
               Navigator.pushNamed(context, '/search');
+            },
+          ),
+          RaisedButton(
+            child: Text('tooltip'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/tooltio');
             },
           )
         ],
