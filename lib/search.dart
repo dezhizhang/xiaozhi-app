@@ -13,6 +13,14 @@ class _SearchPage extends State<SearchPage>{
     return Scaffold(
       appBar: AppBar(
         title: Text('search'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              print('search');
+            },
+          ),
+        ],
       ),
     );
   }
