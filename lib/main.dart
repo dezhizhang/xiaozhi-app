@@ -10,6 +10,7 @@ import './bottomBar.dart';
 import './navigator.dart';
 import './search.dart';
 import './toolTip.dart';
+import './wrap.dart';
 
 void main() {
   runApp(MyApp());
@@ -58,6 +59,7 @@ class MyApp extends StatelessWidget{
         '/navbar':(context) => NavigatorPage(),
         '/search':(context) => SearchPage(),
         '/tooltio':(context) => ToolTipPage(),
+        '/wrapper':(context) => WrapPage(),
       },
       // routes: {
       //   "/alertDialog":(context) => AlertDialogPage(),
@@ -142,6 +144,12 @@ class HomeContent extends StatelessWidget{
             child: Text('tooltip'),
             onPressed: () {
               Navigator.pushNamed(context, '/tooltio');
+            },
+          ),
+          RaisedButton(
+            child: Text('wrapper'),
+            onPressed: () {
+              Navigator.pushNamed(context, '/wrapper');
             },
           )
         ],
