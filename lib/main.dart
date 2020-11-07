@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
- 
+ import './absorbpointer.dart';
+
 void main() => runApp(MyApp());
  
 class MyApp extends StatelessWidget {
@@ -13,40 +14,28 @@ class MyApp extends StatelessWidget {
         ),
         body: HomeContent(),
       ),
+      routes: {
+        '/absorbpoint':(context) => AbsorbpointerPage(),
+      },
     );
   }
 }
 
-class  HomeContent extends StatefulWidget{
-  _HomeContent createState() => _HomeContent();
-}
-
-class _HomeContent extends State<HomeContent>{
+class HomeContent extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Stack(
+    return Center(
+      child:Column(
       children: <Widget>[
-        Listener(
-          child: ConstrainedBox(
-            constraints: BoxConstraints.tight(Size(300,200)),
-            child: DecoratedBox(
-              decoration: BoxDecoration(color: Colors.blue),
-            )
-          ),
-          onPointerDown: (event) => print('donw0'),
-        ),
-        Listener(
-          child: ConstrainedBox(
-            constraints: BoxConstraints.tight(Size(200,100)),
-            child: Center(
-              child: Text('左上解200*100范围被点透'),
-            ),
-          ),
-          onPointerDown: (event) => print('down1'),
-          behavior: HitTestBehavior.translucent,
+        RaisedButton(
+          child: Text('absorbpoint'),
+          onPressed: () {
+            Navigator.pushNamed(context, '/absorbpoint');
+          },
         )
       ],
+    ),
     );
   }
 }
