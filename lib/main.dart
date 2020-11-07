@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 
-import './splashScreen.dart';
 void main() {
   runApp(MyApp());
 }
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget{
         appBar: AppBar(
           title: Text('晓智商城'),
         ),
-        body: SplashScreen(),
+        body: Text('hello'),
       ),
      
       theme: ThemeData(
