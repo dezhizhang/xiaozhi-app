@@ -15,7 +15,7 @@ class _SplashScreen extends State<SplashScreen> with SingleTickerProviderStateMi
   void initState() { 
     super.initState();
     _controller = AnimationController(vsync:this,duration: Duration(milliseconds: 3000));
-    _animation = Tween(begin: 0,end: 1).animate(_controller);
+    _animation = Tween(begin: 0.0,end: 1.0).animate(_controller);
     _animation.addStatusListener((status) {
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (context) => MyHomePage()),
@@ -39,6 +39,11 @@ class MyHomePage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Text('hello');
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('首页'),
+      ),
+      body: Text('hello'),
+    );
   }
 }
