@@ -2374,6 +2374,95 @@ class _HomeContent extends State<HomeContent>{
   }
 }
 ```
+### 事件系统
+```
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+ 
+
+ class EventPage extends StatefulWidget{
+   _EventPage createState() =>_EventPage();
+ }
+
+ class _EventPage extends State<EventPage>{
+   String _operation = 'noevent';
+   void updateText(String text) {
+     setState(() {
+       _operation = text;
+     });
+   }
+   @override
+   Widget build(BuildContext context) {
+     return Scaffold(
+       appBar: AppBar(
+         title: Text('event'),
+       ),
+       body:  Center(
+       child: GestureDetector(
+         child: Container(
+           alignment: Alignment.center,
+           color: Colors.blue,
+           width: 100,
+           height: 100,
+           child: Text(_operation,style: TextStyle(color: Colors.pink)),
+         ),
+         onTap: () => updateText('onTap'),
+         onDoubleTap: () => updateText('onDoubleTap'),
+         onLongPress: () => updateText('onLongPress'),
+       ),
+     ),
+     );
+  ```
+  ### 拖拽
+  ```
+  import 'package:flutter/material.dart';
+
+
+class DragEventPage extends StatefulWidget{
+  _DragEventPage createState() => _DragEventPage();
+}
+
+class _DragEventPage extends State<DragEventPage> with SingleTickerProviderStateMixin{
+  double _top = 0.0;
+  double _left = 0.0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('eventDrag'),
+      ),
+      body: Stack(
+        children: <Widget>[
+          Positioned(
+            top: _top,
+            left: _left,
+            child: GestureDetector(
+              child: CircleAvatar(
+                child: Text('A'),
+              ),
+              onPanDown:(DragDownDetails e) {
+                print('${e.globalPosition}');
+              },
+              onPanUpdate: (DragUpdateDetails e) {
+                setState(() {
+                  _left += e.delta.dx;
+                  _top += e.delta.dy;
+                });
+              },
+              onPanEnd: (DragEndDetails e) {
+                print(e.velocity);
+              },
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+```
+
 
 
 

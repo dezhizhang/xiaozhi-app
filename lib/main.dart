@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import './absorbpointer.dart';
 import './event.dart';
+import './dragEvent.dart';
 void main() => runApp(MyApp());
  
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       // title: 'Material App',
       home: Scaffold(
         appBar: AppBar(
@@ -17,6 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/absorbpoint':(context) => AbsorbpointerPage(),
         '/event':(context) => EventPage(),
+        '/eventDrag':(context) => DragEventPage()
       },
     );
   }
@@ -41,6 +44,12 @@ class HomeContent extends StatelessWidget{
             Navigator.pushNamed(context, '/event');
           },
         ),
+        RaisedButton(
+          child: Text('eventDrag'),
+          onPressed: () {
+            Navigator.pushNamed(context, '/eventDrag');
+          },
+        )
       ],
     ),
     );
