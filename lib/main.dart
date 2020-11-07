@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
- import './absorbpointer.dart';
-
+import './absorbpointer.dart';
+import './event.dart';
 void main() => runApp(MyApp());
  
 class MyApp extends StatelessWidget {
@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/absorbpoint':(context) => AbsorbpointerPage(),
+        '/event':(context) => EventPage(),
       },
     );
   }
@@ -33,7 +34,13 @@ class HomeContent extends StatelessWidget{
           onPressed: () {
             Navigator.pushNamed(context, '/absorbpoint');
           },
-        )
+        ),
+        RaisedButton(
+          child: Text('event'),
+          onPressed: () {
+            Navigator.pushNamed(context, '/event');
+          },
+        ),
       ],
     ),
     );
