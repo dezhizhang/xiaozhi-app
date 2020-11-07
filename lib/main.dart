@@ -11,6 +11,7 @@ import './navigator.dart';
 import './search.dart';
 import './toolTip.dart';
 import './wrap.dart';
+import './draggable.dart';
 
 void main() {
   runApp(MyApp());
@@ -60,6 +61,7 @@ class MyApp extends StatelessWidget{
         '/search':(context) => SearchPage(),
         '/tooltio':(context) => ToolTipPage(),
         '/wrapper':(context) => WrapPage(),
+        '/dragger':(context) => DraggablePage(),
       },
       // routes: {
       //   "/alertDialog":(context) => AlertDialogPage(),
@@ -150,6 +152,13 @@ class HomeContent extends StatelessWidget{
             child: Text('wrapper'),
             onPressed: () {
               Navigator.pushNamed(context, '/wrapper');
+            },
+          ),
+          RaisedButton(
+            child: Text('拖拽'),
+            color: Colors.green,
+            onPressed: () {
+              Navigator.pushNamed(context, '/dragger');
             },
           )
         ],
