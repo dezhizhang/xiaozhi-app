@@ -1,8 +1,7 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import './clip.dart';
 
+import './splashScreen.dart';
 void main() {
   runApp(MyApp());
 }
@@ -17,33 +16,9 @@ class MyApp extends StatelessWidget{
         appBar: AppBar(
           title: Text('晓智商城'),
         ),
-        body: HomeContent(),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              title: Text('首页'),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.category),
-              title: Text('分类')
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              title: Text('搜索')
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              title: Text('我的')
-            ),
-          ]
-        ),
-      
+        body: SplashScreen(),
       ),
-      routes:{
-        '/clip':(context) => ClipPage(),
-      },
+     
       theme: ThemeData(
         primarySwatch: Colors.blue
       ),
@@ -52,21 +27,4 @@ class MyApp extends StatelessWidget{
 }
 
 
-class HomeContent extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Center(
-      child: Column(
-        children: <Widget>[
-          RaisedButton(
-            child: Text('clip'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/clip');
-            },
-          )
-        ],
-      ),
-    );
-  }
-}
+
