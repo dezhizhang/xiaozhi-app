@@ -1,17 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import './bottomsheet.dart';
-import './logding.dart';
-import './dateinfo.dart';
-import './dateinfo2.dart';
-import './constrom.dart';
-import './bottomBar.dart';
-import './navigator.dart';
-import './search.dart';
-import './toolTip.dart';
-import './wrap.dart';
-import './draggable.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -52,16 +42,7 @@ class MyApp extends StatelessWidget{
       
       ),
       routes: {
-        '/bottomsheet':(context) => BottomSheetPage(),
-        '/loading':(context) => LoadingSheetPage(),
-        '/dateinfo2':(context) => DateInfoPage2(),
-        '/custom':(context) => ConstomPage(),
-        '/bottombar':(context) => BottomBarPage(),
-        '/navbar':(context) => NavigatorPage(),
-        '/search':(context) => SearchPage(),
-        '/tooltio':(context) => ToolTipPage(),
-        '/wrapper':(context) => WrapPage(),
-        '/dragger':(context) => DraggablePage(),
+      
       },
       // routes: {
       //   "/alertDialog":(context) => AlertDialogPage(),
@@ -87,80 +68,7 @@ class HomeContent extends StatelessWidget{
               Navigator.pushNamed(context, '/alertDialog');
             },
           ),
-          RaisedButton(
-            child: Text('bottomsheet'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/bottomsheet');
-            },
-          ),
-          RaisedButton(
-            child: Text('loading'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/loading');
-            },
-          ),
-          RaisedButton(
-            child: Text('date'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/dateinfo');
-            },
-          ),
-          RaisedButton(
-            child: Text('date2'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/dateinfo2');
-            },
-          ),
-          RaisedButton(
-            child: Text('custrom'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/custom');
-            },
-          ),
-          RaisedButton(
-            child: Text('国际化'),
-            color: Colors.yellow,
-            onPressed: () {
-              Navigator.pushNamed(context, '/local');
-            },
-          ),
-          RaisedButton(
-            child: Text('bottomBar'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/bottombar');
-            },
-          ),
-          RaisedButton(
-            child: Text('navbar'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/navbar');
-            },
-          ),
-          RaisedButton(
-            child: Text('search'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/search');
-            },
-          ),
-          RaisedButton(
-            child: Text('tooltip'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/tooltio');
-            },
-          ),
-          RaisedButton(
-            child: Text('wrapper'),
-            onPressed: () {
-              Navigator.pushNamed(context, '/wrapper');
-            },
-          ),
-          RaisedButton(
-            child: Text('拖拽'),
-            color: Colors.green,
-            onPressed: () {
-              Navigator.pushNamed(context, '/dragger');
-            },
-          )
+        
         ],
       ),
     );
