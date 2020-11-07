@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './absorbpointer.dart';
 import './event.dart';
 import './dragEvent.dart';
+import './recognizer.dart';
 void main() => runApp(MyApp());
  
 class MyApp extends StatelessWidget {
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/absorbpoint':(context) => AbsorbpointerPage(),
         '/event':(context) => EventPage(),
-        '/eventDrag':(context) => DragEventPage()
+        '/eventDrag':(context) => DragEventPage(),
+        '/recognizer':(context) => RecognizerPage(),
       },
     );
   }
@@ -48,6 +50,12 @@ class HomeContent extends StatelessWidget{
           child: Text('eventDrag'),
           onPressed: () {
             Navigator.pushNamed(context, '/eventDrag');
+          },
+        ),
+        RaisedButton(
+          child: Text('recognizer'),
+          onPressed: () {
+            Navigator.pushNamed(context, '/recognizer');
           },
         )
       ],
