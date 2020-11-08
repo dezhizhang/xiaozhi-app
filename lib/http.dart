@@ -13,7 +13,12 @@ class _HttpPage extends State<HttpPage>{
     this.getData();
   }
   getData() async {
-    Response response = await Dio().get('https://www.guicaioa.com/api/product/list',queryParameters: {"page":"1"});
+    Response response = await Dio().get('https://www.guicaioa.com/api/product/list',queryParameters: {"page":1});
+    print(response.data.toString());
+  }
+
+  postData() async{
+    Response response = await Dio().post('https://www.guicaioa.com/api/product/list',data: {'name':'123'});
     print(response.data.toString());
   }
   
@@ -23,7 +28,19 @@ class _HttpPage extends State<HttpPage>{
       appBar: AppBar(
         title: Text('http'),
       ),
-      body: Text('http'),
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            RaisedButton(
+              color: Colors.pink,
+              child: Text('post'),
+              onPressed: () async{
+                this.postData();
+              },
+            )
+          ],
+        ),
+      ),
     );
   }
 }
