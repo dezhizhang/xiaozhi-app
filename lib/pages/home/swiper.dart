@@ -27,8 +27,8 @@ class _SwiperCompt extends State<SwiperCompt>{
     var focus =  FocusModel.fromJson(response.data);
     if(focus.code == 200) {
       var list = focus.data;
-       setState(() {
-        list;
+      setState(() {
+        this.list=list;
       });
     }
   }
@@ -40,11 +40,8 @@ class _SwiperCompt extends State<SwiperCompt>{
         aspectRatio: 2 / 1,
         child: Swiper(
           itemBuilder: (BuildContext context,index) {
-            print('---');
-            print(list[index]);
-            print('---');
             return Image.network(
-              this.list[index]['url'],
+              list[index].url,
               fit: BoxFit.cover,
             );
           },
