@@ -1,3 +1,9 @@
+/**
+ * @author:zhangdezhi
+ * @date:2020-11-08
+ * @descc:轮播图模型
+*/
+
 class FocusModel {
   int code;
   String msg;
