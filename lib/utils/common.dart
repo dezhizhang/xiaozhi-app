@@ -1,0 +1,1 @@
+const URL = 'https://www.guicaioa.com/api';
