@@ -3,6 +3,7 @@ import './absorbpointer.dart';
 import './event.dart';
 import './dragEvent.dart';
 import './recognizer.dart';
+import './http.dart';
 void main() => runApp(MyApp());
  
 class MyApp extends StatelessWidget {
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         '/event':(context) => EventPage(),
         '/eventDrag':(context) => DragEventPage(),
         '/recognizer':(context) => RecognizerPage(),
+        '/http':(context) => HttpPage(),
       },
     );
   }
@@ -56,6 +58,12 @@ class HomeContent extends StatelessWidget{
           child: Text('recognizer'),
           onPressed: () {
             Navigator.pushNamed(context, '/recognizer');
+          },
+        ),
+        RaisedButton(
+          child: Text('http'),
+          onPressed: () {
+            Navigator.pushNamed(context, '/http');
           },
         )
       ],
