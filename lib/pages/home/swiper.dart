@@ -4,7 +4,6 @@
  * @desc:轮播图组件
 */
 import 'dart:ui';
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import '../../services/service.dart';
