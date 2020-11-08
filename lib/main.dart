@@ -1,73 +1,32 @@
+
 import 'package:flutter/material.dart';
-import './absorbpointer.dart';
-import './event.dart';
-import './dragEvent.dart';
-import './recognizer.dart';
-import './http.dart';
-void main() => runApp(MyApp());
- 
-class MyApp extends StatelessWidget {
+import './routers/router.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget{
+  MyApp({Key key}):super(key:key);
+  _MyApp createState() => _MyApp();
+}
+
+
+class _MyApp extends State<MyApp>{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
-        ),
-        body: HomeContent(),
+      onGenerateRoute: onGenerateRoute,
+      initialRoute: '/',
+      theme: ThemeData(
+        primarySwatch: Colors.pink
       ),
-      routes: {
-        '/absorbpoint':(context) => AbsorbpointerPage(),
-        '/event':(context) => EventPage(),
-        '/eventDrag':(context) => DragEventPage(),
-        '/recognizer':(context) => RecognizerPage(),
-        '/http':(context) => HttpPage(),
-      },
     );
   }
 }
 
-class HomeContent extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Center(
-      child:Column(
-      children: <Widget>[
-        RaisedButton(
-          child: Text('absorbpoint'),
-          onPressed: () {
-            Navigator.pushNamed(context, '/absorbpoint');
-          },
-        ),
-        RaisedButton(
-          child: Text('event'),
-          onPressed: () {
-            Navigator.pushNamed(context, '/event');
-          },
-        ),
-        RaisedButton(
-          child: Text('eventDrag'),
-          onPressed: () {
-            Navigator.pushNamed(context, '/eventDrag');
-          },
-        ),
-        RaisedButton(
-          child: Text('recognizer'),
-          onPressed: () {
-            Navigator.pushNamed(context, '/recognizer');
-          },
-        ),
-        RaisedButton(
-          child: Text('http'),
-          onPressed: () {
-            Navigator.pushNamed(context, '/http');
-          },
-        )
-      ],
-    ),
-    );
-  }
-}
+
+
+
+
