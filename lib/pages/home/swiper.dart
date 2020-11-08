@@ -15,14 +15,7 @@ class SwiperCompt extends StatefulWidget{
 }
 
 class _SwiperCompt extends State<SwiperCompt>{
-  List list = [
-    {
-      'url':'http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371732208143.jpeg',
-    },
-    {
-      'url':'http://tugua.oss-cn-hangzhou.aliyuncs.com/16007371921474207.jpeg'
-    }
-  ];
+  List list = [];
   @override
   void initState() {
     // TODO: implement initState
@@ -30,13 +23,14 @@ class _SwiperCompt extends State<SwiperCompt>{
     this.getFousData();
   }
   getFousData() async{
-    var list = await Service().getFocuInfo();
-    var focus = FocusModel.formJson(json.decode(list.data));
-    
-
-    print('+++');
-    print(focus);
-    print('++++');
+    var response = await Service().getFocuInfo();
+    var focus =  FocusModel.fromJson(response.data);
+    if(focus.code == 200) {
+      var list = focus.data;
+       setState(() {
+        list;
+      });
+    }
   }
   @override
   Widget build(BuildContext context) {
@@ -46,6 +40,9 @@ class _SwiperCompt extends State<SwiperCompt>{
         aspectRatio: 2 / 1,
         child: Swiper(
           itemBuilder: (BuildContext context,index) {
+            print('---');
+            print(list[index]);
+            print('---');
             return Image.network(
               this.list[index]['url'],
               fit: BoxFit.cover,
