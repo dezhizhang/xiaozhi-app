@@ -78,7 +78,7 @@ class ProductItem extends StatelessWidget{
             padding: EdgeInsets.only(top:ScreenAdapter.height(10)),
             child: Text(
               this.item.title,
-              textAlign: TextAlign.start,
+              textAlign: TextAlign.left,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
@@ -91,12 +91,12 @@ class ProductItem extends StatelessWidget{
             padding: EdgeInsets.only(top:ScreenAdapter.height(10)),
             child: Text(
               this.item.subTitle,
-              maxLines: 2,
+              maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 color: Colors.black54,
               ),
-              textAlign: TextAlign.start,
+              textAlign: TextAlign.left,
             ),
           ),
           Padding(
