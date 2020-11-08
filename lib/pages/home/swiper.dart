@@ -8,6 +8,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import '../../services/service.dart';
+import '../../model/focus.dart';
 
 class SwiperCompt extends StatefulWidget{
   _SwiperCompt createState()=> _SwiperCompt();
@@ -30,9 +31,11 @@ class _SwiperCompt extends State<SwiperCompt>{
   }
   getFousData() async{
     var list = await Service().getFocuInfo();
+    var focus = FocusModel.formJson(json.decode(list.data));
     
+
     print('+++');
-    print(list);
+    print(focus);
     print('++++');
   }
   @override
