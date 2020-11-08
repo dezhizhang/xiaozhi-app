@@ -4,15 +4,32 @@
  * @desc:商品列表
 */
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import '../../services/service.dart';
 import '../../utils/utils.dart';
+import '../../model/product.dart';
 
 
 class ProductWidget extends StatefulWidget{
   _ProductWidget createState()=> _ProductWidget();
 }
 class _ProductWidget extends State<ProductWidget>{
+  List<ProductModelItem> list = [];
+  @override
+  void initState() { 
+    super.initState();
+    this.getProductList();
+  }
+  getProductList() async{
+    var res = await Service().getProductInfo({"page":1});
+    var proudct = ProductModel.fromJson(res.data);
+    if(proudct.code == 200) {
+      var list = proudct.data;
+      setState(() {
+        this.list = list;
+      });
+    }
+  }
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
@@ -21,23 +38,15 @@ class _ProductWidget extends State<ProductWidget>{
       child: Wrap(
         runSpacing: 10,
         spacing: 10,
-        children: <Widget>[
-          ProductItem(),
-          ProductItem(),
-          ProductItem(),
-          ProductItem(),
-        ],
+        children:list.map((item) => ProductItem(item)).toList(),
       ),
     );
   }
 }
 
-class ProductItem extends StatefulWidget{
-  _ProductItem createState() =>_ProductItem();
-}
-
-class _ProductItem extends State<ProductItem>{
-  
+class ProductItem extends StatelessWidget{
+  var item;
+  ProductItem(ProductModelItem this.item, {Key key}):super(key:key);
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
@@ -52,6 +61,7 @@ class _ProductItem extends State<ProductItem>{
         color: Colors.white
       ),
       child: Column(
+        // mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Container(
             width: double.infinity,
@@ -59,7 +69,7 @@ class _ProductItem extends State<ProductItem>{
             child: AspectRatio(
               aspectRatio: 1/1,
               child:Image.network(
-              'http://tugua.oss-cn-hangzhou.aliyuncs.com/16005339644607674.jpeg',
+              this.item.url,
               fit: BoxFit.cover,
               ),
             )
@@ -67,10 +77,26 @@ class _ProductItem extends State<ProductItem>{
           Padding(
             padding: EdgeInsets.only(top:ScreenAdapter.height(10)),
             child: Text(
-              '大皮衣大皮衣大皮衣大皮衣大皮衣大皮衣大皮衣大皮衣大皮衣大皮衣大皮衣大皮衣',
+              this.item.title,
+              textAlign: TextAlign.start,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 16
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top:ScreenAdapter.height(10)),
+            child: Text(
+              this.item.subTitle,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(color: Colors.black54),
+              style: TextStyle(
+                color: Colors.black54,
+              ),
+              textAlign: TextAlign.start,
             ),
           ),
           Padding(
@@ -82,7 +108,7 @@ class _ProductItem extends State<ProductItem>{
                   child: Padding(
                     padding: EdgeInsets.only(left:ScreenAdapter.width(20)),
                     child: Text(
-                      '￥1111',
+                      "￥${this.item.price}",
                       style: TextStyle(
                         color: Colors.red,
                         fontSize: 16,
@@ -95,7 +121,7 @@ class _ProductItem extends State<ProductItem>{
                   child: Padding(
                     padding: EdgeInsets.only(right:ScreenAdapter.width(20)),
                     child: Text(
-                      '￥1888',
+                      "￥${this.item.oldPrice}",
                       style: TextStyle(
                         color: Colors.black54,
                         decoration: TextDecoration.lineThrough

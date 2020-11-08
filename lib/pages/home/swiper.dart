@@ -22,8 +22,8 @@ class _SwiperWidget extends State<SwiperWidget>{
     this.getFousData();
   }
   getFousData() async{
-    var response = await Service().getFocuInfo();
-    var focus =  FocusModel.fromJson(response.data);
+    var res = await Service().getFocuInfo();
+    var focus =  FocusModel.fromJson(res.data);
     if(focus.code == 200) {
       var list = focus.data;
       setState(() {
