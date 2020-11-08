@@ -12,12 +12,10 @@ import '../../utils/utils.dart';
 class ProductWidget extends StatefulWidget{
   _ProductWidget createState()=> _ProductWidget();
 }
-
 class _ProductWidget extends State<ProductWidget>{
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
-    // TODO: implement build
     return Padding(
       padding: EdgeInsets.all(ScreenAdapter.height(10)),
       child: Wrap(
