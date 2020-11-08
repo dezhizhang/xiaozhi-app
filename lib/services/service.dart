@@ -10,4 +10,7 @@ class Service {
   getProductInfo(params) async{
     return await Dio().get("$URL/product/list",queryParameters: params);
   }
+  getCategoryInfo() async{
+    return await Dio().get("$URL/category/list");
+  }
 }
