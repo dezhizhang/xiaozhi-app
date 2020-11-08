@@ -20,7 +20,7 @@ class _Tabs extends State<Tabs>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('贵彩办公'),
+        title: Text('晓智商城'),
       ),
       body: this.pageList[this.currentIndex],
       bottomNavigationBar: BottomNavigationBar(

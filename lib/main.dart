@@ -20,7 +20,7 @@ class _MyApp extends State<MyApp>{
       onGenerateRoute: onGenerateRoute,
       initialRoute: '/',
       theme: ThemeData(
-        primarySwatch: Colors.pink
+        primarySwatch: Colors.blue
       ),
     );
   }

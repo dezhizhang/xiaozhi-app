@@ -9,11 +9,11 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import '../../services/service.dart';
 import '../../model/focus.dart';
 
-class SwiperCompt extends StatefulWidget{
-  _SwiperCompt createState()=> _SwiperCompt();
+class SwiperWidget extends StatefulWidget{
+  _SwiperWidget createState()=> _SwiperWidget();
 }
 
-class _SwiperCompt extends State<SwiperCompt>{
+class _SwiperWidget extends State<SwiperWidget>{
   List list = [];
   @override
   void initState() {
