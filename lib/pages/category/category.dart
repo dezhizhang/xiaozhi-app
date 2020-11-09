@@ -52,7 +52,7 @@ class _Category extends State<Category>{
                       alignment: Alignment.center,
                       width: double.infinity,
                       height: ScreenAdapter.height(56),
-                      color: _selectIndex == index ? Colors.red:Colors.white,
+                      color: _selectIndex == index ? Colors.grey:Colors.white,
                       child: Text(
                         this.list[index].title,
                         textAlign: TextAlign.center,
