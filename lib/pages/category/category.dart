@@ -35,7 +35,7 @@ class _Category extends State<Category>{
       children: <Widget>[
         Container(
           color: Colors.white,
-          width: ScreenAdapter.width(160),
+          width: ScreenAdapter.screenWidth() / 4.6,
           height: double.infinity,
           child: ListView.builder(
             itemCount: this.list.length,
