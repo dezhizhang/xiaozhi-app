@@ -29,7 +29,7 @@ class _Home extends State<Home>{
         children: <Widget>[
           SwiperWidget(), //轮播图
           SizedBox(height:ScreenAdapter.height(10)),
-          CategoryCompt(),
+          CategoryWidget(),
           SizedBox(height:ScreenAdapter.height(10)),
           Container(
             color: Colors.white,
