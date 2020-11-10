@@ -10,6 +10,7 @@ class Tabs extends StatefulWidget{
 
 class _Tabs extends State<Tabs>{
   int currentIndex = 0;
+  PageController pageController;
   List<Widget> pageList = [
     Home(),
     Category(),
@@ -17,14 +18,20 @@ class _Tabs extends State<Tabs>{
     People(),
   ];
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    this.pageController = new PageController(initialPage: this.currentIndex);
+  }
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('贵彩办公'),
       ),
       // body: this.pageList[this.currentIndex],
-      body: IndexedStack(
-        index: this.currentIndex,
+      body: PageView(
+        controller: this.pageController,
         children: this.pageList,
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -33,6 +40,7 @@ class _Tabs extends State<Tabs>{
         onTap: (index) {
           setState(() {
             this.currentIndex = index;
+            this.pageController.jumpToPage(index);
           });
         },
         items: [

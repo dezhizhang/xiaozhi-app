@@ -8,9 +8,11 @@ class Category extends StatefulWidget{
   _Category createState() => _Category();
 }
 
-class _Category extends State<Category>{
+class _Category extends State<Category> with AutomaticKeepAliveClientMixin{
   int   _selectIndex = 0;
   List<CategoryModelItem> list = [];
+  @override
+  bool get wantKeepAlive => true;
   @override
   void initState() {
     // TODO: implement initState

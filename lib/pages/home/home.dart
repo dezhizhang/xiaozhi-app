@@ -17,7 +17,9 @@ class Home extends StatefulWidget{
   _Home createState() => _Home();
 }
 
-class _Home extends State<Home>{
+class _Home extends State<Home> with AutomaticKeepAliveClientMixin{
+  @override
+  bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
