@@ -10,7 +10,7 @@ class Tabs extends StatefulWidget{
 
 class _Tabs extends State<Tabs>{
   int currentIndex = 0;
-  List pageList = [
+  List<Widget> pageList = [
     Home(),
     Category(),
     Cart(),
@@ -22,7 +22,11 @@ class _Tabs extends State<Tabs>{
       appBar: AppBar(
         title: Text('贵彩办公'),
       ),
-      body: this.pageList[this.currentIndex],
+      // body: this.pageList[this.currentIndex],
+      body: IndexedStack(
+        index: this.currentIndex,
+        children: this.pageList,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: this.currentIndex,
         type: BottomNavigationBarType.fixed,
