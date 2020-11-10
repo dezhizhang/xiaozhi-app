@@ -9,6 +9,8 @@ class _CategoryCompt extends State<CategoryCompt>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Text('分类');
+    return Container(
+      child: Text('hello'),
+    );
   }
 }
