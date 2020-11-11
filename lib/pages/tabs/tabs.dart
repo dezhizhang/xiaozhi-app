@@ -30,20 +30,12 @@ class _Tabs extends State<Tabs>{
         title: Text('贵彩办公'),
       ),
       body: this.pageList[this.currentIndex],
-      // body: PageView(
-      //   controller: this.pageController,
-      //   children: this.pageList,
-      //   onPageChanged: (index) {
-
-      //   },
-      // ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: this.currentIndex,
         type: BottomNavigationBarType.fixed,
         onTap: (index) {
           setState(() {
             this.currentIndex = index;
-            // this.pageController.jumpToPage(index);
           });
         },
         items: [

@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-class ProductPage extends StatefulWidget{
+class Product extends StatefulWidget{
   Map arguments;
-  ProductPage({Key key,this.arguments}):super(key:key);
-  _ProductPage createState() => _ProductPage();
+  Product({Key key,this.arguments}):super(key:key);
+  _Product createState() => _Product();
 }
 
-class _ProductPage extends State<ProductPage>{
+class _Product extends State<Product>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('hello'),
+        title: Text('商品列表'),
       ),
-      body: Text('${widget.arguments}'),
+      body: Text('商品列表'),
     );
   }
 }

@@ -9,7 +9,7 @@ class _People extends State<People>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Text('我的');
+    return Text('hello');
   }
 }
 

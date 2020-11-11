@@ -4,7 +4,7 @@ import '../pages/product/product.dart';
 
 final routes = {
   '/':(context) => Tabs(),
-  '/product':(context,{arguments}) => ProductPage(arguments:arguments),
+  '/product':(context,{arguments}) => Product(arguments:arguments),
 };
 
 var onGenerateRoute = (RouteSettings settings) {
