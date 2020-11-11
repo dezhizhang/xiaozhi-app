@@ -85,7 +85,13 @@ class _Category extends State<Category> with AutomaticKeepAliveClientMixin{
                 ),
                 itemCount: list[this._selectIndex].items.length,
                 itemBuilder: (context,index) {
-                  return Container(
+                  return InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/product',arguments: {
+                        'id':this.list[this._selectIndex].items[index].sId
+                      });
+                    },
+                    child: Container(
                     color: Colors.white,
                     child: Column(
                       children: <Widget>[
@@ -102,7 +108,8 @@ class _Category extends State<Category> with AutomaticKeepAliveClientMixin{
                         )
                       ],
                     ),
-                  );
+                  ),
+                 );
                 }
               ),
             ),
