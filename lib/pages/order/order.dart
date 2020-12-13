@@ -1,7 +1,7 @@
 /*
  * @Author: dezhizhang
  * @Date: 2020-12-13 18:29:00
- * @LastEditTime: 2020-12-13 20:13:01
+ * @LastEditTime: 2020-12-13 20:30:13
  * @LastEditors: Please set LastEditors
  * @Description: 订单页面
  * @FilePath: /xiaozhi/lib/pages/order/order.dart
@@ -23,7 +23,12 @@ class _Order extends State<Order>{
       appBar: AppBar(
         title: Text('订单列表'),
       ),
-      body: Text('hello'),
+      body: Stack(
+        children: <Widget>[
+          ListView(),
+          Positioned()
+        ],
+      ),
     );
   }
 }
