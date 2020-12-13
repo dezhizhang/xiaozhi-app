@@ -1,9 +1,9 @@
 /*
- * @Author: your name
+ * @Author: dezhizhang
  * @Date: 2020-10-25 15:59:50
- * @LastEditTime: 2020-12-13 14:14:07
+ * @LastEditTime: 2020-12-13 14:16:20
  * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
+ * @Description: tabs列表
  * @FilePath: /xiaozhi/lib/pages/tabs/tabs.dart
  */
 import 'package:flutter/material.dart';
