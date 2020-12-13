@@ -1,8 +1,11 @@
-/**
- * @author:zhangdezhi
- * @date:2020-10-23
- * @desc:轮播图组件
-*/
+/*
+ * @Author: dezhizhang
+ * @Date: 2020-10-25 18:04:19
+ * @LastEditTime: 2020-12-13 14:45:33
+ * @LastEditors: Please set LastEditors
+ * @Description: 轮播图组件
+ * @FilePath: /xiaozhi/lib/pages/home/swiper.dart
+ */
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
