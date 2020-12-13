@@ -1,4 +1,13 @@
+/*
+ * @Author: your name
+ * @Date: 2020-10-25 16:22:12
+ * @LastEditTime: 2020-12-13 14:40:36
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /xiaozhi/lib/pages/cart/cart.dart
+ */
 import 'package:flutter/material.dart';
+import '../../utils/utils.dart';
 
 class Cart extends StatefulWidget{
   _Cart createState() => _Cart();
@@ -7,8 +16,21 @@ class Cart extends StatefulWidget{
 class _Cart extends State<Cart>{
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-      return Text('购物车');
+    ScreenAdapter.init(context);
+    return Stack(
+      children: <Widget>[
+        ListView(),
+        Positioned(
+          bottom: 0,
+          width:ScreenAdapter.width(750),
+          height: ScreenAdapter.height(80),
+          child: Container(
+            color: Colors.red,
+            child: Text('bottom'),
+          ),
+        )
+      ],
+    );
   }
 }
 
