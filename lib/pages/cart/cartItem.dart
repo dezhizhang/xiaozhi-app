@@ -1,7 +1,7 @@
 /*
  * @Author: dezhizhang
  * @Date: 2020-12-13 14:44:07
- * @LastEditTime: 2020-12-13 15:23:14
+ * @LastEditTime: 2020-12-13 17:28:36
  * @LastEditors: Please set LastEditors
  * @Description: 购物车列表页
  * @FilePath: /xiaozhi/lib/pages/cart/cartItem.dart
@@ -9,6 +9,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../../utils/utils.dart';
+import './cartItemBtn.dart';
 
 class CartItem extends StatefulWidget{
   _CartItem createState() => _CartItem();
@@ -67,6 +68,10 @@ class _CartItem extends State<CartItem>{
                           style: TextStyle(
                           color: Colors.red
                         )),
+                      ),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: CartItemBtn(),
                       )
                     ],
                   ),
