@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-10-31 21:06:22
+ * @LastEditTime: 2020-12-13 11:56:58
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /xiaozhi/examples/button.dart
+ */
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -25,40 +33,6 @@ class MyApp extends StatelessWidget{
     );
   }
 }
-
-// class HomeContent extends StatelessWidget{
-//   @override
-//   Widget build(BuildContext context) {
-//     // TODO: implement build
-//     return Center(
-//       child: OutlineButton(
-//         child: Text('normal'),
-//         onPressed: (){
-//           print('hello');
-//         },
-//       ),
-//     );
-//   }
-// }
-
-// class HomeContent extends StatelessWidget{
-//   @override
-//   Widget build(BuildContext context) {
-//     // TODO: implement build
-//     return Center(
-//       child: RaisedButton.icon(
-//         color: Colors.pink,
-//         textColor: Colors.white,
-//         icon: Icon(Icons.home),
-//         label: Text('家'),
-//         onPressed: () {
-
-//         },
-//       ),
-//     );
-//   }
-// }
-
 
 class HomeContent extends StatelessWidget{
   @override
