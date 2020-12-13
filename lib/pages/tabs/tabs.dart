@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-10-25 15:59:50
+ * @LastEditTime: 2020-12-13 14:14:07
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /xiaozhi/lib/pages/tabs/tabs.dart
+ */
 import 'package:flutter/material.dart';
 import '../home/home.dart';
 import '../category/category.dart';
@@ -27,7 +35,7 @@ class _Tabs extends State<Tabs>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('贵彩办公'),
+        title: Text('菜小鲜'),
       ),
       body: this.pageList[this.currentIndex],
       bottomNavigationBar: BottomNavigationBar(
