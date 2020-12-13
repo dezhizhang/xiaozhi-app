@@ -1,7 +1,7 @@
 /*
  * @Author: dezhizhang
  * @Date: 2020-12-13 18:29:00
- * @LastEditTime: 2020-12-13 20:01:04
+ * @LastEditTime: 2020-12-13 20:13:01
  * @LastEditors: Please set LastEditors
  * @Description: 订单页面
  * @FilePath: /xiaozhi/lib/pages/order/order.dart
@@ -9,6 +9,7 @@
 
 
 import 'package:flutter/material.dart';
+import '../../utils/utils.dart';
 
 class Order extends StatefulWidget{
   _Order createState() => _Order();
@@ -17,6 +18,7 @@ class Order extends StatefulWidget{
 class _Order extends State<Order>{
   @override
   Widget build(BuildContext context) {
+    ScreenAdapter.init(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('订单列表'),
