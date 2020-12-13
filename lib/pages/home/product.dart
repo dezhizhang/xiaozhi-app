@@ -128,7 +128,6 @@ class ProductItem extends StatelessWidget{
                       ),
                     ),
                   ),
-                  // child: Text('187'),
                 )
               ],
             ),

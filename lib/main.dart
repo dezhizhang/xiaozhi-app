@@ -1,3 +1,11 @@
+/*
+ * @Author: dezhizhang
+ * @Date: 2020-10-24 15:07:50
+ * @LastEditTime: 2020-12-13 20:04:51
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /xiaozhi/lib/main.dart
+ */
 
 import 'package:flutter/material.dart';
 import './routers/router.dart';
