@@ -16,12 +16,16 @@ class People extends StatefulWidget{
 class _People extends State<People>{
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return RaisedButton(
-      child: Text('订单列表'),
-      onPressed: (){
-        Navigator.pushNamed(context, "/order");
-      },
+    return Container(
+      child: ListView(
+        children: <Widget>[
+          Container(
+            width: double.infinity,
+            height: 200,
+            color: Colors.red,
+          )
+        ],
+      ),
     );
   }
 }
