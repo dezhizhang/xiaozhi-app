@@ -23,12 +23,7 @@ class _Order extends State<Order>{
       appBar: AppBar(
         title: Text('订单列表'),
       ),
-      body: Stack(
-        children: <Widget>[
-          ListView(),
-          Positioned()
-        ],
-      ),
+      body:Text('hello')
     );
   }
 }
