@@ -51,29 +51,46 @@ class _AddContent extends State<AddContent>{
             ),
             obscureText: true,
           ),
-          TextField(
+          InkWell(
+            child: Container(
+            decoration: BoxDecoration(
+              border: Border(
+                bottom: BorderSide(width: 1,color:Color.fromRGBO(143,143,143,1))
+              )
+            ),
+            padding: EdgeInsets.only(left:ScreenAdapter.width(16)),
+            height: ScreenAdapter.height(80),
+            child: Row(
+              children: <Widget>[
+                Icon(Icons.add_location,color: Color.fromRGBO(143,143,143,1),),
+                SizedBox(width: 10),
+                Text('省/市/区',style: TextStyle(
+                  color: Color.fromRGBO(143,143,143,1),
+                  fontFamily: '微软雅黑',
+                )),
+                SizedBox(width: 10),
+                Text('')
+              ],
+            ),
+          ),
+          onTap: () async{
+            Result result = await CityPickers.showCityPicker(
+              context: context,
+            );
+          },
+        ),
+        TextField(
             decoration: InputDecoration(
                 labelText: "详细地址",
                 hintText: "请输入详细地址",
-                prefixIcon: Icon(Icons.ac_unit),
+                prefixIcon: Icon(Icons.add_location_alt_sharp),
               
             ),
             maxLines: 1,
             obscureText: true,
           ),
-          RaisedButton(
-            color: Colors.pink,
-            child: Text('城市级联'),
-            onPressed: () async {
-              Result result = await CityPickers.showCityPicker(
-                context: context,
-              );
-              print(result);
-            },
-          ),
-          SizedBox(height: 40),
-          RaisedButton(
-            
+        SizedBox(height: 40),
+        RaisedButton(
             color: Colors.blue,
             child: Text('确定',style: TextStyle(
               color: Colors.white,
@@ -83,7 +100,6 @@ class _AddContent extends State<AddContent>{
 
             },
           )
-
         ],
       ),
     );
