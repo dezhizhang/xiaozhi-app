@@ -16,18 +16,14 @@ class People extends StatefulWidget{
 class _People extends State<People>{
   @override
   Widget build(BuildContext context) {
-    return 
-    // return Container(
-    //   child: ListView(
-    //     children: <Widget>[
-    //       Container(
-    //         width: double.infinity,
-    //         height: 200,
-    //         color: Colors.red,
-    //       )
-    //     ],
-    //   ),
-    // );
+    return Stack(
+      children: <Widget>[
+        Container(
+          child: Text('hello'),
+        ),
+      ],
+    );
+
   }
 }
 
