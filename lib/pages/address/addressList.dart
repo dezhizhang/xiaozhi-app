@@ -31,13 +31,7 @@ class _AddressList extends State<AddressList>{
               AddressItem(),
               AddressItem(),
               AddressItem(),
-              AddressItem(),
-              // Container(
-              //   margin: EdgeInsets.only(bottom:10),
-              //   width: double.infinity,
-              //   height: ScreenAdapter.height(280),
-              //   color: Colors.white,
-              // )
+              AddressItem(), //地址列表
             ],
           ),
           Positioned(
