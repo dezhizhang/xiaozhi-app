@@ -61,7 +61,7 @@ class _AddressList extends State<AddressList>{
                   ],
                 ),
                 onTap: () {
-
+                  Navigator.pushNamed(context, '/addressAdd');
                 },
               )
             ),

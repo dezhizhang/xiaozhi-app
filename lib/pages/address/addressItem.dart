@@ -19,21 +19,21 @@ class _AddressItem extends State<AddressItem> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(15),
-      margin: EdgeInsets.only(bottom: ScreenAdapter.height(12)),
+      margin: EdgeInsets.only(bottom: ScreenAdapter.height(10)),
       width: double.infinity,
       height: ScreenAdapter.height(280),
       color: Colors.white,
       child: Column(
         children: <Widget>[
           Container(
-            margin: EdgeInsets.only(bottom: ScreenAdapter.height(32)),
+            margin: EdgeInsets.only(bottom: ScreenAdapter.height(30)),
             child: Row(
               children: <Widget>[
                 Text('包图君',
                     style: TextStyle(
                         fontFamily: '微软雅黑',
                         color: Color.fromRGBO(52, 52, 52, 1),
-                        fontSize: ScreenAdapter.fontSize(32))),
+                        fontSize: ScreenAdapter.fontSize(30))),
                 Container(
                   margin: EdgeInsets.only(left: ScreenAdapter.width(10)),
                   child: Text('158****4568',
