@@ -3,9 +3,10 @@
  * @Date: 2020-10-25 16:18:22
  * @LastEditTime: 2020-12-13 19:48:49
  * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
+ * @Description: 个人信息页
  * @FilePath: /xiaozhi/lib/pages/people/people.dart
  */
+
 import 'package:flutter/material.dart';
 
 
@@ -19,7 +20,12 @@ class _People extends State<People>{
     return Stack(
       children: <Widget>[
         Container(
-          child: Text('hello'),
+         child: RaisedButton(
+           child: Text('收货地址'),
+           onPressed: () {
+             Navigator.pushNamed(context, '/address');
+           },
+         ),
         ),
       ],
     );
