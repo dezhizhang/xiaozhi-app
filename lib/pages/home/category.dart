@@ -12,23 +12,27 @@ class _CategoryWidget extends State<CategoryWidget>{
     ScreenAdapter.init(context);
     return Container(
       width: double.infinity,
-      height: ScreenAdapter.height(300),
+      height: ScreenAdapter.height(240),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius:BorderRadius.circular(10)
       ),
-      child:Column(
+      child: GridView.count(
+        crossAxisCount: 5,
+        childAspectRatio: 1.0,
         children: <Widget>[
-          Row(
-            children: <Widget>[
-              CategoryIcon(),
-              CategoryIcon(),
-              CategoryIcon(),
-              CategoryIcon(),
-            ],
-          )
+          CategoryIcon(),
+          CategoryIcon(),
+          CategoryIcon(),
+          CategoryIcon(),
+          CategoryIcon(),
+          CategoryIcon(),
+          CategoryIcon(),
+          CategoryIcon(),
+          CategoryIcon(),
+          CategoryIcon(),
         ],
-      )
+      ),
     );
   }
 }
@@ -45,7 +49,7 @@ class _CategoryIcon extends State<CategoryIcon>{
       padding: EdgeInsets.all(10),
       child: Container(
         color: Colors.red,
-        width: (ScreenAdapter.screenWidth() / 4) - 40,
+        width: (ScreenAdapter.screenWidth() / 4) - 20,
         child: Text('hello'),
       ),
     );

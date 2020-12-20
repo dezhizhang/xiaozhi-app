@@ -1,4 +1,6 @@
 PODS:
+  - city_pickers (0.0.1):
+    - Flutter
   - Flutter (1.0.0)
   - shared_preferences (0.0.1):
     - Flutter
@@ -6,11 +8,14 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
+  - city_pickers (from `.symlinks/plugins/city_pickers/ios`)
   - Flutter (from `Flutter`)
   - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
   - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
 
 EXTERNAL SOURCES:
+  city_pickers:
+    :path: ".symlinks/plugins/city_pickers/ios"
   Flutter:
     :path: Flutter
   shared_preferences:
@@ -19,6 +24,7 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/url_launcher/ios"
 
 SPEC CHECKSUMS:
+  city_pickers: b0370f4c35c201723b5b7fcce10ec29b59d5bc35
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
   url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
