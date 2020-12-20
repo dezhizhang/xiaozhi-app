@@ -26,6 +26,7 @@ class AddContent extends StatefulWidget{
 }
 
 class _AddContent extends State<AddContent>{
+  String area = "";
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
@@ -53,23 +54,33 @@ class _AddContent extends State<AddContent>{
           ),
           InkWell(
             child: Container(
+            // alignment: Alignment.centerLeft,
             decoration: BoxDecoration(
               border: Border(
                 bottom: BorderSide(width: 1,color:Color.fromRGBO(143,143,143,1))
               )
             ),
-            padding: EdgeInsets.only(left:ScreenAdapter.width(16)),
-            height: ScreenAdapter.height(80),
-            child: Row(
+            padding: EdgeInsets.all(10),
+            height: ScreenAdapter.height(100),
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                Icon(Icons.add_location,color: Color.fromRGBO(143,143,143,1),),
-                SizedBox(width: 10),
-                Text('省/市/区',style: TextStyle(
-                  color: Color.fromRGBO(143,143,143,1),
-                  fontFamily: '微软雅黑',
-                )),
-                SizedBox(width: 10),
-                Text('')
+                Row(
+                  children: <Widget>[
+                    Icon(Icons.add_location,color: Color.fromRGBO(143,143,143,1),),
+                    SizedBox(width: 10),
+                    Text('省/市/区',style: TextStyle(
+                      color: Color.fromRGBO(143,143,143,1),
+                      fontFamily: '微软雅黑',
+                    )),
+                    SizedBox(width: 10),
+                  ],
+                ),
+                Container(
+                  padding: EdgeInsets.only(left:40),
+                  alignment: Alignment.centerLeft,
+                  child:Text('${this.area}'),
+                )
               ],
             ),
           ),
@@ -77,6 +88,9 @@ class _AddContent extends State<AddContent>{
             Result result = await CityPickers.showCityPicker(
               context: context,
             );
+            setState(() {
+              this.area = "${result.provinceName}${result.cityName}${result.areaName}";
+            });
           },
         ),
         TextField(
