@@ -21,9 +21,9 @@ class _People extends State<People>{
       children: <Widget>[
         Container(
          child: RaisedButton(
-           child: Text('收货地址'),
+           child: Text('订单页'),
            onPressed: () {
-             Navigator.pushNamed(context, '/address');
+             Navigator.pushNamed(context, '/order');
            },
          ),
         ),

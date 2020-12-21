@@ -23,7 +23,56 @@ class _Order extends State<Order>{
       appBar: AppBar(
         title: Text('我的订单'),
       ),
-      body:Text('hello')
+      body:OrderContent()
     );
   }
 }
+
+class OrderContent extends StatefulWidget{
+  _OrderContent createState() => _OrderContent();
+}
+
+
+class _OrderContent extends State<OrderContent>{
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Color.fromRGBO(238,238,238,1),
+      child: Stack(
+        children: <Widget>[
+          ListView(),
+          Positioned(
+            left: 0,
+            top: 0,
+            child:Container(
+              child: Text('hello'),
+            )
+          )
+        ],
+      ),
+    );
+  }
+}
+
+// class _OrderContent extends State<OrderContent>{
+//   @override
+//   Widget build(BuildContext context) {
+  
+//     // return Stack(
+//     //   children: <Widget>[
+//     //     ListView(
+//     //       children: <Widget>[
+
+//     //       ],
+//     //     ),
+//     //     Positioned(
+//     //       top: 0,
+//     //       left: 0,
+//     //       child: Text('hello'),
+
+//     //     )
+//     //   ],
+//     // );
+//   }
+// }
+
