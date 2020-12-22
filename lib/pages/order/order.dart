@@ -84,16 +84,81 @@ class _OrderContent extends State<OrderContent>{
                               child: Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/16006152126699263.jpeg',fit: BoxFit.cover),
                             ),
                             Expanded(
-                            
                               flex: 1,
                               child: Container(
-                                margin: EdgeInsets.only(left:ScreenAdapter.width(32)),
-                                child: Text('hello'),
-                              ),
+                                margin: EdgeInsets.only(left:ScreenAdapter.width(30)),
+                                child: Column(
+                                  children: <Widget>[
+                                    Text('2018早秋装ins古着新款韩版条纹衬衫情侣装chic…2018早秋装ins古着新款韩版条纹衬衫情侣装chic…'),
+                                    Row(
+                                      children: <Widget>[
+                                        Container(
+                                          margin: EdgeInsets.only(top:ScreenAdapter.height(10)),
+                                          child: Text('￥9.9',style: TextStyle(
+                                            color:  Color.fromRGBO(41,38,33,1),
+                                            fontFamily: '微软雅黑'
+                                          )),
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(top:ScreenAdapter.height(10),left: ScreenAdapter.width(30)),
+                                          child: Text('X2'),
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
                             )
                           ],
                         ),
+                      ),
+                      //价格
+                      Container(
+                        padding: EdgeInsets.only(right:ScreenAdapter.width(30),top:ScreenAdapter.height(30)),
+                        margin: EdgeInsets.only(bottom: ScreenAdapter.height(20)),
+                        alignment: Alignment.centerRight,
+                        child:Text('共1件商品 实付款：¥ 18.9')
+                      ),
+                      //线条
+                      Container(
+                        padding: EdgeInsets.only(left:ScreenAdapter.width(30),right: ScreenAdapter.width(30)),
+                        child: Divider(),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left:ScreenAdapter.width(30),right: ScreenAdapter.width(30)),
+                        alignment: Alignment.centerRight,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: <Widget>[
+                           Container(
+                             margin: EdgeInsets.only(left: ScreenAdapter.width(20)),
+                             padding: EdgeInsets.only(left:ScreenAdapter.width(24),top: ScreenAdapter.height(10),right:ScreenAdapter.width(24),bottom:ScreenAdapter.height(10)),
+                             decoration: BoxDecoration(
+                               borderRadius: BorderRadius.circular(25),
+                               border: Border.all(
+                                 width: 1,
+                                 color: Color.fromRGBO(176,169,158,1)
+                               )
+                             ),
+                             child: Text('删除订单'),
+                           ),
+                           Container(
+                             margin: EdgeInsets.only(left: ScreenAdapter.width(20)),
+                             padding: EdgeInsets.only(left:ScreenAdapter.width(24),top: ScreenAdapter.height(10),right:ScreenAdapter.width(24),bottom:ScreenAdapter.height(10)),
+                             decoration: BoxDecoration(
+                               borderRadius: BorderRadius.circular(25),
+                               border: Border.all(
+                                 width: 1,
+                                 color: Color.fromRGBO(176,169,158,1)
+                               )
+                             ),
+                             child: Text('再来一单'),
+                           )
+                          ],
+                        ),
                       )
+                     
+
                     ],
                     //内容
                     //描述
