@@ -25,30 +25,58 @@ class _People extends State<People>{
       color: Color.fromRGBO(238,238,238,1),
       child: Stack(
         children: <Widget>[
-          Container(
-           
-            width: ScreenAdapter.width(750),
-            height: ScreenAdapter.height(322),
-            decoration: BoxDecoration(
-              color: Colors.yellow,
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: NetworkImage('http://tugua.oss-cn-hangzhou.aliyuncs.com/16086451694422710.png')
-              ),
-              // gradient: RadialGradient( //背景径向渐变
-              //   colors: [Colors.red, Colors.orange],
-              //   center: Alignment.topLeft,
-              //   radius: .98
-              // ),
-              // borderRadius:BorderRadius.only(bottomLeft:Radius.circular(14),bottomRight:Radius.circular(14))
-            ),
-            child: Text('HELLO'),
-          ),
-          ListView(
-            children: <Widget>[
+          // Container(
+          //   color: Colors.white,
+          //   width: ScreenAdapter.height(750),
+          //   height: ScreenAdapter.width(489),
+          //   child:Container(
+          //   width: ScreenAdapter.width(750),
+          //   height: ScreenAdapter.height(322),
+          //   decoration: BoxDecoration(
+          //     image: DecorationImage(
+          //       fit: BoxFit.cover,
+          //       image: NetworkImage('http://tugua.oss-cn-hangzhou.aliyuncs.com/16086451694422710.png')
+          //     ),
+          //   ),
+          //   child: Text('HELLO'),
+          // ),
+          // ),
+          
+          // Container(
+          //   margin: EdgeInsets.only(top:ScreenAdapter.height(322)),
+          //   color: Colors.white,
+          //   width: ScreenAdapter.width(750),
+          //   height: ScreenAdapter.height(1012),
+          //   child: ListView(
+          //     children: <Widget>[
+          //       Container(
+          //         color: Colors.yellow,
+          //         width: ScreenAdapter.width(750),
+          //         height: ScreenAdapter.height(120),
+          //       )
+          //     ],
+          //   ),
+          // ),
+          // ListView(
+          //   children: <Widget>[
+          //     Container(
+          //       width: ScreenAdapter.width(750),
+          //       height: ScreenAdapter.height(120),
+          //       margin: EdgeInsets.only(top:ScreenAdapter.height(322),bottom: ),
+          //       decoration: BoxDecoration(
+          //         color: Colors.white,
+          //         border: Border(
+          //           bottom: BorderSide(
+          //             width: 1,
+          //             color: Color.fromRGBO(179,39,79,1)
+          //           )
+          //         )
+          //       ),
+          //       child: Row(),
+          //     ),
 
-            ],
-          ),
+          //   ],
+          // ),
           Positioned(
             top: 120,
             left: 20,
@@ -58,7 +86,7 @@ class _People extends State<People>{
               height: ScreenAdapter.height(302),
               child: Text('hello'),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Color.fromRGBO(238, 238, 238,1),
                 borderRadius: BorderRadius.circular(20)
               ),
             ),
