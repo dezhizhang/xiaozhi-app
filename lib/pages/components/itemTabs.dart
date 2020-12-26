@@ -11,9 +11,9 @@ import '../../utils/utils.dart';
 class ItemTabs extends StatefulWidget {
 
   String title;
-  String content = "";
-  double margin = 0;
-  bool isBack = false;
+  String content;
+  double margin;
+  bool isBack;
    ItemTabs({Key key,this.margin,this.title,this.content,this.isBack}):super(key:key);
   _ItemTabs createState() => _ItemTabs(this.title,this.content,this.margin,this.isBack);
 }
