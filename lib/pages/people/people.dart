@@ -53,13 +53,11 @@ class _People extends State<People>{
                   height: ScreenAdapter.height(205),
                   child: Text('hello'),
                 ),
-                PeopleItem(margin:0),
-                PeopleItem(margin:0),
-                PeopleItem(margin:0),
-                PeopleItem(margin: 10.0),
-                PeopleItem(margin:0),
-               
-
+                PeopleItem(margin:0,title: '我的消息',routeName: "/message"),
+                PeopleItem(margin:0,title: '我的收藏',routeName: "/collection",),
+                PeopleItem(margin:0,title: '我的卡券',routeName: "/coupon",),
+                PeopleItem(margin: 10.0,title: '我的金币',routeName: '/money'),
+                PeopleItem(margin:0,title: '课程回放'),
               ],
             ),
           ),
