@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import '../../utils/utils.dart';
+import './couponsTop.dart';
 class Coupons extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -30,39 +31,53 @@ class _Content extends State<Content>{
       height: ScreenAdapter.height(1334),
       child: Stack(
         children: <Widget>[
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            // height: ScreenAdapter.height(100),
-            child: Container(
-              padding: EdgeInsets.only(left:ScreenAdapter.width(30),right:ScreenAdapter.width(30)),
-              alignment: Alignment.center,
-              color: Colors.white,
-              width: ScreenAdapter.height(750),
-              height: ScreenAdapter.height(100),
-              child: Flex(
-                direction: Axis.horizontal,
-                children: <Widget>[
-                  Expanded(
-                    flex: 1,
-                    child: Text('合部'),
+          CouponsTop(),
+          Container(
+          
+            margin: EdgeInsets.only(top:ScreenAdapter.height(110)),
+            padding: EdgeInsets.only(left:ScreenAdapter.width(30),right: ScreenAdapter.width(30)),
+            child: ListView(
+              children: <Widget>[
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.pink,
+                    borderRadius: BorderRadius.circular(10)
                   ),
-                  Expanded(
-                    flex: 1,
-                    child: Text('已使用'),
+                
+                  height: ScreenAdapter.height(160),
+                  child: Flex(
+                    direction: Axis.horizontal,
+                    children: <Widget>[
+                      Expanded(
+                        flex: 3,
+                        child: Container(
+                         
+                          decoration: BoxDecoration(
+                            color: Colors.yellow,
+                            border:Border(
+                              right: BorderSide(
+                                width: 1,
+                                color: Colors.white,
+
+                              )
+                            )
+                          ),
+                          alignment: Alignment.center,
+                          child: Text('5'),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 6,
+                        child: Container(
+                          alignment: Alignment.center,
+                          child: Text('hello'),
+                        ),
+                      )
+                    ],
                   ),
-                  Expanded(
-                    flex: 1,
-                    child: Text('已失效'),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Text('其它'),
-                  )
-                ],
-              ),
-            ),
+                )
+              ],
+            )
           )
         ],
       ),
