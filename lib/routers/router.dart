@@ -17,6 +17,7 @@ import '../pages/address/addressAdd.dart';
 import '../pages/information/information.dart';
 import '../pages/setting/setting.dart';
 import '../pages/system/system.dart';
+import '../pages/coupons/coupons.dart';
 
 final routes = {
    
@@ -25,6 +26,7 @@ final routes = {
   '/order':(context) => Order(),
   '/address':(context) => Address(),
   '/system':(context) => System(),
+  '/coupons':(context) => Coupons(),
   "/setting":(context) => Setting(),
   '/information':(context) => Information(),
   '/addressAdd':(context) => AddressAdd(),
