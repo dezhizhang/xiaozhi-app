@@ -1,5 +1,7 @@
 
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import '../../utils/utils.dart';
 
@@ -49,7 +51,21 @@ class _Content extends State<Content>{
                 borderRadius: BorderRadius.circular(20)
               ),
               padding: EdgeInsets.only(left:ScreenAdapter.width(20),right: ScreenAdapter.width(20)),
-              child: Text('HELLO'),
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(top:ScreenAdapter.height(10),bottom: ScreenAdapter.height(40)),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50)
+                    ),
+                    alignment: Alignment.center,
+                    width: ScreenAdapter.width(100),
+                    height: ScreenAdapter.height(100),
+                    child: Image.network('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1608488282889&di=a6bf8af5bcd7d57e10d5b73011c8c1ba&imgtype=0&src=http%3A%2F%2Fimg.jingbao321.com%2Ftang%2Fbbf5f23f0bf16ede8905d79da9789049-2.jpg',fit: BoxFit.cover),
+                  ),
+                  
+                ],
+              ),
             ),
           )
         ],

@@ -50,9 +50,9 @@ class _PeopleItem extends State<PeopleItem> {
           ],
         ),
     ),
-     onTap: () {
-                Navigator.pushNamed(context, routeName);
-              },
-  ); 
+    onTap: () {
+        Navigator.pushNamed(context, routeName);
+      },
+    ); 
   }
 }
