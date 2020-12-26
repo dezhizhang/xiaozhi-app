@@ -53,10 +53,13 @@ class _People extends State<People>{
                   height: ScreenAdapter.height(205),
                   child: Text('hello'),
                 ),
-                PeopleItem(),
-                PeopleItem(),
-                PeopleItem(),
-                PeopleItem(),
+                PeopleItem(margin:0),
+                PeopleItem(margin:0),
+                PeopleItem(margin:0),
+                PeopleItem(margin: 10.0),
+                PeopleItem(margin:0),
+               
+
               ],
             ),
           ),
