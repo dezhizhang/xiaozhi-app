@@ -41,7 +41,7 @@ class _ItemTabs extends State<ItemTabs> {
         direction: Axis.horizontal,
         children: <Widget>[
           Expanded(
-            flex: 12,
+            flex:  this.isBack ? 12:25,
             child: Text("${this.title}"),
           ),
           Expanded(

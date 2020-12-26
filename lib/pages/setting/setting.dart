@@ -29,17 +29,58 @@ class _Content extends State<Content>{
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
     return Container(
+      color: Color.fromRGBO(238,238,238,1),
       width: ScreenAdapter.width(750),
       height: ScreenAdapter.height(1334),
       child: Column(
         children: <Widget>[
-          ItemTabs(title: "推送设置",content: "",isBack: true,margin: 0),
-          ItemTabs(title: "推送设置",content: "",isBack: true,margin: 0),
+          Container(
+            color: Colors.white,
+            width: ScreenAdapter.width(750),
+            padding: EdgeInsets.only(left:ScreenAdapter.width(30),right:ScreenAdapter.width(30)),
+            margin: EdgeInsets.only(bottom:ScreenAdapter.height(10)),
+            child: Column(
+              children: <Widget>[
+                ItemTabs(title: '推送设置',isBack: true,content: '',margin: 0),
+                ItemTabs(title: '清理缓存',isBack: false,content: '800',margin: 0),
+                ItemTabs(title: '清理缓存',isBack: false,content: '800',margin: 0),
+                // ItemTabs(title: '清理缓存',isBack: false,content: '800',margin: 0),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(bottom:ScreenAdapter.height(10)),
+            color: Colors.white,
+            width: ScreenAdapter.width(750),
+            padding: EdgeInsets.only(left:ScreenAdapter.width(30),right: ScreenAdapter.width(30)),
+            child: Column(
+              children: <Widget>[
+                ItemTabs(title: '去评分',isBack: true,content: '',margin: 0),
+                ItemTabs(title: '资质中心',isBack: true,content: '',margin: 0),
+                ItemTabs(title: '版权信息',isBack: true,content: '',margin: 0),
+                ItemTabs(title: '隐私中心',isBack: true,content: '',margin: 0),
+                ItemTabs(title: '隐私中心',isBack: true,content: '',margin: 0),
+                ItemTabs(title: '关于我们',isBack: true,content: '',margin: 0),
+                ItemTabs(title: '推荐二维码',isBack: true,content: '',margin: 0),
+              ],
+            ),
+          ),
+          Container(
+            color: Colors.white,
+            width: ScreenAdapter.width(750),
+            padding: EdgeInsets.only(left:ScreenAdapter.width(30),right: ScreenAdapter.width(30)),
+            child: Column(
+              children: <Widget>[
+                ItemTabs(title: '退出登录',isBack: true,content: '',margin: 0),
+              ],
+            ),
+          )
         ],
-      ),
+      )
     );
   }
 }
 
 
 
+//
