@@ -14,7 +14,7 @@ import '../pages/product/product.dart';
 import '../pages/order/order.dart';
 import '../pages/address/address.dart';
 import '../pages/address/addressAdd.dart';
-import '../pages/message/message.dart';
+import '../pages/information/information.dart';
 
 final routes = {
    
@@ -22,7 +22,7 @@ final routes = {
   '/product':(context,{arguments}) => Product(arguments:arguments),
   '/order':(context) => Order(),
   '/address':(context) => Address(),
-  '/message':(context) => Message(),
+  '/information':(context) => Information(),
   '/addressAdd':(context) => AddressAdd(),
  
 };
