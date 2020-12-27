@@ -35,7 +35,7 @@ class _Tabs extends State<Tabs>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('菜小鲜'),
+        title: Text('贵菜办公'),
       ),
       body: this.pageList[this.currentIndex],
       bottomNavigationBar: BottomNavigationBar(
