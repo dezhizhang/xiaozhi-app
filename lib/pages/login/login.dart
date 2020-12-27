@@ -32,7 +32,9 @@ class _Content extends  State<Content>{
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
-    return Container(
+    return Stack(
+      children: <Widget>[
+        Container(
       padding: EdgeInsets.only(
         left:ScreenAdapter.width(70),
         right: ScreenAdapter.width(70),
@@ -48,7 +50,7 @@ class _Content extends  State<Content>{
             alignment: Alignment.center,
             margin: EdgeInsets.only(bottom:ScreenAdapter.height(30)),
             child:Text('手机登录',style: TextStyle(
-              fontFamily: '微软雅黑',
+              fontFamily: '59--Regular',
               fontWeight: FontWeight.normal,
               fontSize: ScreenAdapter.fontSize(58),
               color: Color.fromRGBO(0,0,0,1)
@@ -110,9 +112,65 @@ class _Content extends  State<Content>{
                 )
               ],
             ),
-          )
+          ),
+          Container(
+            padding: EdgeInsets.only(left:ScreenAdapter.width(50)),
+            alignment: Alignment.center,
+            margin: EdgeInsets.only(bottom:ScreenAdapter.height(60)),
+            height: ScreenAdapter.height(90),
+            width: ScreenAdapter.width(608),
+            decoration: BoxDecoration(
+              color: Color.fromRGBO(246, 246, 246,1),
+              borderRadius: BorderRadius.circular(45),
+              gradient: RadialGradient(
+                center: Alignment.topRight,
+                radius: 0.98,
+                colors: [Color.fromRGBO(255,118,78,1),Color.fromRGBO(255,82,80,1)]
+              ),
+              boxShadow: [ //卡片阴影
+                BoxShadow(
+                    color: Colors.black54,
+                    offset: Offset(2.0, 2.0),
+                    blurRadius: 4.0
+                )
+              ]
+            ),
+            child: Text('登录',style: TextStyle(
+              color: Color.fromRGBO(254,254,254,1),
+              fontSize: ScreenAdapter.fontSize(28),
+              fontFamily: '微软雅黑'
+            )),
+          ),
+          
         ],
       ),
+      ),
+      Positioned(
+        bottom: ScreenAdapter.height(100),
+        left: ScreenAdapter.width(70),
+        child: Row(
+          children: <Widget>[
+            Radio(
+              value: false,
+              onChanged: (value){
+
+              },
+            
+            ),
+            Text('使用即同意《用户协议》及《隐私协议》',style: TextStyle(
+              color: Color.fromRGBO(153,153,153,1),
+              fontFamily: '59--Regular',
+              fontSize: ScreenAdapter.fontSize(28)
+            ))
+          ],
+        ),
+      )
+      ],
     );
   }
 }
+
+
+
+
+
