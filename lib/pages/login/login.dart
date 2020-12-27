@@ -64,6 +64,7 @@ class _Content extends  State<Content>{
           Container(
             padding: EdgeInsets.only(left:ScreenAdapter.width(50)),
             alignment: Alignment.centerLeft,
+            margin: EdgeInsets.only(bottom:ScreenAdapter.height(40)),
             height: ScreenAdapter.height(90),
             width: ScreenAdapter.width(608),
             decoration: BoxDecoration(
@@ -77,6 +78,38 @@ class _Content extends  State<Content>{
               ),
               autofocus: true,
             )
+          ),
+          Container(
+            padding: EdgeInsets.only(left:ScreenAdapter.width(50)),
+            alignment: Alignment.centerLeft,
+            margin: EdgeInsets.only(bottom:ScreenAdapter.height(60)),
+            height: ScreenAdapter.height(90),
+            width: ScreenAdapter.width(608),
+            decoration: BoxDecoration(
+              color: Color.fromRGBO(246, 246, 246,1),
+              borderRadius: BorderRadius.circular(45)
+            ),
+            child: Flex(
+              direction: Axis.horizontal,
+              children: <Widget>[
+                Expanded(
+                  flex: 2,
+                  child:TextField(
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText:'验证码'
+                    ),
+                  ) 
+                ),
+                Expanded(
+                  child: Text('获取验证码',style: TextStyle(
+                    color: Color.fromRGBO(179,39,79,1),
+                    fontSize: ScreenAdapter.fontSize(28),
+                    fontFamily:'微软雅黑'
+                  ))
+                )
+              ],
+            ),
           )
         ],
       ),
