@@ -1,4 +1,6 @@
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import '../../utils/utils.dart';
 import './couponsTop.dart';
@@ -63,7 +65,20 @@ class _Content extends State<Content>{
                             )
                           ),
                           alignment: Alignment.center,
-                          child: Text('5'),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text('￥',style: TextStyle(
+                                color: Colors.white
+                              )),
+                              Text('5',style: TextStyle(
+                                fontSize: 32,
+                                color: Colors.white,
+                                fontFamily: '微软雅黑'
+                              )),
+                            ],
+
+                          ),
                         ),
                       ),
                       Expanded(
