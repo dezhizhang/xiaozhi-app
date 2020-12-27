@@ -18,12 +18,14 @@ import '../pages/information/information.dart';
 import '../pages/setting/setting.dart';
 import '../pages/system/system.dart';
 import '../pages/coupons/coupons.dart';
+import '../pages/login/login.dart';
 
 final routes = {
    
   '/':(context) => Tabs(),
   '/product':(context,{arguments}) => Product(arguments:arguments),
   '/order':(context) => Order(),
+  '/login':(context) => Login(),
   '/address':(context) => Address(),
   '/system':(context) => System(),
   '/coupons':(context) => Coupons(),
