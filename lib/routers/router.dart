@@ -19,6 +19,7 @@ import '../pages/setting/setting.dart';
 import '../pages/system/system.dart';
 import '../pages/coupons/coupons.dart';
 import '../pages/login/login.dart';
+import '../pages/integral/integral.dart';
 
 final routes = {
    
@@ -30,6 +31,7 @@ final routes = {
   '/system':(context) => System(),
   '/coupons':(context) => Coupons(),
   "/setting":(context) => Setting(),
+  '/integral':(context) => Integral(),
   '/information':(context) => Information(),
   '/addressAdd':(context) => AddressAdd(),
  
