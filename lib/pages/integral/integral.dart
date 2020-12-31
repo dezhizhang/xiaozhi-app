@@ -6,6 +6,7 @@
  * @desc:积分页面
 */
 import 'package:flutter/material.dart';
+import '../../utils/utils.dart';
 
 class Integral extends StatelessWidget{
   @override
@@ -27,7 +28,62 @@ class Content extends StatefulWidget{
 class _Content extends State<Content>{
   @override
   Widget build(BuildContext context) {
+    ScreenAdapter.init(context);
     // TODO: implement build
-    return Text('我的积分');
+    return Container(
+      color: Color.fromRGBO(238,238,238,1),
+      width: ScreenAdapter.width(750),
+      height: ScreenAdapter.height(1334),
+      child: Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              gradient: RadialGradient(
+                colors: [Color.fromRGBO(255,118,78,1),Color.fromRGBO(255,82,80,1)],
+                center: Alignment.topRight
+              )
+            ),
+            width:ScreenAdapter.width(750),
+            height: ScreenAdapter.height(160),
+            // child: Text(),
+          ),
+          Positioned(
+            top: ScreenAdapter.height(10),
+            child: Container(
+              padding: EdgeInsets.only(left:ScreenAdapter.width(30),right:ScreenAdapter.width(30)),
+              child: Container(
+                padding: EdgeInsets.only(left:ScreenAdapter.width(30),right: ScreenAdapter.width(30)),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8)
+                ),
+                width:ScreenAdapter.width(690),
+                height: ScreenAdapter.height(200),
+                child: Flex(
+                  direction: Axis.horizontal,
+                  children: <Widget>[
+                    Expanded(
+                      flex: 1,
+                      child: Column(
+                        // crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text('我的积分',style: TextStyle()),
+                          Text('2000')
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Text('change'),
+                    )
+                  ],
+                ),
+              ),
+            )
+          )
+        ],
+      ),
+    );
   }
 }
