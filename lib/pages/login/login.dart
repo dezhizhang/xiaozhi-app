@@ -35,7 +35,7 @@ class _Content extends  State<Content>{
     return Stack(
       children: <Widget>[
         Container(
-      padding: EdgeInsets.only(
+        padding: EdgeInsets.only(
         left:ScreenAdapter.width(70),
         right: ScreenAdapter.width(70),
         top: ScreenAdapter.height(110),
