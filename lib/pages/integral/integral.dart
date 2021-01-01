@@ -75,7 +75,27 @@ class _Content extends State<Content>{
                     ),
                     Expanded(
                       flex: 1,
-                      child: Text('change'),
+                      child: Row(
+                        children: <Widget>[
+                          Container(
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(36),
+                              gradient: RadialGradient(
+                                colors: [Color.fromRGBO(255,203,45,1),Color.fromRGBO(255,130,54,1)],
+                                center: Alignment.centerRight
+                              )
+                            ),
+                            width:ScreenAdapter.width(160),
+                            height: ScreenAdapter.height(60),
+                            child: Text('立即签到',style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: '微软雅黑'
+                            )),
+                          ),
+                          Container()
+                        ],
+                      ),
                     )
                   ],
                 ),
