@@ -18,8 +18,6 @@ class Information extends StatelessWidget{
     );
   }
 }
-
-
 class Content extends StatefulWidget{
   _Content createState() => _Content();
 }
