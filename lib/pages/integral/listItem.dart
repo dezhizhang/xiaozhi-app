@@ -39,7 +39,18 @@ class _ListItem extends State<ListItem> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[Text('签到'), Text('连续签到可获得积分')],
+                  children: <Widget>[
+                    Text('签到',style: TextStyle(
+                      color: Color.fromRGBO(51,51,51,1),
+                      fontSize: ScreenAdapter.fontSize(24),
+                      fontFamily: '微软雅黑'
+                    )), 
+                    Text('连续签到可获得积分',style: TextStyle(
+                      color: Color.fromRGBO(153,153,153,1),
+                      fontSize: ScreenAdapter.fontSize(20),
+                      fontFamily: '微软雅黑'
+                    ))
+                  ],
                 )),
           ),
           Expanded(
