@@ -69,12 +69,16 @@ class _Content extends State<Content>{
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text('我的积分',style: TextStyle()),
-                          Text('2000')
+                          Text('2000',style: TextStyle(
+                            color: Color.fromRGBO(255,82,80,1),
+                            fontSize: ScreenAdapter.fontSize(52),
+                            fontWeight: FontWeight.bold
+                          ))
                         ],
                       ),
                     ),
                     Expanded(
-                      flex: 1,
+                      flex: 2,
                       child: Row(
                         children: <Widget>[
                           Container(
@@ -93,7 +97,22 @@ class _Content extends State<Content>{
                               fontFamily: '微软雅黑'
                             )),
                           ),
-                          Container()
+                          Container(
+                            margin: EdgeInsets.only(left:ScreenAdapter.width(36)),
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(36),
+                              gradient: RadialGradient(
+                                colors: [Color.fromRGBO(45,109,255,1),Color.fromRGBO(122,115,255,1)]
+                              )
+                            ),
+                            width: ScreenAdapter.width(160),
+                            height: ScreenAdapter.height(60),
+                            child: Text('积分商城',style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: '微软雅黑'
+                            )),
+                          )
                         ],
                       ),
                     )
@@ -107,3 +126,4 @@ class _Content extends State<Content>{
     );
   }
 }
+
