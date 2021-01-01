@@ -7,6 +7,8 @@
 */
 import 'package:flutter/material.dart';
 import '../../utils/utils.dart';
+import './integralBody.dart';
+import './integralBottom.dart';
 
 class Integral extends StatelessWidget{
   @override
@@ -120,6 +122,17 @@ class _Content extends State<Content>{
                 ),
               ),
             )
+          ),
+          Container(
+            padding: EdgeInsets.only(left:ScreenAdapter.width(30),right: ScreenAdapter.width(30)),
+            margin: EdgeInsets.only(top:ScreenAdapter.height(240)),
+            width:ScreenAdapter.width(750),
+            child: Column(
+              children: <Widget>[
+                IntegralBody(),
+                IntegralBottom(),
+              ],
+            ),
           )
         ],
       ),
