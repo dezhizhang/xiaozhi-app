@@ -69,12 +69,13 @@ class _People extends State<People>{
                             Container(
                               margin: EdgeInsets.only(left:ScreenAdapter.width(30)),
                               width: ScreenAdapter.width(114),
+                              height:ScreenAdapter.height(114),
                               color: Colors.red,
                               // decoration: BoxDecoration(
                               //   color: Colors.green,
                               //   borderRadius: BorderRadius.circular(100)
                               // ),
-                              height:ScreenAdapter.height(114)
+                             
                             ),
                             Expanded(
                               flex: 4,
