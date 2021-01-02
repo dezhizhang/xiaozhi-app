@@ -23,9 +23,6 @@ class _Login extends State<Login>{
 class Content extends StatefulWidget{
   @override
   _Content createState() => _Content();
-  // Widget build(BuildContext context) {
-  //   return ;
-  // }
 }
 
 class _Content extends  State<Content>{

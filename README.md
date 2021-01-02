@@ -2591,6 +2591,39 @@ class _ProductItem extends State<ProductItem>{
   }
 }
 ```
+### flutter设置背图片
+做移动开始的朋友都知道项目中很多时候要用到用图片做背景，当然flutter也可以设置背景图片。
+具体代码如下
+```
+class BackgroundImgDemo extends StatelessWidget {
+  const BackgroundImgDemo({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        image: new DecorationImage(
+          fit: BoxFit.cover,
+          image: new NetworkImage(
+              'https://randomuser.me/api/portraits/men/43.jpg'),
+        ),
+      ),
+      child: Container(
+        color: Colors.red.withOpacity(.5),
+        child: Center(
+          child: Text(
+            "我在图片的上面哦~",
+            style: TextStyle(color: Colors.white, fontSize: 33),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+![背景图片](https://upload-images.jianshu.io/upload_images/1841040-a72b25a7e0ef5cdf.png?imageMogr2/auto-orient/strip|imageView2/2/format/webp)
+
+
 
 
 
