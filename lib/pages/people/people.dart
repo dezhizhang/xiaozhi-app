@@ -59,11 +59,79 @@ class _People extends State<People>{
                           Navigator.pushNamed(context, '/setting');
                         },
                       ),
+                      Container(
+                        alignment: Alignment.center,
+                        width:ScreenAdapter.width(750),
+                        height: ScreenAdapter.height(114),
+                        child: Flex(
+                          direction: Axis.horizontal,
+                          children: <Widget>[
+                            Container(
+                              margin: EdgeInsets.only(left:ScreenAdapter.width(30)),
+                              width: ScreenAdapter.width(114),
+                              color: Colors.red,
+                              // decoration: BoxDecoration(
+                              //   color: Colors.green,
+                              //   borderRadius: BorderRadius.circular(100)
+                              // ),
+                              height:ScreenAdapter.height(114)
+                            ),
+                            Expanded(
+                              flex: 4,
+                              child: Container(
+                                alignment: Alignment.centerLeft,
+                                child: Column(
+                                  children: <Widget>[
+                                    Text('路啊路',style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: ScreenAdapter.fontSize(36),
+                                      fontFamily: '微软雅黑',
+                                      // fontWeight: FontWeight.bold
+                                    )),
+                                    Container(
+                                      margin: EdgeInsets.only(left:ScreenAdapter.width(30)),
+                                      child:Text('ID:65788768',style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: ScreenAdapter.fontSize(24),
+                                        fontFamily: '微软雅黑',
+                                      )) ,
+                                    ),
+                                  ],
+                                ),
+                                height:ScreenAdapter.height(114)
+                              )
+                            ),
+                            Expanded(
+                              flex: 2,
+                              child: Container(
+                                alignment: Alignment.center,
+                                width: ScreenAdapter.width(200),
+                                height:ScreenAdapter.height(56),
+                                decoration: BoxDecoration(
+                                  gradient: RadialGradient(
+                                    colors: [Color.fromRGBO(241,183,18,1),Color.fromRGBO(228,176,29,1),Color.fromRGBO(254,188,11,1)]
+                                  ),
+                                  color: Colors.yellow,
+                                  borderRadius: BorderRadius.only(topLeft: Radius.circular(28),bottomLeft: Radius.circular(28))
+                                ),
+                                // color: Colors.yellow,
+                                child: Text('推荐送礼',style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: '微软雅黑',
+                                  fontSize: ScreenAdapter.fontSize(24),
+                                )),
+                              )
+                            ),
+
+                          ],
+                          // Expl
+                        ),
+                      )
                     ],
                   ),
                 ),
                 Positioned(
-                  top: ScreenAdapter.height(140),
+                  top: ScreenAdapter.height(160),
                   left:ScreenAdapter.width(30) ,
                   child: Container(
                     width: ScreenAdapter.width(670),
@@ -96,5 +164,6 @@ class _People extends State<People>{
     );
   }
 }
+
 
 
