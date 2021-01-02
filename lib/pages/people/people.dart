@@ -46,7 +46,9 @@ class _People extends State<People>{
                   ),
                   width:ScreenAdapter.width(750),
                   height:ScreenAdapter.height(290),
-                  child: Column(
+                  child: Container(
+                    height: ScreenAdapter.height(10),
+                    child: Column(
                     children: <Widget>[
                       //设置
                       InkWell(
@@ -62,25 +64,32 @@ class _People extends State<People>{
                       Container(
                         alignment: Alignment.center,
                         width:ScreenAdapter.width(750),
-                        height: ScreenAdapter.height(114),
+                        height: ScreenAdapter.height(90),
                         child: Flex(
                           direction: Axis.horizontal,
                           children: <Widget>[
                             Container(
                               margin: EdgeInsets.only(left:ScreenAdapter.width(30)),
                               width: ScreenAdapter.width(114),
-                              height:ScreenAdapter.height(114),
-                              color: Colors.red,
-                              // decoration: BoxDecoration(
-                              //   color: Colors.green,
-                              //   borderRadius: BorderRadius.circular(100)
-                              // ),
-                             
+                              height:ScreenAdapter.height(100),  
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  width:1,
+                                  color:Colors.white,
+                                ),
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(50),
+                                image: DecorationImage(
+                                  image: NetworkImage('http://tugua.oss-cn-hangzhou.aliyuncs.com/1600737225621499.jpeg'),
+                                  fit: BoxFit.cover
+                                )
+                              ),
                             ),
                             Expanded(
-                              flex: 4,
+                              flex: 3,
                               child: Container(
                                 alignment: Alignment.centerLeft,
+                                margin: EdgeInsets.only(top:ScreenAdapter.height(10)),
                                 child: Column(
                                   children: <Widget>[
                                     Text('路啊路',style: TextStyle(
@@ -130,6 +139,7 @@ class _People extends State<People>{
                       )
                     ],
                   ),
+                  )
                 ),
                 Positioned(
                   top: ScreenAdapter.height(160),
