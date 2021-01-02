@@ -12,6 +12,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../../utils/utils.dart';
 import './peopleItem.dart';
+import './peopleCard.dart';
+
 
 
 class People extends StatefulWidget{
@@ -37,7 +39,7 @@ class _People extends State<People>{
               children: <Widget>[
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.yellow,
+                    color: Colors.white,
                     image: DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage('http://tugua.oss-cn-hangzhou.aliyuncs.com/16086451694422710.png')
@@ -77,7 +79,7 @@ class _People extends State<People>{
                                   width:1,
                                   color:Colors.white,
                                 ),
-                                color: Colors.red,
+                                color: Colors.white,
                                 borderRadius: BorderRadius.circular(50),
                                 image: DecorationImage(
                                   image: NetworkImage('http://tugua.oss-cn-hangzhou.aliyuncs.com/1600737225621499.jpeg'),
@@ -141,26 +143,28 @@ class _People extends State<People>{
                   ),
                   )
                 ),
-                Positioned(
-                  top: ScreenAdapter.height(160),
-                  left:ScreenAdapter.width(30) ,
-                  child: Container(
-                    width: ScreenAdapter.width(670),
-                    height:ScreenAdapter.height(302),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(ScreenAdapter.width(20)),
-                      boxShadow:[
-                        BoxShadow(
-                          color: Colors.black54,
-                          offset: Offset(2.0,2.0),
-                          blurRadius: 4.0
-                        )
-                      ]
-                    ),
+                PeopleCard(),
+                // Positioned(
+                //   top: ScreenAdapter.height(160),
+                //   left:ScreenAdapter.width(30) ,
+                //   child: Container(
+                //     padding: EdgeInsets.all(ScreenAdapter.width(20)),
+                //     width: ScreenAdapter.width(670),
+                //     height:ScreenAdapter.height(302),
+                //     decoration: BoxDecoration(
+                //       color: Colors.white,
+                //       borderRadius: BorderRadius.circular(ScreenAdapter.width(20)),
+                //       boxShadow:[
+                //         BoxShadow(
+                //           color: Colors.black54,
+                //           offset: Offset(2.0,2.0),
+                //           blurRadius: 4.0
+                //         )
+                //       ]
+                //     ),
                     
-                  )
-                )
+                //   )
+                // )
               ],
             ),
           ),
