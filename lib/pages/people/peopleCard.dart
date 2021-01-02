@@ -63,10 +63,42 @@ class _PeopleCard extends State<PeopleCard> {
                   ],
                 ),
               ),
+              //bottom
               Container(
                 width:ScreenAdapter.width(690),
                 height: ScreenAdapter.height(110),
-                color: Colors.red,
+                // color: Colors.red,
+                child: Flex(
+                  direction: Axis.horizontal,
+                  children: <Widget>[
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        margin: EdgeInsets.only(top:ScreenAdapter.height(28)),
+                        alignment: Alignment.center,
+                        child: Column(
+                          children: <Widget>[
+                            Icon(Icons.cached),
+                            Text('我的问答')
+                          ],
+                        ),
+                      )
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        margin: EdgeInsets.only(top:ScreenAdapter.height(28)),
+                        alignment: Alignment.center,
+                        child: Column(
+                          children: <Widget>[
+                            Icon(Icons.cached),
+                            Text('我的问答')
+                          ],
+                        ),
+                      )
+                    )
+                  ],
+                ),
               )
             ],
           ),

@@ -1,11 +1,9 @@
+
 import 'package:flutter/material.dart';
 import '../../utils/utils.dart';
 
 class CardItem extends StatefulWidget {
   @override
-  // Widget build(BuildContext context) {
-  //   return ;
-  // }
   _CardItem createState() => _CardItem();
 }
 
