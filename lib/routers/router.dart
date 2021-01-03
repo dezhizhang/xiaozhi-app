@@ -7,7 +7,6 @@
  * @FilePath: /xiaozhi/lib/routers/router.dart
  */
 
-
 import 'package:flutter/material.dart';
 import '../pages/tabs/tabs.dart';
 import '../pages/product/product.dart';
@@ -19,6 +18,7 @@ import '../pages/setting/setting.dart';
 import '../pages/system/system.dart';
 import '../pages/coupons/coupons.dart';
 import '../pages/login/login.dart';
+import '../pages/search/search.dart';
 import '../pages/integral/integral.dart';
 
 final routes = {
@@ -29,6 +29,7 @@ final routes = {
   '/login':(context) => Login(),
   '/address':(context) => Address(),
   '/system':(context) => System(),
+  '/serch':(context) => Search(),
   '/coupons':(context) => Coupons(),
   "/setting":(context) => Setting(),
   '/integral':(context) => Integral(),
