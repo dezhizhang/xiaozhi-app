@@ -144,27 +144,6 @@ class _People extends State<People>{
                   )
                 ),
                 PeopleCard(),
-                // Positioned(
-                //   top: ScreenAdapter.height(160),
-                //   left:ScreenAdapter.width(30) ,
-                //   child: Container(
-                //     padding: EdgeInsets.all(ScreenAdapter.width(20)),
-                //     width: ScreenAdapter.width(670),
-                //     height:ScreenAdapter.height(302),
-                //     decoration: BoxDecoration(
-                //       color: Colors.white,
-                //       borderRadius: BorderRadius.circular(ScreenAdapter.width(20)),
-                //       boxShadow:[
-                //         BoxShadow(
-                //           color: Colors.black54,
-                //           offset: Offset(2.0,2.0),
-                //           blurRadius: 4.0
-                //         )
-                //       ]
-                //     ),
-                    
-                //   )
-                // )
               ],
             ),
           ),
@@ -172,7 +151,11 @@ class _People extends State<People>{
             width: ScreenAdapter.width(750),
             height: ScreenAdapter.height(814),
             color: Colors.white,
-            child: Text('change'),
+            child: Column(
+              children: <Widget>[
+                PeopleItem(title: '我的消息',margin:0,routeName:'/system')
+              ],
+            ),
           )
         ]
       ),
