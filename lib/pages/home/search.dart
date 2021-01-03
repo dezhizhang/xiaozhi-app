@@ -22,7 +22,11 @@ class _Search extends State<Search>{
         right:ScreenAdapter.width(30),
         bottom:ScreenAdapter.height(20)
       ),
-      child: Container(
+      child: InkWell(
+        onTap: () {
+          Navigator.pushNamed(context, '/serch');
+        },
+        child:Container(
         padding: EdgeInsets.only(
           left:ScreenAdapter.width(20),
           right:ScreenAdapter.width(20)
@@ -44,7 +48,7 @@ class _Search extends State<Search>{
           ],
         ),
       ),
-      
+      )
     );
   }
 }
