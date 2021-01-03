@@ -12,22 +12,49 @@ class _CategoryWidget extends State<CategoryWidget>{
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
     return Container(
+      padding: EdgeInsets.only(
+        left:ScreenAdapter.width(10),
+        right:ScreenAdapter.width(10)
+      ),
       width:ScreenAdapter.width(750),
-      height:ScreenAdapter.height(300),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius:BorderRadius.circular(10)
-      ),
-      child: ListView(
-        children: <Widget>[
-          Text('hello'),
-           Text('hello'),
-            Text('hello'),
-             Text('hello'),
-              Text('hello'),
-               Text('hello')
-        ],
-      ),
+      height:ScreenAdapter.height(330),
+      child: Container(
+        width: ScreenAdapter.width(730),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10)
+        ),
+        height:ScreenAdapter.height(330),
+        child: Column(
+          children: <Widget>[
+            Container(
+              width:ScreenAdapter.width(730),
+              height:ScreenAdapter.height(165),
+              color: Colors.red,
+              child: Flex(
+                direction: Axis.horizontal,
+                children: <Widget>[
+                  Expanded(
+                    flex: 1,
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          width:ScreenAdapter.width(90),
+                          height:ScreenAdapter.height(90),
+                          decoration: BoxDecoration(
+                            color: Colors.yellow,
+                            // borderRadius: BorderRadius.circular()
+                          ),
+                        )
+                      ],
+                    )
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+      )
     );
   }
 }
