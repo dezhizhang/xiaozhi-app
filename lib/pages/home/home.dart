@@ -6,9 +6,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:xiaozhi/pages/home/category.dart';
-import 'package:xiaozhi/pages/home/product.dart';
-import 'package:xiaozhi/pages/home/swiper.dart';
+import './category.dart';
+import './product.dart';
+import './search.dart';
+import './swiper.dart';
 import '../../utils/utils.dart';
 
 
@@ -29,6 +30,7 @@ class _Home extends State<Home> with AutomaticKeepAliveClientMixin{
         color: Color.fromRGBO(238, 238, 238, 1),
         child:  ListView(
         children: <Widget>[
+          Search(),
           SwiperWidget(), //轮播图
           SizedBox(height:ScreenAdapter.height(10)),
           CategoryWidget(),
