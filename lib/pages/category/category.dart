@@ -78,7 +78,10 @@ class _Category extends State<Category> with AutomaticKeepAliveClientMixin{
             child: list.length > 0 ? ListView.builder(
               itemCount: list[this._selectIndex].items.length,
               itemBuilder: (context,index) {
-                return CategoryItem();
+                String id = list[this._selectIndex].items[index].sId;
+                String url = list[this._selectIndex].items[index].url;
+                String title = list[this._selectIndex].items[index].title;
+                return CategoryItem(title:title,url:url,id:id);
               }
             ):Text('加载中'),
           ),
