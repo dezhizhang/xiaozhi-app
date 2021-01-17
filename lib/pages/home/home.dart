@@ -6,6 +6,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import './hot.dart';
 import './category.dart';
 import './product.dart';
 import './search.dart';
@@ -25,8 +26,9 @@ class _Home extends State<Home> with AutomaticKeepAliveClientMixin{
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
     return  Padding(
-      padding: EdgeInsets.all(ScreenAdapter.height(10)),
+      padding: EdgeInsets.all(ScreenAdapter.height(0)),
       child:Container(
+        // padding: EdgeInsets.all(ScreenAdapter.height(10)),
         color: Color.fromRGBO(238, 238, 238, 1),
         child:  ListView(
         children: <Widget>[
@@ -34,6 +36,8 @@ class _Home extends State<Home> with AutomaticKeepAliveClientMixin{
           SwiperWidget(), //轮播图
           SizedBox(height:ScreenAdapter.height(10)),
           CategoryWidget(),
+          SizedBox(height:ScreenAdapter.height(10)),
+          HotProduct(),
           SizedBox(height:ScreenAdapter.height(10)),
           Container(
             color: Colors.white,

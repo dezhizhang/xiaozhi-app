@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import '../../services/service.dart';
 import '../../model/focus.dart';
+import '../../utils/utils.dart';
 
 class SwiperWidget extends StatefulWidget{
   _SwiperWidget createState()=> _SwiperWidget();
@@ -36,8 +37,13 @@ class _SwiperWidget extends State<SwiperWidget>{
   }
   @override
   Widget build(BuildContext context) {
+    ScreenAdapter.init(context);
     // TODO: implement build
     return Container(
+      padding: EdgeInsets.only(
+        left:ScreenAdapter.width(10),
+        right:ScreenAdapter.width(10)
+      ),
       child: AspectRatio(
         aspectRatio: 2 / 1,
         child: Swiper(
