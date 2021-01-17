@@ -44,7 +44,6 @@ class _People extends State<People>{
                       fit: BoxFit.cover,
                       image: NetworkImage('http://tugua.oss-cn-hangzhou.aliyuncs.com/16086451694422710.png')
                     ),
-                    
                   ),
                   width:ScreenAdapter.width(750),
                   height:ScreenAdapter.height(290),
