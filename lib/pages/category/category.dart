@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../services/service.dart';
 import '../../utils/utils.dart';
 import '../../model/category.dart';
+import './categoryItem.dart';
 
 class Category extends StatefulWidget{
   _Category createState() => _Category();
@@ -55,7 +56,7 @@ class _Category extends State<Category> with AutomaticKeepAliveClientMixin{
                       alignment: Alignment.center,
                       width: double.infinity,
                       height: ScreenAdapter.height(56),
-                      color: _selectIndex == index ? Colors.grey:Colors.white,
+                      color: _selectIndex == index ? Color.fromRGBO(242,242,242,1):Colors.white,
                       child: Text(
                         this.list[index].title,
                         textAlign: TextAlign.center,
@@ -70,52 +71,71 @@ class _Category extends State<Category> with AutomaticKeepAliveClientMixin{
         ),
         Expanded(
           flex: 1,
-          child:list.length > 0 ? Container(
-            color: Color.fromRGBO(240, 246, 246, 0.9),
+          child: Container(
+            color: Color.fromRGBO(242,242,242,1),
+            padding: EdgeInsets.all(ScreenAdapter.width(20)),
             height: double.infinity,
-            padding: EdgeInsets.fromLTRB(ScreenAdapter.width(10), 0, ScreenAdapter.width(10), 0),
-            child: Container(
-              width: double.infinity,
-              color: Colors.white,
-              child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                  childAspectRatio: 1/1.2,
-                  crossAxisSpacing: ScreenAdapter.width(10),
-                  mainAxisSpacing: ScreenAdapter.width(10),
-                ),
-                itemCount: list[this._selectIndex].items.length,
-                itemBuilder: (context,index) {
-                  return InkWell(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/product',arguments: {
-                        'id':this.list[this._selectIndex].items[index].sId
-                      });
-                    },
-                    child: Container(
-                    color: Colors.white,
-                    child: Column(
-                      children: <Widget>[
-                        AspectRatio(
-                          aspectRatio: 1 / 1,
-                          child: Image.network(
-                            list[this._selectIndex].items[index].url,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Container(
-                          height: ScreenAdapter.height(28),
-                          child: Text('${list[this._selectIndex].items[index].title}'),
-                        )
-                      ],
-                    ),
-                  ),
-                 );
-                }
-              ),
+            child: ListView.builder(
+              itemCount: list[this._selectIndex].items.length,
+              itemBuilder: (context,index) {
+                return CategoryItem();
+              }
+              // children: <Widget>[
+              //   CategoryItem(),
+              //   // Text('hello'),
+              //   Text('hello')
+              // ],
             ),
-          ):Text('loading加载中'),
+          ),
         )
+        // Expanded(
+        //   flex: 1,
+        //   child:list.length > 0 ? Container(
+        //     color: Color.fromRGBO(240, 246, 246, 0.9),
+        //     height: double.infinity,
+        //     padding: EdgeInsets.fromLTRB(ScreenAdapter.width(10), 0, ScreenAdapter.width(10), 0),
+        //     child: Container(
+        //       width: double.infinity,
+        //       color: Colors.white,
+        //       child: GridView.builder(
+        //         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        //           crossAxisCount: 3,
+        //           childAspectRatio: 1/1.2,
+        //           crossAxisSpacing: ScreenAdapter.width(10),
+        //           mainAxisSpacing: ScreenAdapter.width(10),
+        //         ),
+        //         itemCount: list[this._selectIndex].items.length,
+        //         itemBuilder: (context,index) {
+        //           return InkWell(
+        //             onTap: () {
+        //               Navigator.pushNamed(context, '/product',arguments: {
+        //                 'id':this.list[this._selectIndex].items[index].sId
+        //               });
+        //             },
+        //             child: Container(
+        //             color: Colors.white,
+        //             child: Column(
+        //               children: <Widget>[
+        //                 AspectRatio(
+        //                   aspectRatio: 1 / 1,
+        //                   child: Image.network(
+        //                     list[this._selectIndex].items[index].url,
+        //                     fit: BoxFit.cover,
+        //                   ),
+        //                 ),
+        //                 Container(
+        //                   height: ScreenAdapter.height(28),
+        //                   child: Text('${list[this._selectIndex].items[index].title}'),
+        //                 )
+        //               ],
+        //             ),
+        //           ),
+        //          );
+        //         }
+        //       ),
+        //     ),
+        //   ):Text('loading加载中'),
+        // )
       ],
     );
   }
