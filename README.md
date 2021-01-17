@@ -2680,6 +2680,30 @@ class _HomeContent extends State<HomeContent> {
 }
 
 ```
+### 事件的传递
+```
+class _HomeContent extends State<HomeContent>{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    // throw UnimplementedError();
+    return Listener(
+      child: AbsorbPointer(
+        child: Listener(
+          child: Container(
+            color: Colors.red,
+            width: 200,
+            height: 100,
+          ),
+          onPointerDown: (event) => print('in'),
+        ),
+      ),
+      onPointerDown: (event) => print('up'),
+    );
+  }
+}
+```
+
 
 
 

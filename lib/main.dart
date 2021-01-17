@@ -28,28 +28,26 @@ class _MyApp extends State<MyApp>{
   _HomeContent createState() => _HomeContent();
 }
 
-class _HomeContent extends State<HomeContent> {
-  PointerEvent _event;
+class _HomeContent extends State<HomeContent>{
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('首页'),
-      ),
-      body: Listener(
-        child: Container(
-          alignment: Alignment.center,
-          color: Colors.pink,
-          width: 300,
-          height: 150,
-          child: Text(this._event?.toString() ?? "",style: TextStyle(color: Colors.white)),
+    // TODO: implement build
+    // throw UnimplementedError();
+    return Listener(
+      child: AbsorbPointer(
+        child: Listener(
+          child: Container(
+            color: Colors.red,
+            width: 200,
+            height: 100,
+          ),
+          onPointerDown: (event) => print('in'),
         ),
-        onPointerDown: (PointerDownEvent event) => setState(() => _event = event),
-        onPointerMove: (PointerMoveEvent event) => setState(() => _event = event),
-        onPointerUp: (PointerUpEvent event) => setState(() => _event = event),
       ),
+      onPointerDown: (event) => print('up'),
     );
   }
 }
+
 
 
