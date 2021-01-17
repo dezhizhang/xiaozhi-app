@@ -1,14 +1,5 @@
-/*
- * @Author: dezhizhang
- * @Date: 2020-10-24 15:07:50
- * @LastEditTime: 2020-12-13 20:04:51
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /xiaozhi/lib/main.dart
- */
 
 import 'package:flutter/material.dart';
-import './routers/router.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,22 +10,46 @@ class MyApp extends StatefulWidget{
   _MyApp createState() => _MyApp();
 }
 
-
 class _MyApp extends State<MyApp>{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      onGenerateRoute: onGenerateRoute,
-      initialRoute: '/',
       theme: ThemeData(
-        primarySwatch: Colors.pink
+        primaryColor: Colors.blue
+      ),
+      home: HomeContent(),
+    );
+  }
+}
+ class HomeContent extends StatefulWidget {
+  HomeContent({Key key}) : super(key: key);
+
+  @override
+  _HomeContent createState() => _HomeContent();
+}
+
+class _HomeContent extends State<HomeContent> {
+  PointerEvent _event;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('首页'),
+      ),
+      body: Listener(
+        child: Container(
+          alignment: Alignment.center,
+          color: Colors.pink,
+          width: 300,
+          height: 150,
+          child: Text(this._event?.toString() ?? "",style: TextStyle(color: Colors.white)),
+        ),
+        onPointerDown: (PointerDownEvent event) => setState(() => _event = event),
+        onPointerMove: (PointerMoveEvent event) => setState(() => _event = event),
+        onPointerUp: (PointerUpEvent event) => setState(() => _event = event),
       ),
     );
   }
 }
-
-
-
 
 
