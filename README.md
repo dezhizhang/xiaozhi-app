@@ -2703,6 +2703,47 @@ class _HomeContent extends State<HomeContent>{
   }
 }
 ```
+### 移动事件组件 
+```
+class _HomeContent extends State<HomeContent>{
+  double _top = 0;
+  double _left = 0;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('首页'),
+      ),
+      body: Stack(
+      children: <Widget>[
+        Positioned(
+          top: _top,
+          left: _left,
+          child: GestureDetector(
+            child: CircleAvatar(child: Text('A')),
+            onPanDown: (DragDownDetails e){
+              print("用户按下：${e.globalPosition}");
+            },
+            onPanUpdate: (DragUpdateDetails e) {
+              setState(() {
+                _left += e.delta.dx;
+                _top += e.delta.dy;
+              });
+            },
+            onPanEnd: (DragEndDetails e) {
+              print(e.velocity);
+            },
+          )
+        )
+      ],
+    ),
+    );
+  }
+}
+
+```
+
 
 
 
