@@ -2743,6 +2743,65 @@ class _HomeContent extends State<HomeContent>{
 }
 
 ```
+### 事件单向移动
+```
+class _HomeContent extends State<HomeContent>{
+  double _top = 0;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    // throw UnimplementedError();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('首页'),
+      ),
+      body: Stack(
+        children: <Widget>[
+          Positioned(
+            top: _top,
+
+            child: GestureDetector(
+              child: CircleAvatar(child: Text('A')),
+              onVerticalDragUpdate: (DragUpdateDetails e) {
+                setState(() {
+                  _top += e.delta.dy;
+                });
+              },
+            )
+          )
+        ],
+      ),
+    );
+  }
+}
+```
+### 缩放
+```
+class _HomeContent extends State<HomeContent>{
+  double _width = 200;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('首页'),
+      ),
+      body: Center(
+      child: GestureDetector(
+        child: Image.network('http://tugua.oss-cn-hangzhou.aliyuncs.com/16006152126699263.jpeg',width: _width),
+        onScaleUpdate: (ScaleUpdateDetails e) {
+          setState(() {
+            _width = 200 * e.scale.clamp(0.8, 10);
+          });
+        },
+      ),
+    ),
+    );
+  }
+}
+```
+
+
 
 
 

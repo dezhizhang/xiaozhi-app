@@ -1,5 +1,6 @@
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,9 +30,9 @@ class _MyApp extends State<MyApp>{
   _HomeContent createState() => _HomeContent();
 }
 
-
 class _HomeContent extends State<HomeContent>{
-  double _top = 0;
+  TapGestureRecognizer _tapGestureRecognizer = new TapGestureRecognizer();
+  bool _toggle = false; //变色开关
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -40,25 +41,32 @@ class _HomeContent extends State<HomeContent>{
       appBar: AppBar(
         title: Text('首页'),
       ),
-      body: Stack(
-        children: <Widget>[
-          Positioned(
-            top: _top,
-
-            child: GestureDetector(
-              child: CircleAvatar(child: Text('A')),
-              onVerticalDragUpdate: (DragUpdateDetails e) {
-                setState(() {
-                  _top += e.delta.dy;
-                });
-              },
-            )
-          )
-        ],
+      body: Center(
+        child: Text.rich(TextSpan(
+          children: [
+            TextSpan(text: '你好世界'),
+            TextSpan(text: '点我变色',style: TextStyle(
+              fontSize: 30,
+              color: _toggle ? Colors.blue:Colors.red
+            ),
+            recognizer: _tapGestureRecognizer
+            ..onTap = () {
+              setState(() {
+                _toggle = !_toggle;
+              });
+            }
+            ),
+            TextSpan(text: '你好世界')
+          ]
+        )),
       ),
     );
-  }
 }
+}
+
+
+
+
 
 
 
