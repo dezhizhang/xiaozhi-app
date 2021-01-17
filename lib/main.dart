@@ -50,10 +50,10 @@ class _HomeContent extends State<HomeContent>{
               color: _toggle ? Colors.blue:Colors.red
             ),
             recognizer: _tapGestureRecognizer
-            ..onTap = () {
-              setState(() {
+            ..onTap = () => {
+              setState((){
                 _toggle = !_toggle;
-              });
+              })
             }
             ),
             TextSpan(text: '你好世界')
