@@ -32,7 +32,7 @@ class CategoryModel {
 
 class CategoryModelItem {
   String sId;
-  Null sort;
+  int sort;
   int status;
   int addTime;
   String title;
@@ -108,7 +108,7 @@ class CategoryModelItem {
 
 class Items {
   String sId;
-  Null sort;
+  int sort;
   int status;
   int addTime;
   String title;

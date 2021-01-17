@@ -23,11 +23,11 @@ class _Category extends State<Category> with AutomaticKeepAliveClientMixin{
     var res = await Service().getCategoryInfo();
     var category = CategoryModel.fromJson(res.data);
     if(category.code == 200) {
-       var list = category.data;
-       print(list);
-       setState(() {
-         this.list = list;
-       });
+      print(category.data);
+      var list = category.data;
+      this.setState(() {
+        this.list = list;
+      });
     }
   }
   @override
