@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import '../../utils/utils.dart';
 
+
 class CategoryItem extends StatefulWidget{
   String id;
   String url;
@@ -20,7 +21,13 @@ class _CategoryItem extends State<CategoryItem>{
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
-    return Container(
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, '/product',arguments:{
+          id:this.id
+        });
+      },
+      child:Container(
       padding: EdgeInsets.all(ScreenAdapter.width(20)),
       margin: EdgeInsets.only(bottom:ScreenAdapter.height(20)),
       width: ScreenAdapter.width(530),
@@ -64,7 +71,9 @@ class _CategoryItem extends State<CategoryItem>{
                Container(
                  child: Row(
                    children: <Widget>[
-                      Text('￥280.00'),
+                      Text('￥280.00',style: TextStyle(
+                        color: Color.fromRGBO(236,62,38,1)
+                      )),
                       Container(
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
@@ -95,6 +104,7 @@ class _CategoryItem extends State<CategoryItem>{
           )
         ],
       ),
-    );
+    ),
+    ); 
   }
 }

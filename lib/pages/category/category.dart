@@ -4,7 +4,7 @@ import '../../services/service.dart';
 import '../../utils/utils.dart';
 import '../../model/category.dart';
 import './categoryItem.dart';
-
+import '../components/loading.dart';
 class Category extends StatefulWidget{
   _Category createState() => _Category();
 }
@@ -83,7 +83,7 @@ class _Category extends State<Category> with AutomaticKeepAliveClientMixin{
                 String title = list[this._selectIndex].items[index].title;
                 return CategoryItem(title:title,url:url,id:id);
               }
-            ):Text('加载中'),
+            ):Loading(),
           ),
         )
       ],
