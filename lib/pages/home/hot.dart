@@ -64,9 +64,23 @@ class _HotProduct extends State<HotProduct>{
                   color: Color.fromRGBO(69,111,251,1)
                 )),
               )
-              
             ],
+          ),
+          SizedBox(height:ScreenAdapter.height(20)),
+          Container(
+            child:ListView(
+              children: <Widget>[
+                Text('hello'),
+                Text('hello')
+              ],
+            ) ,
           )
+          // ListView(
+          //   children: <Widget>[
+          //     Text('111'),
+          //     Text('111')
+          //   ],
+          // )
         ],
       ),
     );
