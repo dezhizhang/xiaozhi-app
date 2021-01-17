@@ -152,7 +152,6 @@ class _Content extends  State<Content>{
               onChanged: (value){
 
               },
-            
             ),
             Text('使用即同意《用户协议》及《隐私协议》',style: TextStyle(
               color: Color.fromRGBO(153,153,153,1),
