@@ -45,6 +45,8 @@ class _CategoryItem extends State<CategoryItem>{
             alignment: Alignment.centerLeft,
             margin: EdgeInsets.only(left:ScreenAdapter.width(20)),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              // mainAxisAlignment: MainAxisAlignment.spaceAround,
              children: <Widget>[
                Container(
                  alignment: Alignment.centerLeft,
@@ -56,6 +58,7 @@ class _CategoryItem extends State<CategoryItem>{
                    children: <Widget>[
                       Text('￥280.00'),
                       Container(
+                        alignment: Alignment.center,
                         decoration: BoxDecoration(
                           color: Color.fromRGBO(16,142,239,1),
                           borderRadius: BorderRadius.circular(20)
@@ -64,8 +67,11 @@ class _CategoryItem extends State<CategoryItem>{
                         width:ScreenAdapter.width(130),
                         height:ScreenAdapter.height(40),
                         child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            Icon(Icons.card_travel,color: Colors.white),
+                            Icon(Icons.card_travel,color: Colors.white,size:ScreenAdapter.fontSize(28)),
+                            SizedBox(width:ScreenAdapter.width(10)),
                             Text('购买',style: TextStyle(
                               color: Colors.white,
                               fontSize: ScreenAdapter.fontSize(24)
