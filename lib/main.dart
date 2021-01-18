@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,8 +27,26 @@ class _MyApp extends State<MyApp>{
   @override
   _HomeContent createState() => _HomeContent();
 }
+class _HomeContent extends State<HomeContent> with SingleTickerProviderStateMixin{
+  Animation<double> animation;
+  AnimationController controller;
 
-class _HomeContent extends State<HomeContent>{
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    controller = new AnimationController(
+      duration: const Duration(seconds: 3),
+      vsync: this
+    );
+    animation = new Tween(begin: 0.0, end: 300.0).animate(controller)
+    ..addListener(() {
+     setState(()=>{});
+    });
+    controller.forward();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -37,25 +54,24 @@ class _HomeContent extends State<HomeContent>{
       appBar: AppBar(
         title: Text('首页'),
       ),
-      body: NotificationListener(
-        onNotification: (notification) {
-           switch(notification.runtimeType) {
-             case ScrollSpringSimulation: print("开始滚动");break;
-             case ScrollUpdateNotification: print('正在滚动');break;
-             case ScrollUpdateNotification: print('滚动停止');break;
-             case OverscrollNotification: print('滚动到边界');break;
-           }
-        },
-        child:  ListView.builder(
-        itemCount: 100,
-        itemBuilder: (context,index) {
-          return ListTile(title:Text('${index}'));
-        },
-      ),
+      body: Center(
+        child: Image.asset(
+          "images/avator.png",
+          width: animation.value,
+          height: animation.value,
+        ),
       ),
     );
   }
+    @override
+  void dispose() {
+    // TODO: implement dispose
+    controller.dispose();
+    super.dispose();
+  }
+
 }
+
 
 
 
