@@ -1,5 +1,14 @@
+/*
+ * @Author: dezhizhang
+ * @Date: 2020-10-24 15:07:50
+ * @LastEditTime: 2020-12-13 20:04:51
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /xiaozhi/lib/main.dart
+ */
 
 import 'package:flutter/material.dart';
+import './routers/router.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,74 +19,17 @@ class MyApp extends StatefulWidget{
   _MyApp createState() => _MyApp();
 }
 
+
 class _MyApp extends State<MyApp>{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: onGenerateRoute,
+      initialRoute: '/detail',
       theme: ThemeData(
-        primaryColor: Colors.blue
+        primarySwatch: Colors.pink
       ),
-      home: HeroAnimationRoute(),
     );
   }
 }
-
-class AnimatedImage extends AnimatedWidget{
-  AnimatedImage({Key key,Animation<double> animation}):super(key: key,listenable: animation);
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    final Animation<double> animation = listenable;
-    return Center(
-      child: Image.asset('images/avator.png',width: animation.value,height: animation.value),
-    );
-  }
-
-}
-
-class HeroAnimationRoute extends StatefulWidget{
-  _HeroAnimationRoute createState() => _HeroAnimationRoute();
-}
-
-
-class _HeroAnimationRoute extends State<HeroAnimationRoute>with SingleTickerProviderStateMixin {
-  Animation<double> animation;
-  AnimationController controller;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    controller = new AnimationController(
-      duration: const Duration(seconds:3),
-      vsync: this,
-    );
-    animation = new Tween(begin:0.0,end:300.0).animate(controller);
-    controller.forward();
-  }
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    controller.dispose();
-  }
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('首页'),
-      ),
-      body: AnimatedImage(animation: animation),
-    );
-  }
-}
-
-
-
-
-
-
-
-
-
