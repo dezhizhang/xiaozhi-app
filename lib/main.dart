@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,17 +17,30 @@ class _MyApp extends State<MyApp>{
       theme: ThemeData(
         primaryColor: Colors.blue
       ),
-      home: HomeContent(),
+      home: HeroAnimationRoute(),
     );
   }
 }
- class HomeContent extends StatefulWidget {
-  HomeContent({Key key}) : super(key: key);
 
+class AnimatedImage extends AnimatedWidget{
+  AnimatedImage({Key key,Animation<double> animation}):super(key: key,listenable: animation);
   @override
-  _HomeContent createState() => _HomeContent();
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    final Animation<double> animation = listenable;
+    return Center(
+      child: Image.asset('images/avator.png',width: animation.value,height: animation.value),
+    );
+  }
+
 }
-class _HomeContent extends State<HomeContent> with SingleTickerProviderStateMixin{
+
+class HeroAnimationRoute extends StatefulWidget{
+  _HeroAnimationRoute createState() => _HeroAnimationRoute();
+}
+
+
+class _HeroAnimationRoute extends State<HeroAnimationRoute>with SingleTickerProviderStateMixin {
   Animation<double> animation;
   AnimationController controller;
 
@@ -36,17 +49,18 @@ class _HomeContent extends State<HomeContent> with SingleTickerProviderStateMixi
     // TODO: implement initState
     super.initState();
     controller = new AnimationController(
-      duration: const Duration(seconds: 3),
-      vsync: this
+      duration: const Duration(seconds:3),
+      vsync: this,
     );
-    animation = new Tween(begin: 0.0, end: 300.0).animate(controller)
-    ..addListener(() {
-     setState(()=>{});
-    });
+    animation = new Tween(begin:0.0,end:300.0).animate(controller);
     controller.forward();
   }
-
-
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    controller.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -54,26 +68,10 @@ class _HomeContent extends State<HomeContent> with SingleTickerProviderStateMixi
       appBar: AppBar(
         title: Text('首页'),
       ),
-      body: Center(
-        child: Image.asset(
-          "images/avator.png",
-          width: animation.value,
-          height: animation.value,
-        ),
-      ),
+      body: AnimatedImage(animation: animation),
     );
   }
-    @override
-  void dispose() {
-    // TODO: implement dispose
-    controller.dispose();
-    super.dispose();
-  }
-
 }
-
-
-
 
 
 
