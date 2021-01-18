@@ -2876,6 +2876,38 @@ class _HomeContent extends State<HomeContent>{
 }
 
 ```
+### 通知
+```
+class _HomeContent extends State<HomeContent>{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('首页'),
+      ),
+      body: NotificationListener(
+        onNotification: (notification) {
+           switch(notification.runtimeType) {
+             case ScrollSpringSimulation: print("开始滚动");break;
+             case ScrollUpdateNotification: print('正在滚动');break;
+             case ScrollUpdateNotification: print('滚动停止');break;
+             case OverscrollNotification: print('滚动到边界');break;
+           }
+        },
+        child:  ListView.builder(
+        itemCount: 100,
+        itemBuilder: (context,index) {
+          return ListTile(title:Text('${index}'));
+        },
+      ),
+      ),
+    );
+  }
+}
+
+```
+
 
 
 
