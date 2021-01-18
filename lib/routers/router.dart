@@ -20,6 +20,7 @@ import '../pages/coupons/coupons.dart';
 import '../pages/login/login.dart';
 import '../pages/search/search.dart';
 import '../pages/integral/integral.dart';
+import '../pages/detail/detail.dart';
 
 final routes = {
    
@@ -35,6 +36,7 @@ final routes = {
   '/integral':(context) => Integral(),
   '/information':(context) => Information(),
   '/addressAdd':(context) => AddressAdd(),
+  '/detail':(context) => Detal(),
  
 };
 
