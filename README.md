@@ -2838,6 +2838,45 @@ class _HomeContent extends State<HomeContent>{
 }
 
 ```
+###  事件总结程
+```
+class _HomeContent extends State<HomeContent>{
+  double _top = 0;
+  double _left = 0;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('首页'),
+      ),
+      body: Stack(
+        children: <Widget>[
+          Positioned(
+            left: _left,
+            child: GestureDetector(
+              child: CircleAvatar(child: Text('A')),
+              onHorizontalDragUpdate: (DragUpdateDetails e) {
+                setState(() {
+                  _left += e.delta.dx;
+                });
+              },
+              onHorizontalDragEnd: (details) {
+                print('onHorizontalDragEnd');
+              },
+              onTapDown: (details) {
+                print('details');
+              },
+            )
+          )
+        ],
+      ),
+    );
+  }
+}
+
+```
+
 
 
 
