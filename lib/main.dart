@@ -27,16 +27,15 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeContent extends StatelessWidget{
-  double _turns = 0;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-   return Scaffold(
-     appBar: AppBar(
-       title: Text('首页'),
-     ),
-     body: Content()
-   );
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('副文本组件'),
+      ),
+      body: Content(),
+    );
   }
 }
 
@@ -45,82 +44,31 @@ class Content extends StatefulWidget{
 }
 
 class _Content extends State<Content>{
-  double _turns = 0;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Center(
-      child: Column(
-        children: <Widget>[
-          TurnBox(
-            turns: _turns,
-            speed: 500,
-            child: Icon(Icons.refresh,size: 50),
-          ),
-          TurnBox(
-            turns: _turns,
-            speed: 1000,
-            child: Icon(Icons.refresh,size: 150),
-          ),
-          RaisedButton(
-            child: Text('顺时什'),
-            onPressed: () {
-             setState(() {
-               _turns+= 0.2;
-             });
-            }
-          )
-        ],
-      ),
-    );
+   return MyRichText(text: 'hello');
   }
 }
 
-class TurnBox extends StatefulWidget{
-  final double turns;
-  final int speed;
-  final Widget child;
-  TurnBox({Key key,this.turns = .0,this.speed = 200, this.child}):super(key: key);
-  _TurnBox createState() => _TurnBox();
+class MyRichText extends StatefulWidget{
+  final String text;
+  final TextStyle linkStyle;
+  MyRichText({Key key,this.text,this.linkStyle}):super(key: key);
+  _MyRichText createState() => _MyRichText();
 }
 
-class _TurnBox extends State<TurnBox> with SingleTickerProviderStateMixin{
-  AnimationController _controller;
+class _MyRichText extends State<MyRichText>{
+  TextSpan _textSpan;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _controller = new AnimationController(
-      vsync: this,
-      lowerBound:  -double.infinity,
-      upperBound: double.infinity
-    );
-    _controller.value = widget.turns;
-  }
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    _controller.dispose();
   }
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return RotationTransition(
-      turns: _controller,
-      child: widget.child,
-    );
-  }
-  @override
-  void didUpdateWidget(TurnBox oldWidget) {
-    // TODO: implement didUpdateWidget
-    super.didUpdateWidget(oldWidget);
-    if(oldWidget.turns != widget.turns) {
-      _controller.animateTo(
-        widget.turns,
-        duration: Duration(milliseconds: widget.speed??200),
-        curve: Curves.easeOut,
-      );
-    }
+    return RichText(text: _textSpan);
   }
 }
+
