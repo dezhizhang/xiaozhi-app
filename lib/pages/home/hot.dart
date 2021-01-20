@@ -67,8 +67,29 @@ class _HotProduct extends State<HotProduct>{
             ],
           ),
           SizedBox(height:ScreenAdapter.height(20)),
+          Container(
+            width:100,
+            height:100,
+            color:Colors.red,
+            child:Text('hello')
+          )
         ],
       ),
+    );
+  }
+}
+
+class HotItem extends StatefulWidget{
+  @override
+  _HotItem createState() => _HotItem();
+}
+
+class _HotItem extends State<HotItem>{
+  @override
+  Widget build(BuildContext context) {
+    
+    return Container(
+
     );
   }
 }
