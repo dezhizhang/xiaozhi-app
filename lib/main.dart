@@ -8,51 +8,28 @@
  */
 
 import 'package:flutter/material.dart';
+import './routers/router.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget{
+  MyApp({Key key}):super(key:key);
+  _MyApp createState() => _MyApp();
+}
 
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class _MyApp extends State<MyApp>{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: onGenerateRoute,
+      initialRoute: '/detail',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink
       ),
-      home:HomeContent(),
     );
   }
 }
-
-class HomeContent extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('副文本组件'),
-      ),
-      body: Content(),
-    );
-  }
-}
-
-class Content extends StatefulWidget{
-  _Content createState() => _Content();
-}
-
-class _Content extends State<Content>{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Text('hello');
-  }
-}
-
-
-
-
-
-
