@@ -4,7 +4,10 @@
  * @desc:热销商品
 */
 import 'package:flutter/material.dart';
+import './hotItem.dart';
+import './swiper.dart';
 import '../../utils/utils.dart';
+
 
 
 class HotProduct extends StatefulWidget{
@@ -67,29 +70,11 @@ class _HotProduct extends State<HotProduct>{
             ],
           ),
           SizedBox(height:ScreenAdapter.height(20)),
-          Container(
-            width:100,
-            height:100,
-            color:Colors.red,
-            child:Text('hello')
-          )
+          HotItem(),
         ],
       ),
     );
   }
 }
 
-class HotItem extends StatefulWidget{
-  @override
-  _HotItem createState() => _HotItem();
-}
 
-class _HotItem extends State<HotItem>{
-  @override
-  Widget build(BuildContext context) {
-    
-    return Container(
-
-    );
-  }
-}
