@@ -13,18 +13,17 @@ class _HotItem extends State<HotItem>{
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
     return Container(
-      padding: EdgeInsets.only(
-        left:ScreenAdapter.width(30),
-        right:ScreenAdapter.width(30)
-      ),
+      
       height:ScreenAdapter.height(260),
       child: Container(
-        color: Colors.yellow,
         child: Swiper(
           itemBuilder: (BuildContext context,index) {
-            return Image.network(
-              'http://tugua.oss-cn-hangzhou.aliyuncs.com/16006150123505715.jpeg',
-              fit: BoxFit.cover,
+            return Row(
+              children: <Widget>[
+                HotProduct(),
+                HotProduct(),
+                HotProduct(),
+              ],
             );
           },
           itemCount: 1,
@@ -33,3 +32,55 @@ class _HotItem extends State<HotItem>{
     ) ;
   }
 }
+
+class HotProduct extends StatefulWidget{
+  _HotProduct createState() => _HotProduct();
+}
+
+class _HotProduct extends State<HotProduct>{
+  @override
+  Widget build(BuildContext context) {
+    ScreenAdapter.init(context);
+    return Container(
+      margin: EdgeInsets.only(left:ScreenAdapter.width(30)),
+      width: ScreenAdapter.width(204),
+      height: ScreenAdapter.height(270),
+      child: Column(
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(bottom:ScreenAdapter.height(6)),
+            width:ScreenAdapter.width(204),
+            height: ScreenAdapter.height(180),
+            decoration: BoxDecoration(
+              color: Colors.green,
+              borderRadius: BorderRadius.circular(5),
+              image: DecorationImage(
+                image: NetworkImage('http://tugua.oss-cn-hangzhou.aliyuncs.com/16006150123505715.jpeg'),
+                fit: BoxFit.cover
+              )
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(bottom:ScreenAdapter.height(6)),
+            child: Text('潮流碎花连衣裙',style: TextStyle(
+              color: Color.fromRGBO(51,51,51,1),
+              fontFamily: '微软雅黑'
+            )),
+          ),
+          Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children:<Widget>[
+                Text('￥89',style: TextStyle(
+                  color: Color.fromRGBO(246,58,0,1)
+                )),
+                Icon(Icons.card_travel,color: Color.fromRGBO(246,58,0,1)) 
+              ]
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
