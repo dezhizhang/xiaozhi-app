@@ -21,6 +21,7 @@ import '../pages/login/login.dart';
 import '../pages/search/search.dart';
 import '../pages/integral/integral.dart';
 import '../pages/detail/detail.dart';
+import '../pages/goods/goods.dart';
 
 final routes = {
    
@@ -37,6 +38,7 @@ final routes = {
   '/information':(context) => Information(),
   '/addressAdd':(context) => AddressAdd(),
   '/detail':(context) => Detal(),
+  '/goods':(context) => Goods(),
  
 };
 
