@@ -47,28 +47,12 @@ class _Content extends State<Content>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-   return MyRichText(text: 'hello');
+    return Text('hello');
   }
 }
 
-class MyRichText extends StatefulWidget{
-  final String text;
-  final TextStyle linkStyle;
-  MyRichText({Key key,this.text,this.linkStyle}):super(key: key);
-  _MyRichText createState() => _MyRichText();
-}
 
-class _MyRichText extends State<MyRichText>{
-  TextSpan _textSpan;
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return RichText(text: _textSpan);
-  }
-}
+
+
+
 
