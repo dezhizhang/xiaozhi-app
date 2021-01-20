@@ -6,6 +6,8 @@
  */
 
 import 'package:flutter/material.dart';
+import '../../utils/utils.dart';
+import './goodsItem.dart';
 
 
 class Goods extends StatelessWidget{
@@ -26,9 +28,22 @@ class HomeContent extends StatefulWidget{
 }
 
 class _HomeContent extends State<HomeContent>{
+  List list = [];
   @override
   Widget build(BuildContext context) {
+    ScreenAdapter.init(context);
     // TODO: implement build
-    return Text('hello');
+    return Container(
+      width: ScreenAdapter.width(750),
+      height: ScreenAdapter.height(1334),
+      color: Color.fromRGBO(242,242,242,1),
+      child:  ListView(
+        children: <Widget>[
+           GoodsItem(),
+        ],
+      ),
+    );
+
   }
 }
+
