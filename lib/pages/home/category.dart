@@ -28,58 +28,28 @@ class _CategoryWidget extends State<CategoryWidget> {
       ),
       child: Row(
         children: <Widget>[
-          CategoryItem(),
-          CategoryItem(),
-          CategoryItem(),
-          CategoryItem(),
+          CategoryItem(
+            title: '女装',
+            url:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1159937822,203922547&fm=26&gp=0.jpg',
+          ),
+          CategoryItem(
+            title: '男装',
+            url: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=315398933,2898163426&fm=26&gp=0.jpg',
+          ),
+          CategoryItem(
+            title: '套装',
+            url: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1044359778,2662188731&fm=26&gp=0.jpg',
+          ),
+          CategoryItem(
+            title: '更多',
+            url: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1243905855,2036993032&fm=26&gp=0.jpg'
+          ),
         ],
       ),
     );
   }
 }
 
-// class CategoryItem extends StatefulWidget{
-//   _CategoryItem createState() => _CategoryItem();
-// }
-
-// class _CategoryItem extends State<CategoryItem>{
-//   @override
-//   Widget build(BuildContext context) {
-//     ScreenAdapter.init(context);
-//     // TODO: implement build
-//     return Container(
-//       margin: EdgeInsets.only(
-//         left:ScreenAdapter.width(50)
-//       ),
-//       width: ScreenAdapter.width(100),
-//       child: Column(
-//         children: <Widget>[
-//           Container(
-//             margin: EdgeInsets.only(
-//               bottom:ScreenAdapter.height(10)
-//             ),
-//             width:ScreenAdapter.width(100),
-//             height: ScreenAdapter.height(80),
-//             decoration: BoxDecoration(
-//               borderRadius: BorderRadius.circular(50),
-//               image: DecorationImage(
-//                 image: NetworkImage('http://tugua.oss-cn-hangzhou.aliyuncs.com/16006151939994201.jpeg'),
-//                 fit: BoxFit.cover,
-//               )
-//             ),
-//           ),
-//           Container(
-//             child: Text('女装',style: TextStyle(
-//               fontSize: ScreenAdapter.fontSize(28),
-//               fontFamily: '微软雅黑',
-//               color: Color.fromRGBO(102,102,102,1)
-//             )),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
 
 
 

@@ -4,10 +4,16 @@ import 'package:flutter/material.dart';
 import '../../utils/utils.dart';
 
 class CategoryItem extends StatefulWidget{
-  _CategoryItem createState() => _CategoryItem();
+  String url;
+  String title;
+  CategoryItem({Key key,this.url,this.title}):super(key:key);
+  _CategoryItem createState() => _CategoryItem(this.url,this.title);
 }
 
 class _CategoryItem extends State<CategoryItem>{
+  String url; 
+  String title;
+  _CategoryItem(this.url,this.title);
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
@@ -28,13 +34,13 @@ class _CategoryItem extends State<CategoryItem>{
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
               image: DecorationImage(
-                image: NetworkImage('http://tugua.oss-cn-hangzhou.aliyuncs.com/16006151939994201.jpeg'),
+                image: NetworkImage(this.url),
                 fit: BoxFit.cover,
               )
             ),
           ),
           Container(
-            child: Text('女装',style: TextStyle(
+            child: Text(this.title,style: TextStyle(
               fontSize: ScreenAdapter.fontSize(28),
               fontFamily: '微软雅黑',
               color: Color.fromRGBO(102,102,102,1)
