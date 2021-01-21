@@ -26,6 +26,7 @@ class Content extends StatefulWidget{
 }
 
 class _Content extends  State<Content>{
+  bool radio = false;
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
@@ -148,9 +149,13 @@ class _Content extends  State<Content>{
         child: Row(
           children: <Widget>[
             Radio(
-              value: false,
+              value: radio,
+              groupValue:radio,
               onChanged: (value){
-
+                print(value);
+                setState(() {
+                  this.radio = !value;
+                });
               },
             ),
             Text('使用即同意《用户协议》及《隐私协议》',style: TextStyle(
