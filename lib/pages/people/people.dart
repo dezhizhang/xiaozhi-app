@@ -93,12 +93,17 @@ class _People extends State<People>{
                                 margin: EdgeInsets.only(top:ScreenAdapter.height(10)),
                                 child: Column(
                                   children: <Widget>[
-                                    Text('路啊路',style: TextStyle(
+                                    InkWell(
+                                      child:Text('路啊路',style: TextStyle(
                                       color: Colors.white,
                                       fontSize: ScreenAdapter.fontSize(36),
                                       fontFamily: '微软雅黑',
                                       // fontWeight: FontWeight.bold
-                                    )),
+                                      )),
+                                      onTap: (){
+                                        Navigator.pushNamed(context, '/login');
+                                      },
+                                    ),
                                     Container(
                                       margin: EdgeInsets.only(left:ScreenAdapter.width(30)),
                                       child:Text('ID:65788768',style: TextStyle(
