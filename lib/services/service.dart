@@ -14,4 +14,8 @@ class Service {
   getCategoryInfo() async{
     return await Dio().get("$URL/category/list");
   }
+  //获取热门商品
+  getHotProduct() async {
+    return await Dio().get("$URL/product/hot");
+  }
 }

@@ -5,8 +5,8 @@
 */
 import 'package:flutter/material.dart';
 import './hotItem.dart';
-import './swiper.dart';
 import '../../utils/utils.dart';
+import '../../services/service.dart';
 
 
 

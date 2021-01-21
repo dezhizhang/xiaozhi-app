@@ -1,7 +1,9 @@
 
-
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import '../../model/hot.dart';
+import '../../services/service.dart';
 import '../../utils/utils.dart';
 
 class HotItem extends StatefulWidget{
@@ -9,16 +11,41 @@ class HotItem extends StatefulWidget{
 }
 
 class _HotItem extends State<HotItem>{
+  List<HotItemModel> list = [];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    this.getHotList(); //获取热门商品
+  }
+  getHotList() async {
+    var res = await Service().getHotProduct();
+    var hot = HotModel.fromJson(res.data);
+    if(hot.code == 200) {
+      var list = hot.data;
+      // var newList = arrTrans(3,list);
+      setState(() {
+        this.list = list;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
     return Container(
       
       height:ScreenAdapter.height(260),
+      // child: Container(
+      //   child:Column(
+      //     children: [],
+      //   )
+      // ),
       child: Container(
         child: Swiper(
           itemBuilder: (BuildContext context,index) {
             return Row(
+              // children: list.map((item) => HotProduct()).toList(),
               children: <Widget>[
                 HotProduct(),
                 HotProduct(),
