@@ -42,7 +42,7 @@ class _HotProduct extends State<HotProduct>{
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
     return Container(
-      margin: EdgeInsets.only(left:ScreenAdapter.width(30)),
+      margin: EdgeInsets.only(left:ScreenAdapter.width(24)),
       width: ScreenAdapter.width(204),
       height: ScreenAdapter.height(270),
       child: Column(

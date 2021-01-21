@@ -20,7 +20,7 @@ class _Search extends State<Search>{
         left:ScreenAdapter.width(30),
         top:ScreenAdapter.height(20),
         right:ScreenAdapter.width(30),
-        bottom:ScreenAdapter.height(20)
+        bottom:ScreenAdapter.height(30)
       ),
       child: InkWell(
         onTap: () {

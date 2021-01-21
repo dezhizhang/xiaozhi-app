@@ -25,8 +25,8 @@ class _HotProduct extends State<HotProduct>{
         bottom:ScreenAdapter.height(20)
       ),
       margin: EdgeInsets.only(
-        left:ScreenAdapter.width(10),
-        right: ScreenAdapter.width(10),
+        left:ScreenAdapter.width(20),
+        right: ScreenAdapter.width(20),
       ),
       width:ScreenAdapter.width(690),
       height:ScreenAdapter.height(370),

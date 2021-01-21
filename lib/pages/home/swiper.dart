@@ -41,8 +41,8 @@ class _SwiperWidget extends State<SwiperWidget>{
     // TODO: implement build
     return Container(
       padding: EdgeInsets.only(
-        left:ScreenAdapter.width(10),
-        right:ScreenAdapter.width(10)
+        left:ScreenAdapter.width(20),
+        right:ScreenAdapter.width(20)
       ),
       child: AspectRatio(
         aspectRatio: 2 / 1,
