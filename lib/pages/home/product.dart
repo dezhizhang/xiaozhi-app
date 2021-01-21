@@ -34,7 +34,9 @@ class _ProductWidget extends State<ProductWidget>{
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
     return Padding(
-      padding: EdgeInsets.all(ScreenAdapter.height(10)),
+      padding: EdgeInsets.all(
+        ScreenAdapter.width(20),
+      ),
       child: Wrap(
         runSpacing: 10,
         spacing: 10,
@@ -51,7 +53,7 @@ class ProductItem extends StatelessWidget{
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
     return Container(
-      width: (ScreenAdapter.screenWidth() - ScreenAdapter.height(60)) / 2,
+      width: (ScreenAdapter.screenWidth() - ScreenAdapter.width(60)) / 2,
       padding: EdgeInsets.all(ScreenAdapter.height(10)),
       decoration: BoxDecoration(
         border: Border.all(

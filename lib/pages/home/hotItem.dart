@@ -52,7 +52,7 @@ class _HotProduct extends State<HotProduct>{
             width:ScreenAdapter.width(204),
             height: ScreenAdapter.height(180),
             decoration: BoxDecoration(
-              color: Colors.green,
+              color: Colors.white,
               borderRadius: BorderRadius.circular(5),
               image: DecorationImage(
                 image: NetworkImage('http://tugua.oss-cn-hangzhou.aliyuncs.com/16006150123505715.jpeg'),
