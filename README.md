@@ -1,4 +1,45 @@
 # xiaozhi
+---
+# 主题列表：juejin, github, smartblue, cyanosis, channing-cyan, fancy, hydrogen, condensed-night-purple, greenwillow, v-green, vue-pro, healer-readable, mk-cute, jzman, geek-black, awesome-green, qklhk-chocolate
+# 贡献主题：https://github.com/xitu/juejin-markdown-themes
+theme: juejin
+highlight:
+---
+### flutter实现跨平台电商app
+#### 首页页面![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/74a50a4a709e48da96b3894ab6a3bf40~tplv-k3u1fbpfcp-watermark.image)
+
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a8ae906beaaa4187825c0c3a36e8639e~tplv-k3u1fbpfcp-watermark.image)
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d2becb647452444c883250f6987ad326~tplv-k3u1fbpfcp-watermark.image)
+### 分类页面
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7829f5fdff7645758673251a66913ca1~tplv-k3u1fbpfcp-watermark.image)
+### 购物车页面
+![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/30e91c4a16384c19946a2935170f0025~tplv-k3u1fbpfcp-watermark.image)
+###  我的页面
+![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/136df182289845f28225ee388b9aee8f~tplv-k3u1fbpfcp-watermark.image)
+### 登录注册页面
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/781e9150812a451fa444eb00e9919743~tplv-k3u1fbpfcp-watermark.image)
+### 设置页面
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/386e56df3bed4394805c3b7a8a079eea~tplv-k3u1fbpfcp-watermark.image)
+### 系统消页面
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3da5d02c46084fbcac9cfd7c6f81398c~tplv-k3u1fbpfcp-watermark.image)
+### 积分页面
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/798a2de9b2044ac7b0052e6910c3f156~tplv-k3u1fbpfcp-watermark.image)
+### 订单页面
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3b014818dd1b4be6adbb85b30ff58f8b~tplv-k3u1fbpfcp-watermark.image)
+### 地址页面
+![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ae2a2a3496404956a2dbb4d56a03fc1e~tplv-k3u1fbpfcp-watermark.image)
+### 增加地址页面
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/14bfe27ea27343158d071881db40096d~tplv-k3u1fbpfcp-watermark.image)
+### 个人信息页
+![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e5af0d76bc61471588ac313871e6ae3f~tplv-k3u1fbpfcp-watermark.image)
+### app地址:<a href="https://github.com/dezhizhang/xiaozhi">https://github.com/dezhizhang/xiaozhi</a>
+### 服务端地址<a href="https://github.com/dezhizhang/eureka">https://github.com/dezhizhang/eureka</a>
+### pc端页面 <a href="https://www.guicaioa.com/">https://www.guicaioa.com/</a>
+### 开源不易如果对你有帮助你可以请我喝杯咖啡
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8f8f767db08c48ef901f9bcf7fba6294~tplv-k3u1fbpfcp-watermark.image)
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b35446f8f098488db1e12fabf5d508a1~tplv-k3u1fbpfcp-watermark.image)
+### 如有问题请加微信私聊
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a9540d93260441fa8d741402df0a617c~tplv-k3u1fbpfcp-watermark.image)
 
 
 
