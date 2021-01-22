@@ -130,12 +130,16 @@ class _People extends State<People>{
                                   color: Colors.yellow,
                                   borderRadius: BorderRadius.only(topLeft: Radius.circular(28),bottomLeft: Radius.circular(28))
                                 ),
-                                // color: Colors.yellow,
-                                child: Text('推荐送礼',style: TextStyle(
+                                child: InkWell(
+                                  onTap: () {
+                                    Navigator.pushNamed(context, '/information');
+                                  },
+                                  child: Text('个人资料',style: TextStyle(
                                   color: Colors.white,
                                   fontFamily: '微软雅黑',
                                   fontSize: ScreenAdapter.fontSize(24),
                                 )),
+                                ),
                               )
                             ),
 
