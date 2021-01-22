@@ -37,7 +37,7 @@ class _Content extends State<Content>{
             width: ScreenAdapter.width(750),
             height: ScreenAdapter.height(120),
             color: Colors.pink,
-            child: Text('hello'),
+            // child: Text('hello'),
           ),
           Positioned(
             top: 20,

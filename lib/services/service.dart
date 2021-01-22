@@ -1,7 +1,7 @@
 
 
 import 'package:dio/dio.dart';
-import '../utils/common.dart';
+import '../config/config.dart';
 
 class Service {
   getFocuInfo() async{
