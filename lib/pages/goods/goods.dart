@@ -39,7 +39,7 @@ class _HomeContent extends State<HomeContent>{
       color: Color.fromRGBO(242,242,242,1),
       child:  ListView(
         children: <Widget>[
-           GoodsItem(),
+          //  GoodsItem(),
         ],
       ),
     );

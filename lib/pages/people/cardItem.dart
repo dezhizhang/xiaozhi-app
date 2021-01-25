@@ -40,7 +40,7 @@ class _CardItem extends State<CardItem> {
                     color: Color.fromRGBO(77, 77, 77, 0.9),
                     fontSize: ScreenAdapter.fontSize(36),
                     fontFamily: '微软雅黑',
-                  ))
+                ))
             ],
           ),
           ),
