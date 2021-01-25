@@ -62,7 +62,11 @@ class ProductItem extends StatelessWidget{
         ),
         color: Colors.white
       ),
-      child: Column(
+      child:InkWell(
+        onTap: () {
+          Navigator.pushNamed(context, '/detail');
+        },
+        child: Column(
         // mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Container(
@@ -136,6 +140,11 @@ class ProductItem extends StatelessWidget{
           )
         ],
       ),
+      ),
+      
+      
+      
+      
     );
   }
 }
