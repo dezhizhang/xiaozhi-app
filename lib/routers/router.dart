@@ -22,6 +22,7 @@ import '../pages/search/search.dart';
 import '../pages/integral/integral.dart';
 import '../pages/detail/detail.dart';
 import '../pages/goods/goods.dart';
+import '../pages/advice/advice.dart';
 
 final routes = {
    
@@ -39,6 +40,7 @@ final routes = {
   '/addressAdd':(context) => AddressAdd(),
   '/detail':(context) => Detal(),
   '/goods':(context) => Goods(),
+  '/advice':(context) => Advice(),
  
 };
 

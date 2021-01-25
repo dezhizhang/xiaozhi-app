@@ -164,7 +164,7 @@ class _People extends State<People>{
                 PeopleItem(title: '我的消息',margin:0,routeName:'/system'),
                 PeopleItem(title:'积分排行',margin: 0,routeName: '/integral'),
                 PeopleItem(title:'我的卡券',margin:0,routeName:'/coupons'),
-                PeopleItem(title:'投诉建议',margin:0,routeName:'')
+                PeopleItem(title:'投诉建议',margin:0,routeName:'/advice')
               ],
             ),
           )
