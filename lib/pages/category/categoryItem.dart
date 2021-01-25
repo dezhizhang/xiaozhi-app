@@ -23,7 +23,7 @@ class _CategoryItem extends State<CategoryItem>{
     ScreenAdapter.init(context);
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, '/product',arguments:{
+        Navigator.pushNamed(context, '/goods',arguments:{
           id:this.id
         });
       },

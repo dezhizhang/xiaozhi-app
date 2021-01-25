@@ -56,10 +56,10 @@ class _PeopleCard extends State<PeopleCard> {
                 child: Flex(
                   direction: Axis.horizontal,
                   children: <Widget>[
-                    CardItem(),
-                    CardItem(),
-                    CardItem(),
-                    CardItem(),
+                    CardItem(title:'待支付',number: "1",router: '/order'),
+                    CardItem(title: '持配送',number: "1",router: '/order'),
+                    CardItem(title: '己完成',number: "1",router: '/order'),
+                    CardItem(title: '待评价',number: "2",router: '/order'),
                   ],
                 ),
               ),
@@ -76,11 +76,17 @@ class _PeopleCard extends State<PeopleCard> {
                       child: Container(
                         margin: EdgeInsets.only(top:ScreenAdapter.height(28)),
                         alignment: Alignment.center,
-                        child: Column(
+                        child: InkWell(
+                          onTap: (){
+                            Navigator.pushNamed(context, '/order');
+                          },
+                          child:  Column(
                           children: <Widget>[
+                            
                             Icon(Icons.cached),
-                            Text('我的问答')
+                            Text('所有订单')
                           ],
+                        ),
                         ),
                       )
                     ),
@@ -89,12 +95,14 @@ class _PeopleCard extends State<PeopleCard> {
                       child: Container(
                         margin: EdgeInsets.only(top:ScreenAdapter.height(28)),
                         alignment: Alignment.center,
-                        child: Column(
+                        child: InkWell(
+                          child:Column(
                           children: <Widget>[
                             Icon(Icons.cached),
-                            Text('我的问答')
+                            Text('完成订单')
                           ],
                         ),
+                       ),
                       )
                     )
                   ],
