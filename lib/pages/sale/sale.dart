@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import '../../utils/utils.dart';
 
 
 class Sale extends StatelessWidget {
@@ -22,8 +23,11 @@ class  HomeContent extends StatefulWidget {
 class _HomeContent extends State<HomeContent>  {
   @override
   Widget build(BuildContext context) {
+    ScreenAdapter.init(context);
     return Container(
-      
+      width: ScreenAdapter.width(750),
+      height: ScreenAdapter.height(1334),
+      child: Text('hello'),
     );
   }
 }
