@@ -8,6 +8,7 @@
 import 'package:flutter/material.dart';
 import './swiper.dart';
 import '../../utils/utils.dart';
+import './content.dart';
 
 class Detal extends StatelessWidget{
   @override
@@ -38,6 +39,7 @@ class _HomeContent extends State<HomeContent>{
       child: ListView(
         children: <Widget>[
           SwiperWidget(),
+          Content(),
         ],
       ),
     );
