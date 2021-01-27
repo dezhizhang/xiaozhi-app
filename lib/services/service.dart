@@ -18,4 +18,8 @@ class Service {
   getHotProduct() async {
     return await Dio().get("$URL/product/hot");
   }
+  //获取商品轮播图
+  getDetailPhoto(params) async {
+    return await Dio().get("$URL/detail/photo",queryParameters:params);
+  }
 }

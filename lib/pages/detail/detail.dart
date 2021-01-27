@@ -6,6 +6,8 @@
  */
 
 import 'package:flutter/material.dart';
+import './swiper.dart';
+import '../../utils/utils.dart';
 
 class Detal extends StatelessWidget{
   @override
@@ -13,7 +15,7 @@ class Detal extends StatelessWidget{
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('订单详情'),
+        title: Text('商品详情'),
       ),
       body: HomeContent(),
     );
@@ -27,7 +29,17 @@ class HomeContent extends StatefulWidget{
 class _HomeContent extends State<HomeContent>{
   @override
   Widget build(BuildContext context) {
+    ScreenAdapter.init(context);
     // TODO: implement build
-    return Text('hello');
+    return Container(
+      width: ScreenAdapter.width(750),
+      height: ScreenAdapter.height(1334),
+      color: Color.fromRGBO(238, 238, 238, 1),
+      child: ListView(
+        children: <Widget>[
+          SwiperWidget(),
+        ],
+      ),
+    );
   }
 }
