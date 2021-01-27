@@ -9,6 +9,9 @@ class Content extends StatelessWidget{
     ScreenAdapter.init(context);
     // TODO: implement build
     return Container(
+      margin: EdgeInsets.only(
+        bottom:ScreenAdapter.height(20)
+      ),
       width: ScreenAdapter.width(750),
       height: ScreenAdapter.height(240),
       color: Colors.white,
