@@ -36,14 +36,17 @@ class _CategoryWidget extends State<CategoryWidget> {
           CategoryItem(
             title: '男装',
             url: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=315398933,2898163426&fm=26&gp=0.jpg',
+            routeName:'/sale',
           ),
           CategoryItem(
             title: '套装',
             url: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1044359778,2662188731&fm=26&gp=0.jpg',
+             routeName:'/sale',
           ),
           CategoryItem(
             title: '更多',
-            url: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1243905855,2036993032&fm=26&gp=0.jpg'
+            url: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1243905855,2036993032&fm=26&gp=0.jpg',
+            routeName:'/sale',
           ),
         ],
       ),

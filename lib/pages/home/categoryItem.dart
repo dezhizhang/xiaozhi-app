@@ -15,7 +15,7 @@ class CategoryItem extends StatefulWidget{
 class _CategoryItem extends State<CategoryItem>{
   String url; 
   String title;
-  Setting routeName;
+  String routeName;
   _CategoryItem(this.url,this.title,this.routeName);
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class _CategoryItem extends State<CategoryItem>{
       width: ScreenAdapter.width(100),
       child: InkWell(
         onTap: () {
-          Navigator.pushNamed(context, this.routeName)
+          Navigator.pushNamed(context, this.routeName);
         },
         child:Column(
         children: <Widget>[
