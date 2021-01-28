@@ -6,11 +6,12 @@
  */
 
 import 'package:flutter/material.dart';
-import '../../utils/utils.dart';
-import './goodsItem.dart';
 
+class Goods extends StatefulWidget{
+  _Goods createState() => _Goods();
+}
 
-class Goods extends StatelessWidget{
+class _Goods extends State<Goods>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -18,32 +19,7 @@ class Goods extends StatelessWidget{
       appBar: AppBar(
         title: Text('商品分类'),
       ),
-      body: HomeContent(),
+      body: Text('hello'),
     );
   }
 }
-
-class HomeContent extends StatefulWidget{
-  _HomeContent createState() => _HomeContent();
-}
-
-class _HomeContent extends State<HomeContent>{
-  List list = [];
-  @override
-  Widget build(BuildContext context) {
-    ScreenAdapter.init(context);
-    // TODO: implement build
-    return Container(
-      width: ScreenAdapter.width(750),
-      height: ScreenAdapter.height(1334),
-      color: Color.fromRGBO(242,242,242,1),
-      child:  ListView(
-        children: <Widget>[
-          //  GoodsItem(),
-        ],
-      ),
-    );
-
-  }
-}
-

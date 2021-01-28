@@ -1,19 +1,22 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:xiaozhi/pages/setting/setting.dart';
 import '../../utils/utils.dart';
 
 class CategoryItem extends StatefulWidget{
   String url;
   String title;
-  CategoryItem({Key key,this.url,this.title}):super(key:key);
-  _CategoryItem createState() => _CategoryItem(this.url,this.title);
+  String routeName;
+  CategoryItem({Key key,this.url,this.title,this.routeName}):super(key:key);
+  _CategoryItem createState() => _CategoryItem(this.url,this.title,this.routeName);
 }
 
 class _CategoryItem extends State<CategoryItem>{
   String url; 
   String title;
-  _CategoryItem(this.url,this.title);
+  Setting routeName;
+  _CategoryItem(this.url,this.title,this.routeName);
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
@@ -23,7 +26,11 @@ class _CategoryItem extends State<CategoryItem>{
         left:ScreenAdapter.width(60)
       ),
       width: ScreenAdapter.width(100),
-      child: Column(
+      child: InkWell(
+        onTap: () {
+          Navigator.pushNamed(context, this.routeName)
+        },
+        child:Column(
         children: <Widget>[
           Container(
             margin: EdgeInsets.only(
@@ -47,7 +54,11 @@ class _CategoryItem extends State<CategoryItem>{
             )),
           ),
         ],
-      ),
+      ), 
+      )
+      
+      
+      
     );
   }
 }

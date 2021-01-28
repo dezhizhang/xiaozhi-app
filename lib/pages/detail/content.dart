@@ -15,6 +15,11 @@ class Content extends StatelessWidget{
       width: ScreenAdapter.width(750),
       height: ScreenAdapter.height(240),
       color: Colors.white,
+      child:Column(
+        children: <Widget>[
+          Text('贵彩办公')
+        ],
+      ) ,
     );
   }
 }

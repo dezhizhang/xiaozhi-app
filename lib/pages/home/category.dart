@@ -31,6 +31,7 @@ class _CategoryWidget extends State<CategoryWidget> {
           CategoryItem(
             title: '女装',
             url:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1159937822,203922547&fm=26&gp=0.jpg',
+            routeName: '/sale',
           ),
           CategoryItem(
             title: '男装',
