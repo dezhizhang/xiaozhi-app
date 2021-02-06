@@ -40,10 +40,9 @@ final routes = {
   '/information':(context) => Information(),
   '/addressAdd':(context) => AddressAdd(),
   '/detail':(context) => Detal(),
-  '/goods':(context) => Goods(),
+  '/goods':(context,{arguments}) => Goods(arguments:arguments),
   '/advice':(context) => Advice(),
   '/sale':(context) => Sale(),
- 
 };
 
 var onGenerateRoute = (RouteSettings settings) {

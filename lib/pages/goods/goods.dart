@@ -6,12 +6,18 @@
  */
 
 import 'package:flutter/material.dart';
+import './goodsItem.dart';
+
 
 class Goods extends StatefulWidget{
-  _Goods createState() => _Goods();
+  final Map arguments;
+  Goods({this.arguments});
+  _Goods createState() => _Goods(this.arguments);
 }
 
 class _Goods extends State<Goods>{
+  final Map arguments;
+  _Goods(this.arguments);
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -19,7 +25,23 @@ class _Goods extends State<Goods>{
       appBar: AppBar(
         title: Text('商品分类'),
       ),
-      body: Text('hello'),
+      body: HomeContent(),
+    );
+  }
+}
+
+class HomeContent extends StatefulWidget{
+  _HomeContent createState() =>  _HomeContent();
+}
+
+class _HomeContent extends State<HomeContent>{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return ListView(
+      children: <Widget>[
+        GoodsItem(),
+      ],
     );
   }
 }
