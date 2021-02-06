@@ -25,18 +25,33 @@ class TitleSearch extends StatefulWidget{
 }
 
 class _TitleSearch extends State<TitleSearch>{
+  String keywords;
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+    ScreenAdapter.init(context);
     return Container(
-      width: ScreenAdapter.width(750),
       height: ScreenAdapter.height(60),
-      child: Row(
-        children: <Widget>[
-          TextField(),
-          Text('搜索')
-        ],
-      ),
+      child: Flex(
+          direction: Axis.horizontal,
+          children: <Widget>[
+            Expanded(
+              flex: 6,
+              child: Container(
+                height:ScreenAdapter.height(60),
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(230,227,227,1),
+                  borderRadius: BorderRadius.circular(30)
+                ),
+              ),
+            ),
+            SizedBox(width:ScreenAdapter.width(10)),
+            Expanded(
+              flex: 1,
+              child: Text('搜索'),
+            ),
+          ],
+        ),
     );
+  
   }
 }
