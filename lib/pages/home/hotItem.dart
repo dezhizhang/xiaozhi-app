@@ -1,5 +1,3 @@
-
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import '../../model/hot.dart';
@@ -33,14 +31,8 @@ class _HotItem extends State<HotItem>{
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
-    return Container(
-      
+    return Container( 
       height:ScreenAdapter.height(260),
-      // child: Container(
-      //   child:Column(
-      //     children: [],
-      //   )
-      // ),
       child: Container(
         child: Swiper(
           itemBuilder: (BuildContext context,index) {
@@ -112,8 +104,6 @@ class _HotProduct extends State<HotProduct>{
         ],
       ),
       )
-      
-  
     );
   }
 }
