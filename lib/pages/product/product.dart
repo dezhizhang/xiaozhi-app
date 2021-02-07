@@ -63,8 +63,8 @@ class _Product extends State<Product>{
                   color:item["index"] == activeIndex ? Colors.pink:Colors.white,
                   changeColorCallBack:(index){
                     if(index == 3) {
+                      this.activeIndex = index;
                       _globalKey.currentState.openEndDrawer();
-                      print('HELLO');
                     }
                   }
                 )
