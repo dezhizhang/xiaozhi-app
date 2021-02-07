@@ -3118,6 +3118,139 @@ class _TurnBox extends State<TurnBox> with SingleTickerProviderStateMixin{
 ```
 www.20yye.com
 ```
+### 子组件与父组件数据回调
+```
+import 'package:flutter/material.dart';
+import '../../utils/utils.dart';
+
+class ProductTabBar extends StatefulWidget {
+  int index;
+  String title;
+  int activeIndex;
+  final ValueChanged<int> changeColorCallBack;
+  ProductTabBar({Key key,this.title,this.index,this.activeIndex,this.changeColorCallBack}):super(key: key);
+  _ProductTabBar createState() => _ProductTabBar(this.title,this.index,this.activeIndex,this.changeColorCallBack);
+}
+
+class _ProductTabBar extends State<ProductTabBar> {
+  int index;
+  String title;
+  int activeIndex;
+  final ValueChanged<int> changeColorCallBack;
+  _ProductTabBar(this.title,this.index,this.activeIndex,this.changeColorCallBack);
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Expanded(
+      flex: 1,
+      child:InkWell(
+        onTap: () {
+          changeColorCallBack(index);
+        },
+        child: Container(
+        decoration: BoxDecoration(
+          border: Border(
+            bottom: BorderSide(
+              width: 1,
+              color: this.activeIndex == this.index ? Colors.pink:Colors.white
+            )
+          )
+        ),
+        alignment: Alignment.center,
+        height: ScreenAdapter.height(80),
+        child: Text(this.title)
+        ),
+      ),
+    );
+  }
+}
+
+```
+```
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+import './productItem.dart';
+import './productTabBar.dart';
+import '../../utils/utils.dart';
+class Product extends StatefulWidget{
+  Map arguments;
+  Product({Key key,this.arguments}):super(key:key);
+  _Product createState() => _Product();
+}
+
+class _Product extends State<Product>{
+  @override
+  Widget build(BuildContext context) {
+    ScreenAdapter.init(context);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('商品列表'),
+      ),
+      body:HomeContent(),
+    );
+  }
+}
+
+class HomeContent extends StatefulWidget{
+  _HomeContent createState() => _HomeContent();
+}
+
+class _HomeContent extends State<HomeContent>{
+  List<Map> list = [
+    {"title":"综合","index":0},
+    {"title": "销量","index":1},
+    {"title":"价格","index":2},
+    {"title":"筛选","index":3},
+  ];
+  int activeIndex = 0;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Stack(
+      children: <Widget>[
+        Container(
+          padding: EdgeInsets.all(ScreenAdapter.width(10)),
+          margin: EdgeInsets.only(top:ScreenAdapter.height(80)),
+          child: ListView.builder(
+            itemCount: 10,
+            itemBuilder: (context,index){
+              return ProductItem();
+            },
+          ),
+        ),
+        Positioned(
+          width: ScreenAdapter.width(750),
+          height: ScreenAdapter.height(80),
+          child: Container(
+            color:Colors.white,
+            child:Flex(
+              direction: Axis.horizontal,
+              children: this.list.map((item) => 
+                ProductTabBar(
+                  title:item['title'],
+                  activeIndex:activeIndex,
+                  index:item["index"],
+                  changeColorCallBack:(index){
+                    print(index);
+                    setState((){
+                      this.activeIndex = index;
+                    });
+                  }
+                )
+              ).toList(),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+
+```
+
+
 
 
 

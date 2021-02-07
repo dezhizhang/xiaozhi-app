@@ -23,13 +23,18 @@ class _Product extends State<Product>{
   }
 }
 
-class HomeContent extends StatelessWidget{
+class HomeContent extends StatefulWidget{
+  _HomeContent createState() => _HomeContent();
+}
+
+class _HomeContent extends State<HomeContent>{
   List<Map> list = [
     {"title":"综合","index":0},
     {"title": "销量","index":1},
     {"title":"价格","index":2},
     {"title":"筛选","index":3},
   ];
+  int activeIndex = 0;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -53,7 +58,17 @@ class HomeContent extends StatelessWidget{
             child:Flex(
               direction: Axis.horizontal,
               children: this.list.map((item) => 
-                ProductTabBar(title:item['title'],currentIndex:0,index:item["index"])
+                ProductTabBar(
+                  title:item['title'],
+                  activeIndex:activeIndex,
+                  index:item["index"],
+                  changeColorCallBack:(index){
+                    print(index);
+                    setState((){
+                      this.activeIndex = index;
+                    });
+                  }
+                )
               ).toList(),
             ),
           ),
