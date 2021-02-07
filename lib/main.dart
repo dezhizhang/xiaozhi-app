@@ -26,7 +26,7 @@ class _MyApp extends State<MyApp>{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoute,
-      initialRoute: '/product',
+      initialRoute: '/',
       theme: ThemeData(
         primarySwatch: Colors.pink
       ),
