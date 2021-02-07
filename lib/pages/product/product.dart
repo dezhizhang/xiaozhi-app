@@ -29,3 +29,11 @@ class _Product extends State<Product>{
     );
   }
 }
+
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Text("hello");
+  }
+}
