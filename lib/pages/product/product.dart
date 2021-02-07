@@ -60,13 +60,12 @@ class _HomeContent extends State<HomeContent>{
               children: this.list.map((item) => 
                 ProductTabBar(
                   title:item['title'],
-                  activeIndex:activeIndex,
                   index:item["index"],
                   changeColorCallBack:(index){
                     print(index);
-                    setState((){
-                      this.activeIndex = index;
-                    });
+                    // setState((){
+                    //   activeIndex = index;
+                    // });
                   }
                 )
               ).toList(),
