@@ -3,14 +3,19 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../../utils/utils.dart';
 
+
 class ProductItem extends StatefulWidget {
-  _ProductItem createState() => _ProductItem();
+  var item;
+  ProductItem({Key key,this.item}):super(key: key);
+  _ProductItem createState() => _ProductItem(this.item);
 }
 
 class _ProductItem extends State<ProductItem> {
-  @override
+  var item;
+  _ProductItem(this.item);
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
+    print(item);
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,7 +26,7 @@ class _ProductItem extends State<ProductItem> {
               width: ScreenAdapter.width(180),
               height: ScreenAdapter.height(180),
               child: Image.network(
-                'http://tugua.oss-cn-hangzhou.aliyuncs.com/16006152126699263.jpeg',
+                item.url,
                 fit: BoxFit.cover,
               ),
             ),
@@ -34,7 +39,8 @@ class _ProductItem extends State<ProductItem> {
                     child: Column(
                       children: <Widget>[
                         Text(
-                          '韩雪，1983年1月11日出生于江苏省苏州市姑苏区，中国内地女演员、歌手、影视制作人，毕业于上海戏剧学院表演系。2000年，韩雪参加并获得香港嘉禾影视公司主办的“世纪之星”影视歌新人大赛全国金奖',
+                        
+                          item.title,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                         ),
