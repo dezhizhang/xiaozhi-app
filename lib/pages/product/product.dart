@@ -60,7 +60,7 @@ class _Product extends State<Product>{
                 ProductTabBar(
                   title:item['title'],
                   index:item["index"],
-                 
+                  color:item["index"] == activeIndex ? Colors.pink:Colors.white,
                   changeColorCallBack:(index){
                     if(index == 3) {
                       _globalKey.currentState.openEndDrawer();
