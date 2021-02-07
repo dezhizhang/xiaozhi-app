@@ -72,7 +72,11 @@ class _HotProduct extends State<HotProduct>{
       margin: EdgeInsets.only(left:ScreenAdapter.width(24)),
       width: ScreenAdapter.width(204),
       height: ScreenAdapter.height(270),
-      child: Column(
+      child: InkWell(
+        onTap: () {
+          Navigator.pushNamed(context, '/product');
+        },
+        child:Column(
         children: <Widget>[
           Container(
             margin: EdgeInsets.only(bottom:ScreenAdapter.height(6)),
@@ -107,6 +111,9 @@ class _HotProduct extends State<HotProduct>{
           )
         ],
       ),
+      )
+      
+  
     );
   }
 }
