@@ -5,29 +5,13 @@ import './productItem.dart';
 import './productTabBar.dart';
 import '../../utils/utils.dart';
 class Product extends StatefulWidget{
+  
   Map arguments;
   Product({Key key,this.arguments}):super(key:key);
   _Product createState() => _Product();
 }
 
 class _Product extends State<Product>{
-  @override
-  Widget build(BuildContext context) {
-    ScreenAdapter.init(context);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('商品列表'),
-      ),
-      body:HomeContent(),
-    );
-  }
-}
-
-class HomeContent extends StatefulWidget{
-  _HomeContent createState() => _HomeContent();
-}
-
-class _HomeContent extends State<HomeContent>{
   List<Map> list = [
     {"title":"综合","index":0},
     {"title": "销量","index":1},
@@ -35,10 +19,25 @@ class _HomeContent extends State<HomeContent>{
     {"title":"筛选","index":3},
   ];
   int activeIndex = 0;
+  final GlobalKey<ScaffoldState> _globalKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Stack(
+    ScreenAdapter.init(context);
+    return Scaffold(
+      key: _globalKey,
+      appBar: AppBar(
+        title: Text('商品列表'),
+        actions: <Widget>[
+          Text("") 
+        ],
+      ),
+      endDrawer: Drawer(
+        child: Container(
+          child:Text("hello")
+        ),
+      ),
+      
+      body:Stack(
       children: <Widget>[
         Container(
           padding: EdgeInsets.all(ScreenAdapter.width(10)),
@@ -61,11 +60,12 @@ class _HomeContent extends State<HomeContent>{
                 ProductTabBar(
                   title:item['title'],
                   index:item["index"],
+                 
                   changeColorCallBack:(index){
-                    print(index);
-                    // setState((){
-                    //   activeIndex = index;
-                    // });
+                    if(index == 3) {
+                      _globalKey.currentState.openEndDrawer();
+                      print('HELLO');
+                    }
                   }
                 )
               ).toList(),
@@ -73,6 +73,7 @@ class _HomeContent extends State<HomeContent>{
           ),
         ),
       ],
+    ),
     );
   }
 }
