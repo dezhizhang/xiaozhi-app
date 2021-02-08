@@ -12,10 +12,12 @@ class Search extends StatefulWidget{
 class _Search extends State<Search>{
   @override
   Widget build(BuildContext context) {
+    ScreenAdapter.init(context);
     return Scaffold(
       appBar: AppBar(
-        title: TitleSearch()
+        title: TitleSearch(),
       ),
+      body: Text("搜索"),
     );
   }
 }
@@ -25,33 +27,33 @@ class TitleSearch extends StatefulWidget{
 }
 
 class _TitleSearch extends State<TitleSearch>{
-  String keywords;
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
+    // TODO: implement build
     return Container(
+      // 
       height: ScreenAdapter.height(60),
-      child: Flex(
-          direction: Axis.horizontal,
-          children: <Widget>[
-            Expanded(
-              flex: 6,
-              child: Container(
-                height:ScreenAdapter.height(60),
-                decoration: BoxDecoration(
-                  color: Color.fromRGBO(230,227,227,1),
-                  borderRadius: BorderRadius.circular(30)
-                ),
-              ),
+      
+      child: Row(
+        children: <Widget>[
+          Container(
+            width: ScreenAdapter.width(500),
+            decoration: BoxDecoration(
+              color: Color.fromRGBO(230,227,227,1),
+              borderRadius: BorderRadius.circular(30)
             ),
-            SizedBox(width:ScreenAdapter.width(10)),
-            Expanded(
-              flex: 1,
-              child: Text('搜索'),
+            child: TextField(
+               decoration: InputDecoration(
+                      border: InputBorder.none,
+                      // hintText:'验证码'
+                    ),
             ),
-          ],
-        ),
+          ),
+          Text("搜索")
+        ],
+      ),
     );
-  
   }
 }
+
