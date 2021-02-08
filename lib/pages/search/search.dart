@@ -17,7 +17,7 @@ class _Search extends State<Search>{
       appBar: AppBar(
         title: TitleSearch(),
       ),
-      body: Text("搜索"),
+      body: Text("搜索",),
     );
   }
 }
@@ -32,9 +32,7 @@ class _TitleSearch extends State<TitleSearch>{
     ScreenAdapter.init(context);
     // TODO: implement build
     return Container(
-      // 
       height: ScreenAdapter.height(60),
-      
       child: Row(
         children: <Widget>[
           Container(
@@ -50,7 +48,11 @@ class _TitleSearch extends State<TitleSearch>{
                     ),
             ),
           ),
-          Text("搜索")
+          SizedBox(width:ScreenAdapter.width(10)),
+          Text("搜索",style: TextStyle(
+            fontFamily: '微软雅黑',
+            fontSize: ScreenAdapter.fontSize(30)
+          ))
         ],
       ),
     );
