@@ -34,12 +34,15 @@ class _SearchContent extends State<SearchContent>{
           Row(
             children:<Widget>[
               Text("热门搜索",style: TextStyle(
+                fontFamily: '微软雅黑',
                 fontSize: ScreenAdapter.fontSize(32)
               )),
               Text('|',style: TextStyle(
+                fontFamily: '微软雅黑',
                 fontSize: ScreenAdapter.fontSize(32)
               )),
               Text("搜索发现",style: TextStyle(
+                fontFamily: '微软雅黑',
                 fontSize: ScreenAdapter.fontSize(32),
               ))
             ]
