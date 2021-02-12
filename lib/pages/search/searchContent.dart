@@ -30,7 +30,21 @@ class _SearchContent extends State<SearchContent>{
                 label: Text('hello')
               )
             ],
+          ),
+          Row(
+            children:<Widget>[
+              Text("热门搜索",style: TextStyle(
+                fontSize: ScreenAdapter.fontSize(32)
+              )),
+              Text('|',style: TextStyle(
+                fontSize: ScreenAdapter.fontSize(32)
+              )),
+              Text("搜索发现",style: TextStyle(
+                fontSize: ScreenAdapter.fontSize(32),
+              ))
+            ]
           )
+          // Text('搜它')
         ],
       ),
     );
