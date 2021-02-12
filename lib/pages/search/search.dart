@@ -42,17 +42,21 @@ class _TitleSearch extends State<TitleSearch>{
               borderRadius: BorderRadius.circular(30)
             ),
             child: TextField(
-               decoration: InputDecoration(
-                      border: InputBorder.none,
-                      // hintText:'验证码'
-                    ),
+              decoration: InputDecoration(
+                border: InputBorder.none,      
+              ),
             ),
           ),
           SizedBox(width:ScreenAdapter.width(10)),
-          Text("搜索",style: TextStyle(
+          InkWell(
+            onTap: (){
+
+            },
+            child:Text("搜索",style: TextStyle(
             fontFamily: '微软雅黑',
             fontSize: ScreenAdapter.fontSize(30)
-          ))
+            ))
+          )
         ],
       ),
     );
