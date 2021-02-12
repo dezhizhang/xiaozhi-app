@@ -38,6 +38,7 @@ class _TitleSearch extends State<TitleSearch>{
       child: Row(
         children: <Widget>[
           Container(
+            padding: EdgeInsets.only(left:ScreenAdapter.width(20)),
             width: ScreenAdapter.width(500),
             decoration: BoxDecoration(
               color: Color.fromRGBO(230,227,227,1),
