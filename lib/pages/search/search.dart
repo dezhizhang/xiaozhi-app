@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import '../../utils/utils.dart';
+import './searchContent.dart';
 
 class Search extends StatefulWidget{
   _Search createState() => _Search();
@@ -17,7 +18,7 @@ class _Search extends State<Search>{
       appBar: AppBar(
         title: TitleSearch(),
       ),
-      body: Text("搜索",),
+      body: SearchContent(),
     );
   }
 }
@@ -27,6 +28,7 @@ class TitleSearch extends StatefulWidget{
 }
 
 class _TitleSearch extends State<TitleSearch>{
+  String search;
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
@@ -45,12 +47,17 @@ class _TitleSearch extends State<TitleSearch>{
               decoration: InputDecoration(
                 border: InputBorder.none,      
               ),
+              onChanged: (value) {
+                setState(() {
+                  this.search = value;
+                });
+              },
             ),
           ),
           SizedBox(width:ScreenAdapter.width(10)),
           InkWell(
             onTap: (){
-
+              print(this.search);
             },
             child:Text("搜索",style: TextStyle(
             fontFamily: '微软雅黑',
