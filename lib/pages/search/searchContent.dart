@@ -13,35 +13,37 @@ class _SearchContent extends State<SearchContent>{
     ScreenAdapter.init(context);
     // TODO: implement build
     return Container(
-      padding: EdgeInsets.all(ScreenAdapter.width(30)),
+      // padding: EdgeInsets.all(ScreenAdapter.width(30)),
       width: ScreenAdapter.width(750),
       height: ScreenAdapter.height(1334),
       color: Colors.white,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text('搜索历史',style: TextStyle(
+      child:ListView(
+        padding: EdgeInsets.all(ScreenAdapter.width(30)),
+        children:<Widget>[
+          Container(  
+            child: Text('搜索历史',style: TextStyle(
             fontFamily: '微软雅黑',
             fontSize: ScreenAdapter.fontSize(32),
           )),
-          Wrap(
+        ),
+         
+        Wrap(
             children: <Widget>[
               Chip(
                 label: Text('hello')
+              ),
+              Chip(label: Text('你好')
+              
               )
             ],
-          ),
-          Row(
-            children:<Widget>[
-              Text("热门搜索",style: TextStyle(
-                fontFamily: '微软雅黑',
-                fontSize: ScreenAdapter.fontSize(32)
-              )),
-            ]
-          )
-          // Text('搜它')
-        ],
+        ),
+        Text("热门搜索",style: TextStyle(
+            fontSize:ScreenAdapter.fontSize(32),
+            fontFamily: '微软雅黑' 
+          ))
+        ]
       ),
+      
     );
   }
 }
