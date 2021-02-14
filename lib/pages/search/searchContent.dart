@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import './searchTitle.dart';
 import '../../utils/utils.dart';
 
 class SearchContent extends StatefulWidget{
@@ -20,28 +21,19 @@ class _SearchContent extends State<SearchContent>{
       child:ListView(
         padding: EdgeInsets.all(ScreenAdapter.width(30)),
         children:<Widget>[
-          Container(  
-            child: Text('搜索历史',style: TextStyle(
-            fontFamily: '微软雅黑',
-            fontSize: ScreenAdapter.fontSize(32),
-          )),
-        ),
-         
-        Wrap(
-          children: <Widget>[
-            Chip(
-              label: Text('hello')
-            ),
-            Chip(
-              label: Text('你好')
-              
-            )
-            ],
-        ),
-        Text("热门搜索",style: TextStyle(
-          fontSize:ScreenAdapter.fontSize(32),
-          fontFamily: '微软雅黑' 
-        ))
+          SearchTitle(title: '搜索历史'),  
+          Wrap(
+            children: <Widget>[
+              Chip(
+                label: Text('hello')
+              ),
+              Chip(
+                label: Text('你好')
+                
+              )
+              ],
+          ),
+          SearchTitle(title:"热门搜索"),
        ]
       ),
       
