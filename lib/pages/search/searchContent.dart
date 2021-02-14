@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import './searchTitle.dart';
+import './clearBtn.dart';
 import '../../utils/utils.dart';
 
 class SearchContent extends StatefulWidget{
@@ -43,18 +44,7 @@ class _SearchContent extends State<SearchContent>{
             ],
           ),
           SizedBox(height:ScreenAdapter.height(50)),
-          Container(
-            width: ScreenAdapter.width(750),
-            height: ScreenAdapter.height(60),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              border: Border.all(
-                width:1,
-                color:Colors.red,
-              )
-            ),
-            child:Text("删除搜索历史")
-          )                                       
+          ClearBtn(),                                 
        ]
       ),
       
