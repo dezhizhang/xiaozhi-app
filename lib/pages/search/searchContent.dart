@@ -28,20 +28,21 @@ class _SearchContent extends State<SearchContent>{
         ),
          
         Wrap(
-            children: <Widget>[
-              Chip(
-                label: Text('hello')
-              ),
-              Chip(label: Text('你好')
+          children: <Widget>[
+            Chip(
+              label: Text('hello')
+            ),
+            Chip(
+              label: Text('你好')
               
-              )
+            )
             ],
         ),
         Text("热门搜索",style: TextStyle(
-            fontSize:ScreenAdapter.fontSize(32),
-            fontFamily: '微软雅黑' 
-          ))
-        ]
+          fontSize:ScreenAdapter.fontSize(32),
+          fontFamily: '微软雅黑' 
+        ))
+       ]
       ),
       
     );
