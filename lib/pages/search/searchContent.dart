@@ -28,6 +28,7 @@ class _SearchContent extends State<SearchContent>{
               Chip(
                 label: Text('hello')
               ),
+              SizedBox(width:ScreenAdapter.width(10)),
               Chip(
                 label: Text('你好')
                 
