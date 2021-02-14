@@ -34,6 +34,27 @@ class _SearchContent extends State<SearchContent>{
               ],
           ),
           SearchTitle(title:"热门搜索"),
+          Column(
+            children: <Widget>[
+              ListTile(
+                title:Text('hello')
+              ),
+              Divider(),
+            ],
+          ),
+          SizedBox(height:ScreenAdapter.height(50)),
+          Container(
+            width: ScreenAdapter.width(750),
+            height: ScreenAdapter.height(60),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              border: Border.all(
+                width:1,
+                color:Colors.red,
+              )
+            ),
+            child:Text("删除搜索历史")
+          )                                       
        ]
       ),
       
