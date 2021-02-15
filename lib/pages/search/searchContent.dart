@@ -20,14 +20,11 @@ class _SearchContent extends State<SearchContent>{
   getStorage() async{
     var searchList = SearchStorage.getSearch();
     setState(() {
-      searchList = searchList;
+      this.searchList = searchList;
     });
   }
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
-    print('+++++');
-    print(searchList);
-    print('+++++');
     // TODO: implement build
     return Container(
       // padding: EdgeInsets.all(ScreenAdapter.width(30)),
@@ -39,16 +36,9 @@ class _SearchContent extends State<SearchContent>{
         children:<Widget>[
           SearchTitle(title: '搜索历史'),  
           Wrap(
-            children: <Widget>[
-              Chip(
-                label: Text('hello')
-              ),
-              SizedBox(width:ScreenAdapter.width(10)),
-              Chip(
-                label: Text('你好')
-                
-              )
-              ],
+            children: this.searchList.map((item) => Chip(
+              label:item ,
+            )).toList(),
           ),
           SearchTitle(title:"热门搜索"),
           Column(

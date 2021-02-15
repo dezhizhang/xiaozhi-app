@@ -61,6 +61,9 @@ class _TitleSearch extends State<TitleSearch>{
           InkWell(
             onTap: (){
               SearchStorage.setSearch(this.search);
+              setState(() {
+                this.search = '';
+              });
             },
             child:Text("搜索",style: TextStyle(
             fontFamily: '微软雅黑',
