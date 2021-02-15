@@ -3,7 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import '../../utils/utils.dart';
+import '../../utils/search.dart';
 import './searchContent.dart';
+
 
 class Search extends StatefulWidget{
   _Search createState() => _Search();
@@ -58,7 +60,7 @@ class _TitleSearch extends State<TitleSearch>{
           SizedBox(width:ScreenAdapter.width(10)),
           InkWell(
             onTap: (){
-              print(this.search);
+              SearchStorage.setSearch(this.search);
             },
             child:Text("搜索",style: TextStyle(
             fontFamily: '微软雅黑',

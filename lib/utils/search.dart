@@ -3,7 +3,7 @@
 import 'dart:convert';
 import './storage.dart';
 
-class Search {
+class SearchStorage {
   //设置缓存
   static setSearch(value) async{
     try {
@@ -12,6 +12,7 @@ class Search {
       if(!hasSearch) {
         searchList.add(value);
       }
+      await Storage.setString('searchList', json.encode(searchList));
     } catch(e) {
       List tempList = new List();
       tempList.add(value);

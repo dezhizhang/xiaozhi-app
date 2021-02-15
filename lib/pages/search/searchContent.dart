@@ -4,15 +4,30 @@ import 'package:flutter/material.dart';
 import './searchTitle.dart';
 import './clearBtn .dart';
 import '../../utils/utils.dart';
+import '../../utils/search.dart';
 
 class SearchContent extends StatefulWidget{
   _SearchContent createState() => _SearchContent();
 }
 
 class _SearchContent extends State<SearchContent>{
+  var searchList = [];
   @override
+  void initState() { 
+    super.initState();
+    this.getStorage();
+  }
+  getStorage() async{
+    var searchList = SearchStorage.getSearch();
+    setState(() {
+      searchList = searchList;
+    });
+  }
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
+    print('+++++');
+    print(searchList);
+    print('+++++');
     // TODO: implement build
     return Container(
       // padding: EdgeInsets.all(ScreenAdapter.width(30)),
