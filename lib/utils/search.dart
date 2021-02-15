@@ -6,12 +6,15 @@ import './storage.dart';
 class SearchStorage {
   //设置缓存
   static setSearch(value) async{
+
     try {
       var searchList = json.decode(await Storage.getString("searchList"));
       bool hasSearch = searchList.any((v) => v == value);
+
       if(!hasSearch) {
         searchList.add(value);
       }
+      print(searchList);
       await Storage.setString('searchList', json.encode(searchList));
     } catch(e) {
       print(value);
