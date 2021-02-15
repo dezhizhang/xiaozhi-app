@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import './searchTitle.dart';
-import './clearBtn.dart';
+import './clearBtn .dart';
 import '../../utils/utils.dart';
 
 class SearchContent extends StatefulWidget{
