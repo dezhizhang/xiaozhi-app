@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import '../../utils/utils.dart';
 
 class BottomIcon extends StatelessWidget {
-  IconData icon;
-  String title;
+  final IconData icon;
+  final String title;
   BottomIcon({Key key,this.icon,this.title});
   @override
   Widget build(BuildContext context) {

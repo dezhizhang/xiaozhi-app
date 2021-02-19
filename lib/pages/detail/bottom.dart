@@ -53,7 +53,7 @@ class _Bottom extends State<Bottom> {
                   ),
                 ),
                 decoration: BoxDecoration(
-                    color: Colors.pink,
+                    color: Color.fromRGBO(255, 163, 1, 0.9),
                     borderRadius: BorderRadius.circular(30)),
               )
             ],
