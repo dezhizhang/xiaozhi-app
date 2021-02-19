@@ -1,10 +1,3 @@
-# xiaozhi
----
-# 主题列表：juejin, github, smartblue, cyanosis, channing-cyan, fancy, hydrogen, condensed-night-purple, greenwillow, v-green, vue-pro, healer-readable, mk-cute, jzman, geek-black, awesome-green, qklhk-chocolate
-# 贡献主题：https://github.com/xitu/juejin-markdown-themes
-theme: juejin
-highlight:
----
 ### flutter实现跨平台电商app
 #### 首页页面![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/74a50a4a709e48da96b3894ab6a3bf40~tplv-k3u1fbpfcp-watermark.image)
 
