@@ -8,12 +8,29 @@
 import 'package:flutter/material.dart';
 import '../../utils/utils.dart';
 import './bottomIcon.dart';
+import './bottomBtn.dart';
 
 class Bottom extends StatefulWidget {
   _Bottom createState() => _Bottom();
 }
 
 class _Bottom extends State<Bottom> {
+  _bottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return GestureDetector(
+          onTap: () {
+            return false;
+          },
+          child: Container(
+            height: 400,
+            child: Text('hello'),
+          ),
+        );
+      }
+    );
+  }
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
@@ -31,31 +48,21 @@ class _Bottom extends State<Bottom> {
               BottomIcon(icon: Icons.shopping_cart, title: '店铺'),
               BottomIcon(icon: Icons.dashboard_customize, title: '客服'),
               BottomIcon(icon: Icons.shopping_cart, title: '购物车'),
-              Container(
-                margin: EdgeInsets.only(left: ScreenAdapter.width(20)),
-                height: ScreenAdapter.height(66),
-                width: ScreenAdapter.width(200),
-                alignment: Alignment.center,
-                child: Text('加入购物车', style: TextStyle(color: Colors.white)),
-                decoration: BoxDecoration(
-                    color: Color.fromRGBO(253, 1, 0, 0.9),
-                    borderRadius: BorderRadius.circular(30)),
+              BottomBtn(
+                color: Color.fromRGBO(253, 1, 0, 0.9),
+                title: '加入购物车',
+                cb: (value) {
+                  _bottomSheet();
+                },
               ),
-              Container(
-                margin: EdgeInsets.only(left: ScreenAdapter.width(20)),
-                height: ScreenAdapter.height(66),
-                width: ScreenAdapter.width(200),
-                alignment: Alignment.center,
-                child: Text(
-                  "立即购买",
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-                decoration: BoxDecoration(
-                    color: Color.fromRGBO(255, 163, 1, 0.9),
-                    borderRadius: BorderRadius.circular(30)),
-              )
+              BottomBtn(
+                color: Color.fromRGBO(255, 163, 1, 0.9),
+                title: '立即购买',
+                cb: (value) {
+                  _bottomSheet();
+                },
+              ),
+             
             ],
           ),
         ));

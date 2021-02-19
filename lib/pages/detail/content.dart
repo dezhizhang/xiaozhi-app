@@ -3,10 +3,13 @@
 import 'package:flutter/material.dart';
 import '../../utils/utils.dart';
 
-class Content extends StatelessWidget{
+class Content extends StatefulWidget{
+  _Content createState() => _Content();
+}
+
+class _Content extends State<Content>{
   @override
   Widget build(BuildContext context) {
-    ScreenAdapter.init(context);
     // TODO: implement build
     return Container(
       margin: EdgeInsets.only(
@@ -14,12 +17,15 @@ class Content extends StatelessWidget{
       ),
       width: ScreenAdapter.width(750),
       height: ScreenAdapter.height(240),
-      color: Colors.white,
-      child:Column(
-        children: <Widget>[
-          Text('贵彩办公')
-        ],
-      ) ,
+      decoration: BoxDecoration(
+        color: Colors.white
+      ),
+      child: InkWell(
+        // onTap: () {
+        //   _attrBottomSheet();
+        // },
+       child:Text('hello')
+      ),
     );
   }
 }

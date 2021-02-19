@@ -5,9 +5,9 @@ import '../../utils/utils.dart';
 
 
 class CategoryItem extends StatefulWidget{
-  String id;
-  String url;
-  String title;
+  final String id;
+  final String url;
+  final String title;
   
   CategoryItem({Key key,this.title,this.url,this.id}):super(key:key);
   _CategoryItem createState() => _CategoryItem(this.title,this.url,this.id);

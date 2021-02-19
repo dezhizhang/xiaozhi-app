@@ -43,21 +43,15 @@ class _HomeContent extends State<HomeContent>{
         children: <Widget>[
           ListView(
             children: <Widget>[
-               SwiperWidget(),
-              
+              SwiperWidget(),
+              Content(),
+              DetailItem(),
             ],
           ),
           Bottom()//底部组伯
           
         ],
       ),
-      // child: ListView(
-      //   children: <Widget>[
-      //     SwiperWidget(),
-      //     Content(),
-      //     DetailItem(),
-      //   ],
-      // ),
     );
   }
 }
