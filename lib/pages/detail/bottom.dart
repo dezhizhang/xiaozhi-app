@@ -15,6 +15,7 @@ class Bottom extends StatefulWidget {
 }
 
 class _Bottom extends State<Bottom> {
+  String current;
   _bottomSheet() {
     showModalBottomSheet(
       context: context,
@@ -52,6 +53,9 @@ class _Bottom extends State<Bottom> {
                 color: Color.fromRGBO(253, 1, 0, 0.9),
                 title: '加入购物车',
                 cb: (value) {
+                  setState(() {
+                    this.current = value;
+                  });
                   _bottomSheet();
                 },
               ),
@@ -59,6 +63,10 @@ class _Bottom extends State<Bottom> {
                 color: Color.fromRGBO(255, 163, 1, 0.9),
                 title: '立即购买',
                 cb: (value) {
+                  print(value);
+                  setState(() {
+                    this.current = value;
+                  });
                   _bottomSheet();
                 },
               ),
