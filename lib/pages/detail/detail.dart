@@ -83,7 +83,7 @@ class _HomeContent extends State<HomeContent>{
                       color: Colors.white
                     )),
                     decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: Color.fromRGBO(253, 1, 0, 0.9),
                       borderRadius: BorderRadius.circular(30)
                     ),
                   ),
