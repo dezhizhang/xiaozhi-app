@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import './routers/router.dart';
 import './provider/counter.dart';
+import './provider/cart.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,7 +28,8 @@ class _MyApp extends State<MyApp>{
   Widget build(BuildContext context) {
     return MultiProvider( //配置provider
       providers: [
-         ChangeNotifierProvider(builder: (_) => Counter()),
+        ChangeNotifierProvider(builder: (_) => Counter()),
+        ChangeNotifierProvider(builder: (_) => Cart()),
       ],
       child:  MaterialApp(
       debugShowCheckedModeBanner: false,
