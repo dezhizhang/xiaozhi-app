@@ -33,8 +33,8 @@ class _BottomBtn extends State<BottomBtn>{
             ),
           ),
           decoration: BoxDecoration(
-              color: this.color,
-              borderRadius: BorderRadius.circular(30)),
+            color: this.color,
+            borderRadius: BorderRadius.circular(30)),
         )
         
       );
