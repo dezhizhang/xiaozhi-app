@@ -32,7 +32,7 @@ class _MyApp extends State<MyApp>{
       child:  MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoute,
-      initialRoute: '/',
+      initialRoute: '/counter',
       theme: ThemeData(
         primarySwatch: Colors.pink
       ),

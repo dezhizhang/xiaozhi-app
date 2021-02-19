@@ -25,6 +25,7 @@ import '../pages/goods/goods.dart';
 import '../pages/advice/advice.dart';
 import '../pages/sale/sale.dart';
 import '../pages/test/test.dart';
+import '../pages/counter/counterTest.dart';
 
 final routes = {
    
@@ -45,6 +46,7 @@ final routes = {
   '/advice':(context) => Advice(),
   '/sale':(context) => Sale(),
   '/test':(context) => Test(),
+  '/counter':(context) => CounterTest()
 };
 
 var onGenerateRoute = (RouteSettings settings) {
