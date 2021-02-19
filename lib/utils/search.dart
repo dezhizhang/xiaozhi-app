@@ -10,14 +10,11 @@ class SearchStorage {
     try {
       var searchList = json.decode(await Storage.getString("searchList"));
       bool hasSearch = searchList.any((v) => v == value);
-
       if(!hasSearch) {
         searchList.add(value);
       }
-      print(searchList);
       await Storage.setString('searchList', json.encode(searchList));
     } catch(e) {
-      print(value);
       var tempList = new List();
       tempList.add(value);
       await Storage.setString('searchList', json.encode(tempList));
@@ -26,7 +23,7 @@ class SearchStorage {
   //获取缓存
   static getSearch() async {
     try{
-      List searchList = json.decode(await Storage.getString('searchList'));
+      var searchList = json.decode(await Storage.getString('searchList'));
       return searchList;
     }catch(e) {
       return [];
