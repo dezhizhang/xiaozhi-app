@@ -1,3 +1,10 @@
+/*
+ * @Author: dezhi
+ * @Date: 2021-02-18
+ * @LastEditTime: 2021-01-18
+ * @Description:详情底部组件
+ */
+
 import 'package:flutter/material.dart';
 import '../../utils/utils.dart';
 import './bottomIcon.dart';
