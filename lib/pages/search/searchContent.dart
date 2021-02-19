@@ -5,6 +5,7 @@ import './searchTitle.dart';
 import './clearBtn .dart';
 import '../../utils/utils.dart';
 import '../../utils/search.dart';
+import '../../utils/storage.dart';
 
 class SearchContent extends StatefulWidget{
   _SearchContent createState() => _SearchContent();
@@ -19,6 +20,9 @@ class _SearchContent extends State<SearchContent>{
   }
   getStorage() async{
     var searchList = SearchStorage.getSearch();
+    print('++++');
+    print(searchList);
+    print('+++++');
     setState(() {
       this.searchList = searchList;
     });
@@ -50,7 +54,13 @@ class _SearchContent extends State<SearchContent>{
             ],
           ),
           SizedBox(height:ScreenAdapter.height(50)),
-          ClearBtn(),                                 
+          InkWell(
+            onTap: () {
+              Storage.clear();
+            },
+            child: ClearBtn()
+          )
+         ,                                 
        ]
       ),
       
