@@ -19,17 +19,35 @@ class _BottomDraw extends State<BottomDraw>{
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
     return Container(
+      padding: EdgeInsets.all(ScreenAdapter.width(10)),
       width: ScreenAdapter.width(750),
       height:ScreenAdapter.height(750),
       child: Stack(
         children: <Widget>[
           Positioned(
-            width: ScreenAdapter.width(750),
-            height: ScreenAdapter.height(80),
-            bottom: 0,
+            right: 0,
             child: Container(
+              child: InkWell(
+                onTap: () {
+                   Navigator.pop(context);
+                },
+                child: Icon(Icons.close),
+              ),
+            )
+          ),
+          ListView(
+            children: <Widget>[
+              Text('hello')
+            ],
+          ),
+          Positioned(
+            height: ScreenAdapter.height(80),
+            bottom: 10,
+            child: Container(
+              width: ScreenAdapter.width(726),
               decoration: BoxDecoration(
-                color: Colors.red
+                color: Colors.red,
+                borderRadius: BorderRadius.circular(40)
               ),
               alignment: Alignment.center,
               child: Text('确定',style: TextStyle(
