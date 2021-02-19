@@ -8,7 +8,9 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import './routers/router.dart';
+import './provider/counter.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,13 +25,18 @@ class MyApp extends StatefulWidget{
 class _MyApp extends State<MyApp>{
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MultiProvider( //配置provider
+      providers: [
+         ChangeNotifierProvider(builder: (_) => Counter()),
+      ],
+      child:  MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoute,
       initialRoute: '/',
       theme: ThemeData(
         primarySwatch: Colors.pink
       ),
+    ),
     );
   }
 }
