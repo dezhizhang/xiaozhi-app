@@ -37,13 +37,44 @@ class _HomeContent extends State<HomeContent>{
       width: ScreenAdapter.width(750),
       height: ScreenAdapter.height(1334),
       color: Color.fromRGBO(238, 238, 238, 1),
-      child: ListView(
+      child: Stack(
         children: <Widget>[
-          SwiperWidget(),
-          Content(),
-          DetailItem(),
+          ListView(
+            children: <Widget>[
+               SwiperWidget(),
+            ],
+          ),
+          Positioned(
+            
+            height: ScreenAdapter.height(80),
+            width: ScreenAdapter.width(750),
+            bottom: 0,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border(
+                  top: BorderSide(
+                    color: Colors.black26,
+                    width: 1
+                  )
+                )
+              ),
+              child: Text('hello'),
+            )
+            
+          )
+          // Positioned(
+          //   child: 
+          // ),
         ],
       ),
+      // child: ListView(
+      //   children: <Widget>[
+      //     SwiperWidget(),
+      //     Content(),
+      //     DetailItem(),
+      //   ],
+      // ),
     );
   }
 }
