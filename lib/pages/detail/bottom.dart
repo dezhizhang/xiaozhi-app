@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import '../../utils/utils.dart';
 import './bottomIcon.dart';
 import './bottomBtn.dart';
+import './bottomDraw.dart';
 
 class Bottom extends StatefulWidget {
   _Bottom createState() => _Bottom();
@@ -24,10 +25,8 @@ class _Bottom extends State<Bottom> {
           onTap: () {
             return false;
           },
-          child: Container(
-            height: 400,
-            child: Text('hello'),
-          ),
+          child: BottomDraw(),
+         
         );
       }
     );
