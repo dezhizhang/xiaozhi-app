@@ -29,7 +29,7 @@ class _BottomDraw extends State<BottomDraw>{
             child: Container(
               child: InkWell(
                 onTap: () {
-                   Navigator.pop(context);
+                  Navigator.pop(context);
                 },
                 child: Icon(Icons.close),
               ),
