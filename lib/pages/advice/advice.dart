@@ -4,8 +4,10 @@
  * @desc:投诉建议页面
 */
 import 'dart:io';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+
 
 class Advice extends StatelessWidget {
   @override
@@ -47,6 +49,16 @@ class _HomeContent extends State<HomeContent>  {
       }
     });
   }
+  handleSubmit() async{
+    FormData formData = new FormData.fromMap({
+      "name":"xiaozhi",
+      "age":25,
+       "file":new UploadFileInfo(this._image, "xxx.jpg"),
+      // "file":new UploadFileInfo(this._image, "xxx.jpg"),
+    });
+    var response = await Dio().post("http://jd.itying.com/imgupload", data: formData);
+    print(response);
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -59,6 +71,10 @@ class _HomeContent extends State<HomeContent>  {
         RaisedButton(
           child: Text('相册选择'),
           onPressed:handlePhoto ,
+        ),
+        RaisedButton(
+          child: Text('上传图片'),
+          onPressed: handleSubmit
         )
       ],
     );
