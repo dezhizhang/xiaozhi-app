@@ -7,6 +7,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../provider/counter.dart';
+import './testItem.dart';
 
 class Test extends StatefulWidget{
   _Test createState() => _Test();
@@ -43,6 +44,7 @@ class _Content extends State<Content>{
           )),
         ),
         Divider(),
+        TestItem(),
 
       ],
     );
