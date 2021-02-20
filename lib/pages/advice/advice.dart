@@ -53,7 +53,7 @@ class _HomeContent extends State<HomeContent>  {
     FormData formData = new FormData.fromMap({
       "name":"xiaozhi",
       "age":25,
-       "file":new UploadFileInfo(this._image, "xxx.jpg"),
+       "file":await MultipartFile.fromFile("${this._image}", filename: "1.png"),
       // "file":new UploadFileInfo(this._image, "xxx.jpg"),
     });
     var response = await Dio().post("http://jd.itying.com/imgupload", data: formData);
