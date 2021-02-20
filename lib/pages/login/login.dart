@@ -48,7 +48,7 @@ class _Content extends  State<Content>{
             alignment: Alignment.center,
             margin: EdgeInsets.only(bottom:ScreenAdapter.height(30)),
             child:Text('手机登录',style: TextStyle(
-              fontFamily: '59--Regular',
+              fontFamily: '微软雅黑',
               fontWeight: FontWeight.normal,
               fontSize: ScreenAdapter.fontSize(58),
               color: Color.fromRGBO(0,0,0,1)
@@ -97,7 +97,8 @@ class _Content extends  State<Content>{
                   child:TextField(
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      hintText:'验证码'
+                      hintText:'验证码',
+                      // errorText: "输入的验证码不合法"
                     ),
                   ) 
                 ),
@@ -160,7 +161,7 @@ class _Content extends  State<Content>{
             ),
             Text('使用即同意《用户协议》及《隐私协议》',style: TextStyle(
               color: Color.fromRGBO(153,153,153,1),
-              fontFamily: '59--Regular',
+              fontFamily: '微软雅黑',
               fontSize: ScreenAdapter.fontSize(28)
             ))
           ],
