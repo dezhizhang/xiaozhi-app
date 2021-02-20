@@ -9,6 +9,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import './routers/router.dart';
 import './provider/counter.dart';
 import './provider/cart.dart';
@@ -35,6 +36,14 @@ class _MyApp extends State<MyApp>{
         
       onGenerateRoute: onGenerateRoute,
       initialRoute: '/',
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate, 
+        GlobalWidgetsLocalizations.delegate, 
+      ],
+      supportedLocales: [
+        const Locale('zh', 'CH'), 
+        const Locale('en', 'US'),
+      ],
       theme: ThemeData(
         primarySwatch: Colors.pink
       ),

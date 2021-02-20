@@ -35,6 +35,9 @@ dependencies:
   provider: ^3.1.0+1
   event_bus: ^1.1.1
   fluttertoast: ^7.1.6
+  flutter_localizations:
+    sdk: flutter
+
  
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
