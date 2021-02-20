@@ -23,6 +23,13 @@ class Content extends StatefulWidget{
 }
 
 class _Content extends State<Content>{
+  bool isShowIcons = false;
+  handlePhoto() {
+    setState(() {
+      this.isShowIcons = false;
+      FocusScope.of(context).requestFocus(FocusNode());
+    });
+  }
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
@@ -33,11 +40,14 @@ class _Content extends State<Content>{
       color:Color.fromRGBO(238,238,238,1),
       child: Stack(
         children: <Widget>[
-          ListView(
+          InkWell(
+            onTap: this.handlePhoto,
+            child:ListView(
             children: <Widget>[
               Text("hello")
             ],
           ),
+          ), 
           Positioned(
             bottom: 0,
             width: ScreenAdapter.width(750),
@@ -67,7 +77,6 @@ class _Content extends State<Content>{
                         radious:0,
                         color: Colors.red,
                       ),
-                     
                       Expanded(
                         flex: 1,
                         child: Container(
@@ -93,12 +102,25 @@ class _Content extends State<Content>{
                         icon:Icons.add_circle,
                         radious:0,
                         color: Colors.red,
+                        cb: (value) {
+                          setState(() {
+                            this.isShowIcons = true;
+                          });
+                        },
                       ),
                 
                     ],
                   ),
-                  )
-                 
+                  ),
+                  this.isShowIcons ? 
+                  Row(
+                    children: <Widget>[
+                      Container(
+                        width:ScreenAdapter.width(750),
+                        height:100
+                      )
+                    ],
+                  ):Text('')
                 ],
               ),
             )
