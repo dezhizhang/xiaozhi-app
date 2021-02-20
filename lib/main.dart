@@ -32,7 +32,7 @@ class _MyApp extends State<MyApp>{
         ChangeNotifierProvider(builder: (_) => Cart()),
       ],
       child:  MaterialApp(
-      debugShowCheckedModeBanner: false,
+        
       onGenerateRoute: onGenerateRoute,
       initialRoute: '/',
       theme: ThemeData(
