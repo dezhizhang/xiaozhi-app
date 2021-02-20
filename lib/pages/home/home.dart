@@ -25,7 +25,11 @@ class _Home extends State<Home> with AutomaticKeepAliveClientMixin{
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
-    return  Padding(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('首页'),
+      ),
+      body:Padding(
       padding: EdgeInsets.all(ScreenAdapter.height(0)),
       child:Container(
         // padding: EdgeInsets.all(ScreenAdapter.height(10)),
@@ -50,6 +54,7 @@ class _Home extends State<Home> with AutomaticKeepAliveClientMixin{
         ],
       ),
       )
+    ),
     );
   }
 }

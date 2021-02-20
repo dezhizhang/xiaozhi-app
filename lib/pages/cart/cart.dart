@@ -20,7 +20,11 @@ class _Cart extends State<Cart>{
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
-    return Stack(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('购物车'),
+      ),
+      body:Stack(
       children: <Widget>[
         ListView(
           children: <Widget>[
@@ -34,6 +38,7 @@ class _Cart extends State<Cart>{
           child: CartBottom(),
         )
       ],
+    ),
     );
   }
 }

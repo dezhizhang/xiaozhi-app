@@ -24,7 +24,11 @@ class _People extends State<People>{
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
-    return Container(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('我的'),
+      ),
+      body: Container(
       color:Color.fromRGBO(238,238,238,1),
       width:ScreenAdapter.width(750),
       height:ScreenAdapter.height(1334),
@@ -170,6 +174,7 @@ class _People extends State<People>{
           )
         ]
       ),
+    ),
     );
   }
 }

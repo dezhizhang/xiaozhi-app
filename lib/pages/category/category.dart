@@ -35,7 +35,11 @@ class _Category extends State<Category> with AutomaticKeepAliveClientMixin{
   Widget build(BuildContext context) {
    
     ScreenAdapter.init(context);
-    return Row(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('分类'),
+      ),
+      body:  Row(
       children: <Widget>[
         Container(
           color: Colors.white,
@@ -87,6 +91,7 @@ class _Category extends State<Category> with AutomaticKeepAliveClientMixin{
           ),
         )
       ],
+    ),
     );
   }
 }
