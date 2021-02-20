@@ -35,8 +35,16 @@ class _Content extends State<Content>{
   Widget build(BuildContext context) {
     var countProvider = Provider.of<Counter>(context);
     // TODO: implement build
-    return Center(
-      child: Text('${countProvider.count}'),
+    return Column(
+      children: <Widget>[
+        Center(
+          child: Text('统计数量：${countProvider.count}',style: TextStyle(
+            fontSize: 30
+          )),
+        ),
+        Divider(),
+
+      ],
     );
   }
 }
