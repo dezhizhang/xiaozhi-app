@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../provider/counter.dart';
+import '../../provider/cart.dart';
 
 class CounterTest extends StatelessWidget{
   @override
@@ -24,14 +25,14 @@ class Content extends StatefulWidget{
 class _Content extends State<Content>{
   @override
   Widget build(BuildContext context) {
-    var countProvider = Provider.of<Counter>(context);
+    var cartProvider = Provider.of<Cart>(context);
     // TODO: implement build
     return Column(
       children: <Widget>[
         RaisedButton(
 
           onPressed: () {
-            countProvider.incCount();
+            cartProvider.addList('hello');
           },
           child: Text('增加'),
         ),
