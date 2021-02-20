@@ -3,7 +3,9 @@
  * @date:20210101
  * @desc:投诉建议页面
 */
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class Advice extends StatelessWidget {
   @override
@@ -23,9 +25,43 @@ class  HomeContent extends StatefulWidget {
 }
 
 class _HomeContent extends State<HomeContent>  {
+  File _image;
+  final picker = ImagePicker();
+  handleTaking() async{
+    final pickedFile = await picker.getImage(source: ImageSource.camera);
+    setState(() {
+      if (pickedFile != null) {
+        _image = File(pickedFile.path);
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
+  handlePhoto() async {
+     final pickedFile = await picker.getImage(source: ImageSource.gallery);
+    setState(() {
+      if (pickedFile != null) {
+        _image = File(pickedFile.path);
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
   @override
   Widget build(BuildContext context) {
-    return Text('hello');
+    return Column(
+      children: <Widget>[
+        RaisedButton(
+          child: Text('拍照'),
+          onPressed: this.handleTaking
+        ),
+        SizedBox(height:10),
+        RaisedButton(
+          child: Text('相册选择'),
+          onPressed:handlePhoto ,
+        )
+      ],
+    );
   }
 }
 
