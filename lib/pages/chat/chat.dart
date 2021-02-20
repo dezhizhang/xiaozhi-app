@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import '../../utils/utils.dart';
+import '../components/customIcons.dart';
 
 
 class Chat extends StatelessWidget{
@@ -59,14 +60,14 @@ class _Content extends State<Content>{
                     child:  Row(
                     
                     children: <Widget>[
-                      Container(
-                        width: ScreenAdapter.width(68),
-                        height: ScreenAdapter.height(68),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(68),
-                        ),
-                        child: Icon(Icons.voice_chat_sharp),
+                      CustomIcons(
+                        width:ScreenAdapter.width(78),
+                        height:ScreenAdapter.height(78),
+                        icon:Icons.volume_up,
+                        radious:0,
+                        color: Colors.red,
                       ),
+                     
                       Expanded(
                         flex: 1,
                         child: Container(
@@ -79,27 +80,21 @@ class _Content extends State<Content>{
                           ),
                         )
                       ),
-                      Container(
-                        width: ScreenAdapter.width(68),
-                        height: ScreenAdapter.width(68),
-                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(68),
-                        ),
-                        child: Icon(Icons.explore),
+                      CustomIcons(
+                        width:ScreenAdapter.width(78),
+                        height:ScreenAdapter.height(78),
+                        icon:Icons.tag_faces,
+                        radious:0,
+                        color: Colors.red,
                       ),
-
-                       Container(
-                        width: ScreenAdapter.width(68),
-                        height: ScreenAdapter.width(68),
-                         decoration: BoxDecoration(
-                          border: Border.all(
-                            width:1,
-                            color:Colors.black12
-                          ),
-                          borderRadius: BorderRadius.circular(68),
-                        ),
-                        child: Icon(Icons.add),
+                      CustomIcons(
+                        width:ScreenAdapter.width(78),
+                        height:ScreenAdapter.height(78),
+                        icon:Icons.add_circle,
+                        radious:0,
+                        color: Colors.red,
                       ),
+                
                     ],
                   ),
                   )
