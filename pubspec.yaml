@@ -33,6 +33,7 @@ dependencies:
   city_pickers: ^0.2.0
   flutter_spinkit: ^4.1.2+1
   provider: ^3.1.0+1
+  event_bus: ^1.1.1
  
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

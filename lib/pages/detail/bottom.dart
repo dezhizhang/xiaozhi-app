@@ -10,6 +10,7 @@ import '../../utils/utils.dart';
 import './bottomIcon.dart';
 import './bottomBtn.dart';
 import './bottomDraw.dart';
+import '../../event/event.dart';
 
 class Bottom extends StatefulWidget {
   _Bottom createState() => _Bottom();

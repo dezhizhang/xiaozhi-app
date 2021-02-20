@@ -1,5 +1,12 @@
 
-
+/*
+ * @Author: dezhizhang
+ * @Date: 2020-10-25 17:33:26
+ * @LastEditTime: 2020-12-13 20:02:23
+ * @LastEditors: dezhizhang
+ * @Description: 路由页面
+ * @FilePath: /xiaozhi/lib/routers/router.dart
+ */
 import 'package:dio/dio.dart';
 import '../config/config.dart';
 
