@@ -40,7 +40,7 @@ class _HomeContent extends State<HomeContent>  {
     });
   }
   handlePhoto() async {
-     final pickedFile = await picker.getImage(source: ImageSource.gallery);
+    final pickedFile = await picker.getImage(source: ImageSource.gallery);
     setState(() {
       if (pickedFile != null) {
         _image = File(pickedFile.path);
@@ -48,6 +48,7 @@ class _HomeContent extends State<HomeContent>  {
         print('No image selected.');
       }
     });
+  
   }
   handleSubmit() async{
     FormData formData = new FormData.fromMap({
