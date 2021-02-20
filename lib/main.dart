@@ -33,7 +33,6 @@ class _MyApp extends State<MyApp>{
         ChangeNotifierProvider(builder: (_) => Cart()),
       ],
       child:  MaterialApp(
-        
       onGenerateRoute: onGenerateRoute,
       initialRoute: '/',
       localizationsDelegates: [
