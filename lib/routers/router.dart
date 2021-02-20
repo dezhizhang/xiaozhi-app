@@ -26,6 +26,7 @@ import '../pages/advice/advice.dart';
 import '../pages/sale/sale.dart';
 import '../pages/chat/chat.dart';
 import '../pages/test/test.dart';
+import '../pages/video/video.dart';
 // import '../pages/counter/counterTest.dart';
 
 final routes = {
@@ -48,6 +49,7 @@ final routes = {
   '/sale':(context) => Sale(),
   '/chat':(context) => Chat(),
   '/test':(context) => Test(),
+  '/video':(context) => Video()
   
 };
 
