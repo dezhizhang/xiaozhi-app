@@ -39,11 +39,12 @@ class _Content extends State<Content>{
           ),
           Positioned(
             bottom: 0,
+            width: ScreenAdapter.width(750),
             child: Container(
               width: ScreenAdapter.width(750),
-              height:ScreenAdapter.height(250),
+              // height:ScreenAdapter.height(250),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color:Color.fromRGBO(238,238,238,1),
                 border: Border(
                   top: BorderSide(
                     width: 1,
@@ -51,7 +52,60 @@ class _Content extends State<Content>{
                   )
                 )
               ),
-              child: Text('hello'),
+              child: Column(
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child:  Row(
+                    
+                    children: <Widget>[
+                      Container(
+                        width: ScreenAdapter.width(68),
+                        height: ScreenAdapter.height(68),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(68),
+                        ),
+                        child: Icon(Icons.voice_chat_sharp),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          // padding: EdgeInsets.all(10),
+                          color:Colors.white,
+                          child: TextField(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                            ),
+                          ),
+                        )
+                      ),
+                      Container(
+                        width: ScreenAdapter.width(68),
+                        height: ScreenAdapter.width(68),
+                         decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(68),
+                        ),
+                        child: Icon(Icons.explore),
+                      ),
+
+                       Container(
+                        width: ScreenAdapter.width(68),
+                        height: ScreenAdapter.width(68),
+                         decoration: BoxDecoration(
+                          border: Border.all(
+                            width:1,
+                            color:Colors.black12
+                          ),
+                          borderRadius: BorderRadius.circular(68),
+                        ),
+                        child: Icon(Icons.add),
+                      ),
+                    ],
+                  ),
+                  )
+                 
+                ],
+              ),
             )
           )
         ],
