@@ -29,4 +29,8 @@ class Service {
   getDetailPhoto(params) async {
     return await Dio().get("$URL/detail/photo",queryParameters:params);
   }
+  //用户登录
+  userLogin(params) async {
+    return await Dio().post("$URL/user/login",data: params);
+  }
 }

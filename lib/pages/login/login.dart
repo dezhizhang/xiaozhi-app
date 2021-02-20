@@ -1,7 +1,8 @@
-
-
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import '../../utils/utils.dart';
+import '../../services/service.dart';
 
 class Login extends StatefulWidget{
   _Login createState() => _Login();
@@ -26,7 +27,77 @@ class Content extends StatefulWidget{
 }
 
 class _Content extends  State<Content>{
-  bool radio = false;
+  bool checkbox = false;
+  String mobile;
+  bool countdown = false;
+  int seconds = 60;
+  String code;
+  String verify = '获取验证码';
+  @override
+  void initState() { 
+    super.initState();
+    this._showTimer();
+  }
+  _showTimer() {
+    Timer.periodic(Duration(milliseconds:1000), (timer) { 
+      setState(() {
+        this.seconds--;
+      });
+      if(this.seconds == 0) {
+        timer.cancel();
+        setState(() {
+          this.countdown = false;
+        });
+      }
+    });
+  }
+  handleVerify() async{
+    RegExp reg = new  RegExp(r'^((13[0-9])|(14[0-9])|(15[0-9])|(16[0-9])|(17[0-9])|(18[0-9])|(19[0-9]))\d{8}$');
+    if(!reg.hasMatch(this.mobile)) {
+      Fluttertoast.showToast(
+        msg: '输入的手机号不合法',
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER
+      );
+      return;
+    }
+    setState(() {
+      this.countdown = true;
+    });
+  }
+  handleSubmit() async{
+    print(mobile);
+    if(this.mobile == null) {
+      Fluttertoast.showToast(
+        msg: '请输入手机号',
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER
+      );
+      return;
+    }
+    if(this.code ==null) {
+      Fluttertoast.showToast(
+        msg: '请输入验证码',
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER
+      );
+      return;
+    }
+    if(!this.checkbox) {
+      Fluttertoast.showToast(
+        msg: '请选择用户协议',
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER
+      );
+      return;
+    }
+    var res = await Service().userLogin({});
+    if(res.code == 200) {
+
+    }
+    
+
+  }
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
@@ -74,8 +145,13 @@ class _Content extends  State<Content>{
             child:TextField(
               decoration: InputDecoration(
                 border: InputBorder.none,
-                hintText: '手机号码'
+                hintText: '手机号码',
               ),
+              onChanged: (value) {
+                setState(() {
+                  this.mobile = value;
+                });
+              },
               autofocus: true,
             )
           ),
@@ -98,16 +174,23 @@ class _Content extends  State<Content>{
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText:'验证码',
-                      // errorText: "输入的验证码不合法"
                     ),
+                    onChanged: (value) {
+                      setState(() {
+                        this.code = value;
+                      });
+                    },
                   ) 
                 ),
                 Expanded(
-                  child: Text('获取验证码',style: TextStyle(
+                  child: InkWell(
+                    onTap: this.handleVerify,
+                    child:Text(this.countdown ? "${this.seconds} 秒":this.verify,style: TextStyle(
                     color: Color.fromRGBO(179,39,79,1),
                     fontSize: ScreenAdapter.fontSize(28),
                     fontFamily:'微软雅黑'
-                  ))
+                  )),
+                  ),
                 )
               ],
             ),
@@ -134,13 +217,15 @@ class _Content extends  State<Content>{
                 )
               ]
             ),
-            child: Text('登录',style: TextStyle(
+            child:InkWell(
+              onTap: this.handleSubmit,
+              child: Text('登录',style: TextStyle(
               color: Color.fromRGBO(254,254,254,1),
               fontSize: ScreenAdapter.fontSize(28),
               fontFamily: '微软雅黑'
             )),
+            ), 
           ),
-          
         ],
       ),
       ),
@@ -149,15 +234,13 @@ class _Content extends  State<Content>{
         left: ScreenAdapter.width(70),
         child: Row(
           children: <Widget>[
-            Radio(
-              value: radio,
-              groupValue:radio,
-              onChanged: (value){
-                print(value);
+            Checkbox(
+              value: checkbox,
+              onChanged: (value) {
                 setState(() {
-                  this.radio = !value;
+                  this.checkbox = value;
                 });
-              },
+              } 
             ),
             Text('使用即同意《用户协议》及《隐私协议》',style: TextStyle(
               color: Color.fromRGBO(153,153,153,1),
