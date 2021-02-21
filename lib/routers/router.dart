@@ -28,6 +28,7 @@ import '../pages/test/test.dart';
 import '../pages/video/video.dart';
 import '../pages/network/network.dart';
 import '../pages/scan/scan.dart';
+import '../pages/webview/webview.dart';
 
 final routes = {
    
@@ -52,6 +53,7 @@ final routes = {
   '/video':(context) => Video(),
   '/network':(context) => Network(),
   '/scan':(context) => Scan(),
+  '/webview':(context) => WebView(),
   
 };
 
