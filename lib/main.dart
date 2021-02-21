@@ -34,7 +34,7 @@ class _MyApp extends State<MyApp>{
       ],
       child:  MaterialApp(
       onGenerateRoute: onGenerateRoute,
-      initialRoute: '/webview',
+      initialRoute: '/',
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate, 
         GlobalWidgetsLocalizations.delegate, 
