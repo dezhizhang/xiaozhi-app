@@ -34,7 +34,7 @@ class _MyApp extends State<MyApp>{
       ],
       child:  MaterialApp(
       onGenerateRoute: onGenerateRoute,
-      initialRoute: '/network',
+      initialRoute: '/scan',
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate, 
         GlobalWidgetsLocalizations.delegate, 

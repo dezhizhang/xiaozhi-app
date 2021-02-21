@@ -27,6 +27,7 @@ import '../pages/chat/chat.dart';
 import '../pages/test/test.dart';
 import '../pages/video/video.dart';
 import '../pages/network/network.dart';
+import '../pages/scan/scan.dart';
 
 final routes = {
    
@@ -50,6 +51,7 @@ final routes = {
   '/test':(context) => Test(),
   '/video':(context) => Video(),
   '/network':(context) => Network(),
+  '/scan':(context) => Scan(),
   
 };
 

@@ -40,6 +40,7 @@ dependencies:
   image_picker: ^0.6.7+22
   cupertino_icons: ^1.0.0
   connectivity: ^2.0.2
+  barcode_scan_fix: ^1.0.2
   flutter_localizations:
     sdk: flutter
 
