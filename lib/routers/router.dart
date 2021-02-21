@@ -6,7 +6,6 @@
  * @Description: 路由页面
  * @FilePath: /xiaozhi/lib/routers/router.dart
  */
-
 import 'package:flutter/material.dart';
 import '../pages/tabs/tabs.dart';
 import '../pages/product/product.dart';
@@ -27,7 +26,7 @@ import '../pages/sale/sale.dart';
 import '../pages/chat/chat.dart';
 import '../pages/test/test.dart';
 import '../pages/video/video.dart';
-// import '../pages/counter/counterTest.dart';
+import '../pages/network/network.dart';
 
 final routes = {
    
@@ -49,7 +48,8 @@ final routes = {
   '/sale':(context) => Sale(),
   '/chat':(context) => Chat(),
   '/test':(context) => Test(),
-  '/video':(context) => Video()
+  '/video':(context) => Video(),
+  '/network':(context) => Network(),
   
 };
 
