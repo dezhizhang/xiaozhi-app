@@ -8,45 +8,51 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import './routers/router.dart';
-import './provider/counter.dart';
-import './provider/cart.dart';
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatefulWidget{
-  MyApp({Key key}):super(key:key);
-  _MyApp createState() => _MyApp();
-}
 
 
-class _MyApp extends State<MyApp>{
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiProvider( //配置provider
-      providers: [
-        ChangeNotifierProvider(builder: (_) => Counter()),
-        ChangeNotifierProvider(builder: (_) => Cart()),
-      ],
-      child:  MaterialApp(
-      onGenerateRoute: onGenerateRoute,
-      initialRoute: '/',
-      localizationsDelegates: [
-        GlobalMaterialLocalizations.delegate, 
-        GlobalWidgetsLocalizations.delegate, 
-      ],
-      supportedLocales: [
-        const Locale('zh', 'CH'), 
-        const Locale('en', 'US'),
-      ],
+    return MaterialApp(
+      title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.pink
+        primarySwatch: Colors.blue,
       ),
-    ),
+      home:HomeContent(),
     );
   }
 }
+
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('副文本组件'),
+      ),
+      body: Content(),
+    );
+  }
+}
+
+class Content extends StatefulWidget{
+  _Content createState() => _Content();
+}
+
+class _Content extends State<Content>{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Text('hello');
+  }
+}
+
+
+
+
+
+

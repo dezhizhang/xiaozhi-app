@@ -10,7 +10,7 @@ class HotModel {
   bool success;
   List<HotItemModel> data;
 
-  HotModel({this.code, this.msg, this.success, this.data});
+  HotModel({required this.code, required this.msg, required this.success, required this.data});
 
   HotModel.fromJson(Map<String, dynamic> json) {
     code = json['code'];
