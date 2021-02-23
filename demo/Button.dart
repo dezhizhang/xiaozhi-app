@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-24 00:30:47
- * @LastEditTime: 2021-02-24 07:41:11
+ * @LastEditTime: 2021-02-24 07:16:34
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /xiaozhi/lib/main.dart
@@ -51,61 +51,42 @@ class MyApp extends StatelessWidget {
         endDrawer:Drawer(),
         
         // drawer: Drawer(),
-        body: ButtonCase(),
+        body: HomeContent(),
       ),
     );
   }
 }
 
 
-
-class ButtonCase extends StatefulWidget {
-  @override
-  _ButtonCaseState createState() => _ButtonCaseState();
+class HomeContent extends StatefulWidget{
+  _HomeContent createState() => _HomeContent();
 }
 
-class _ButtonCaseState extends State<ButtonCase> {
-  ButtonStatus _buttonStatus = ButtonStatus.none;
 
-  _buildChild() {
-    if (_buttonStatus == ButtonStatus.none) {
-      return Text(
-        '登 录',
-        style: TextStyle(color: Colors.white,fontSize: 18),
-      );
-    } else if (_buttonStatus == ButtonStatus.loading) {
-      return CircularProgressIndicator(
-        backgroundColor: Colors.white,
-        strokeWidth: 2,
-      );
-    } else if (_buttonStatus == ButtonStatus.done) {
-      return Icon(
-        Icons.check,
-        color: Colors.white,
-      );
-    }
-  }
+
+class _HomeContent extends State<HomeContent>{
+    double _sliderValue = 0;
+
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      color: Colors.blue,
-      minWidth: 240,
-      height: 48,
-      onPressed: () {
-        setState(() {
-          _buttonStatus = ButtonStatus.loading;
-          Future.delayed(Duration(seconds: 2), () {
-            setState(() {
-              _buttonStatus = ButtonStatus.done;
-            });
-          });
-        });
-      },
-      child: _buildChild(),
+    // TODO: implement build
+    return Center(
+      child:Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          RaisedButton(
+            child: Text('RaisedButton'),
+            onPressed: () {},
+            shape: BeveledRectangleBorder(
+                side: BorderSide(width: 1, color: Colors.red),
+                borderRadius: BorderRadius.circular(10)),
+            elevation: 1.0,
+          )
+        ],
+      ),
     );
   }
 }
 
-enum ButtonStatus { none, loading, done }
 
