@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-24 09:02:28
- * @LastEditTime: 2021-02-24 09:10:42
+ * @LastEditTime: 2021-02-24 20:40:26
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /xiaozhi/lib/main.dart
@@ -9,6 +9,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+
 
 
 
@@ -45,31 +46,33 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
-class HomeContent extends StatefulWidget{
-  _HomeContent createState() => _HomeContent();
-}
-
-class _HomeContent extends State<HomeContent>{
+class HomeContent extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Listener(
-      onPointerDown: (PointerDownEvent pointerDownEvent) {
-        print('$pointerDownEvent');
-      },
-      onPointerMove: (PointerMoveEvent pointerMoveEvent) {
-        print('$pointerMoveEvent');
-      },
-      onPointerUp: (PointerUpEvent upEvent) {
-        print('$upEvent');
-      },
+    return Draggable(
       child: Container(
-        height: 200,
-        width: 200,
-        color: Colors.blue,
+        height: 100,
+        width: 100,
         alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: Colors.red,
+          borderRadius: BorderRadius.circular(10)
+        ),
+        child: Text('孟',style: TextStyle(color: Colors.white,fontSize: 18),),
+      ),
+      feedback: Container(
+        width: 100,
+        height: 100,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: Colors.blue,
+          borderRadius: BorderRadius.circular(10)
+        ),
+        child: Text("刘德华",style: TextStyle(color: Colors.white,fontSize: 18)),
       ),
     );
   }
 }
+
+
