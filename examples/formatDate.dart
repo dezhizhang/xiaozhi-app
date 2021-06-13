@@ -1,11 +1,10 @@
 /*
  * :file description: 
- * :name: /xiaozhi/lib/main.dart
+ * :name: /xiaozhi/examples/formatDate.dart
  * :author: 张德志
- * :copyright: (c) 2021, Tungee
  * :date created: 2021-06-13 20:15:50
  * :last editor: 张德志
- * :date last edited: 2021-06-13 22:54:18
+ * :date last edited: 2021-06-13 22:43:55
  */
 import 'package:flutter/material.dart';
 import 'package:date_format/date_format.dart';
@@ -54,33 +53,15 @@ class HomeContent extends StatefulWidget {
 
 class _HomeContent extends State<HomeContent> {
   late DateTime now = DateTime.now();
-  _showDatePicker() async {
-    var result = await showDatePicker(
-        context: context,
-        initialDate: DateTime.now(),
-        firstDate: DateTime(1980),
-        lastDate: DateTime(2100));
-    print(result);
-  }
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
         child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            InkWell(
-              child: Text('按钮'),
-              onTap: () {
-                _showDatePicker();
-              },
-            )
-          ],
-        )
+        Text('${this.now}'),
+        Text(formatDate(DateTime.now(), [yyyy, '年', mm, ' 月', dd, '日']))
       ],
     ));
   }
