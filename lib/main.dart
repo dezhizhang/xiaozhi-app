@@ -5,10 +5,11 @@
  * :copyright: (c) 2021, Tungee
  * :date created: 2021-06-13 20:15:50
  * :last editor: 张德志
- * :date last edited: 2021-06-13 22:54:18
+ * :date last edited: 2021-06-13 23:28:21
  */
 import 'package:flutter/material.dart';
 import 'package:date_format/date_format.dart';
+import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
 
 void main() {
   runApp(MyApp());
@@ -54,14 +55,7 @@ class HomeContent extends StatefulWidget {
 
 class _HomeContent extends State<HomeContent> {
   late DateTime now = DateTime.now();
-  _showDatePicker() async {
-    var result = await showDatePicker(
-        context: context,
-        initialDate: DateTime.now(),
-        firstDate: DateTime(1980),
-        lastDate: DateTime(2100));
-    print(result);
-  }
+  _showDatePicker(context) async {}
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +70,7 @@ class _HomeContent extends State<HomeContent> {
             InkWell(
               child: Text('按钮'),
               onTap: () {
-                _showDatePicker();
+                _showDatePicker(context);
               },
             )
           ],
