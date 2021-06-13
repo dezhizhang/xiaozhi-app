@@ -1,27 +1,32 @@
 /*
  * @Author: dezhi
  * @Date: 2021-02-18
- * @LastEditTime: 2021-01-18
+ * :date last edited: 2021-06-13 21:30:34
  * @Description:详情底部按钮
  */
 
 import 'package:flutter/material.dart';
 import '../../utils/utils.dart';
 
-class BottomBtn extends StatefulWidget{
+class BottomBtn extends StatefulWidget {
   final Color color;
   final ValueChanged cb;
   final String title;
-  
-  BottomBtn({Key key,this.title,this.cb,this.color}):super(key:key);
-  _BottomBtn createState() => _BottomBtn(this.title,this.cb,this.color);
+
+  BottomBtn(
+      {required Key key,
+      required this.title,
+      required this.cb,
+      required this.color})
+      : super(key: key);
+  _BottomBtn createState() => _BottomBtn(this.title, this.cb, this.color);
 }
 
-class _BottomBtn extends State<BottomBtn>{
-  final Color color ;
+class _BottomBtn extends State<BottomBtn> {
+  final Color color;
   final ValueChanged cb;
   final String title;
-  _BottomBtn(this.title,this.cb,this.color);
+  _BottomBtn(this.title, this.cb, this.color);
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -40,10 +45,7 @@ class _BottomBtn extends State<BottomBtn>{
             ),
           ),
           decoration: BoxDecoration(
-            color: this.color,
-            borderRadius: BorderRadius.circular(30)),
-        )
-        
-      );
+              color: this.color, borderRadius: BorderRadius.circular(30)),
+        ));
   }
 }

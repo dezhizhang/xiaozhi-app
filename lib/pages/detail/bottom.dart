@@ -1,7 +1,7 @@
 /*
  * @Author: dezhi
  * @Date: 2021-02-18
- * @LastEditTime: 2021-01-18
+ * :date last edited: 2021-06-13 21:30:09
  * @Description:详情底部组件
  */
 
@@ -17,21 +17,20 @@ class Bottom extends StatefulWidget {
 }
 
 class _Bottom extends State<Bottom> {
-  String current;
+  late String current;
   _bottomSheet() {
     showModalBottomSheet(
-      context: context,
-      builder: (context) {
-        return GestureDetector(
-          onTap: () {
-            return false;
-          },
-          child: BottomDraw(),
-         
-        );
-      }
-    );
+        context: context,
+        builder: (context) {
+          return GestureDetector(
+            onTap: () {
+              // return false;
+            },
+            child: BottomDraw(),
+          );
+        });
   }
+
   @override
   Widget build(BuildContext context) {
     ScreenAdapter.init(context);
@@ -70,7 +69,6 @@ class _Bottom extends State<Bottom> {
                   _bottomSheet();
                 },
               ),
-             
             ],
           ),
         ));

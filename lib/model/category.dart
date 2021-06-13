@@ -4,7 +4,7 @@
  * :author: 张德志
  * :date created: 2021-05-28 17:52:05
  * :last editor: 张德志
- * :date last edited: 2021-06-13 21:25:39
+ * :date last edited: 2021-06-13 21:28:04
  */
 class CategoryModel {
   int code;
@@ -135,19 +135,19 @@ class Items {
   int iV;
 
   Items(
-      {this.sId,
-      this.sort,
-      this.status,
-      this.addTime,
-      this.title,
-      this.pid,
-      this.filterAttr,
-      this.link,
-      this.subTitle,
-      this.description,
-      this.url,
-      this.fileName,
-      this.iV});
+      {required this.sId,
+      required this.sort,
+      required this.status,
+      required this.addTime,
+      required this.title,
+      required this.pid,
+      required this.filterAttr,
+      required this.link,
+      required this.subTitle,
+      required this.description,
+      required this.url,
+      required this.fileName,
+      required this.iV});
 
   Items.fromJson(Map<String, dynamic> json) {
     sId = json['_id'];
