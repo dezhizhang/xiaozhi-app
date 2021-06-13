@@ -1,16 +1,29 @@
+/*
+ * :file description: 
+ * :name: /xiaozhi/lib/model/category.dart
+ * :author: 张德志
+ * :date created: 2021-05-28 17:52:05
+ * :last editor: 张德志
+ * :date last edited: 2021-06-13 21:25:39
+ */
 class CategoryModel {
   int code;
   String msg;
   bool success;
   List<CategoryModelItem> data;
 
-  CategoryModel({this.code, this.msg, this.success, this.data});
+  CategoryModel(
+      {required this.code,
+      required this.msg,
+      required this.success,
+      required this.data});
 
   CategoryModel.fromJson(Map<String, dynamic> json) {
     code = json['code'];
     msg = json['msg'];
     success = json['success'];
     if (json['data'] != null) {
+      // ignore: deprecated_member_use
       data = new List<CategoryModelItem>();
       json['data'].forEach((v) {
         data.add(new CategoryModelItem.fromJson(v));
@@ -47,20 +60,20 @@ class CategoryModelItem {
   List<Items> items;
 
   CategoryModelItem(
-      {this.sId,
-      this.sort,
-      this.status,
-      this.addTime,
-      this.title,
-      this.pid,
-      this.filterAttr,
-      this.link,
-      this.subTitle,
-      this.description,
-      this.url,
-      this.fileName,
-      this.iV,
-      this.items});
+      {required this.sId,
+      required this.sort,
+      required this.status,
+      required this.addTime,
+      required this.title,
+      required this.pid,
+      required this.filterAttr,
+      required this.link,
+      required this.subTitle,
+      required this.description,
+      required this.url,
+      required this.fileName,
+      required this.iV,
+      required this.items});
 
   CategoryModelItem.fromJson(Map<String, dynamic> json) {
     sId = json['_id'];
