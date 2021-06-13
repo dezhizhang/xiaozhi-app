@@ -5,11 +5,9 @@
  * :copyright: (c) 2021, Tungee
  * :date created: 2021-06-13 20:15:50
  * :last editor: 张德志
- * :date last edited: 2021-06-13 23:28:21
+ * :date last edited: 2021-06-13 23:29:54
  */
 import 'package:flutter/material.dart';
-import 'package:date_format/date_format.dart';
-import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
 
 void main() {
   runApp(MyApp());
