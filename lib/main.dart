@@ -5,7 +5,7 @@
  * :copyright: (c) 2021, Tungee
  * :date created: 2021-06-13 20:15:50
  * :last editor: 张德志
- * :date last edited: 2021-06-13 21:21:46
+ * :date last edited: 2021-06-13 21:59:16
  */
 import 'package:flutter/material.dart';
 
@@ -55,30 +55,32 @@ class _HomeContent extends State<HomeContent> {
   int sex = 1;
   @override
   Widget build(BuildContext context) {
+    final List<Widget> aboutBoxChildren = <Widget>[
+      SizedBox(height: 24),
+      RichText(
+        text: TextSpan(
+          children: <TextSpan>[
+            TextSpan(
+                text: 'Flutter is Google’s UI toolkit for building beautiful, '
+                    'natively compiled applications for mobile, web, and desktop '
+                    'from a single codebase. Learn more about Flutter at '),
+            TextSpan(text: 'https://flutter.dev'),
+            TextSpan(text: '.'),
+          ],
+        ),
+      ),
+    ];
     return Container(
-      child: Column(
-        children: <Widget>[
-          RadioListTile(
-              value: 1,
-              groupValue: this.sex,
-              title: Text('这是主标题'),
-              subtitle: Text('这是二级标题'),
-              onChanged: (value) {
-                setState(() {
-                  this.sex = value.hashCode;
-                });
-              }),
-          RadioListTile(
-              value: 2,
-              groupValue: this.sex,
-              title: Text('这是主标题'),
-              subtitle: Text('这是二级标题'),
-              onChanged: (value) {
-                setState(() {
-                  this.sex = value.hashCode;
-                });
-              })
-        ],
+      child: AboutListTile(
+        applicationIcon: Image.network(
+          'http://imgguicai.oss-cn-hangzhou.aliyuncs.com/15951731012219558.jpeg',
+          fit: BoxFit.cover,
+          width: 100,
+          height: 100,
+        ),
+        applicationName: '弹框',
+        aboutBoxChildren: aboutBoxChildren,
+        child: Text('你好我是一个程序员'),
       ),
     );
   }
