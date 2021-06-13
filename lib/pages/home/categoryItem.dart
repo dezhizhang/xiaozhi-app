@@ -5,7 +5,7 @@
  * :copyright: (c) 2021, Tungee
  * :date created: 2021-05-28 17:52:05
  * :last editor: 张德志
- * :date last edited: 2021-06-13 21:31:37
+ * :date last edited: 2021-06-13 23:05:44
  */
 import 'package:flutter/material.dart';
 import 'package:xiaozhi/pages/setting/setting.dart';
@@ -16,7 +16,7 @@ class CategoryItem extends StatefulWidget {
   String title;
   String routeName;
   CategoryItem(
-      {required Key key,
+      {required Key? key,
       required this.url,
       required this.title,
       required this.routeName})

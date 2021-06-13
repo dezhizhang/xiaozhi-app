@@ -1,7 +1,7 @@
 /*
  * @Author: dezhizhang
  * @Date: 2020-12-26
- * :date last edited: 2021-06-13 21:37:52
+ * :date last edited: 2021-06-13 23:04:35
  * @Description: tabs列表组件
  * :name: /xiaozhi/lib/pages/components/itemTabs.dart
  */
@@ -14,7 +14,7 @@ class ItemTabs extends StatefulWidget {
   double margin;
   bool isBack;
   ItemTabs(
-      {required Key key,
+      {required Key? key,
       required this.margin,
       required this.title,
       required this.content,

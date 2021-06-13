@@ -1,7 +1,7 @@
 /*
  * @Author: dezhi
  * @Date: 2021-02-18
- * :date last edited: 2021-06-13 21:30:34
+ * :date last edited: 2021-06-13 23:06:21
  * @Description:详情底部按钮
  */
 
@@ -14,7 +14,7 @@ class BottomBtn extends StatefulWidget {
   final String title;
 
   BottomBtn(
-      {required Key key,
+      {required Key? key,
       required this.title,
       required this.cb,
       required this.color})
