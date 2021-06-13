@@ -1,7 +1,7 @@
 /*
  * @Author: dezhizhang
  * @Date: 2020-10-25 17:33:26
- * :date last edited: 2021-06-13 21:17:43
+ * :date last edited: 2021-06-13 21:41:53
  * :last editor: 张德志
  * @Description: 路由页面
  * :name: /xiaozhi/lib/routers/router.dart
@@ -32,7 +32,9 @@ import '../pages/webview/webview.dart';
 
 final routes = {
   '/': (context) => Tabs(),
-  '/product': (context, {arguments}) => Product(arguments: arguments),
+  '/product': (context, {arguments}) => Product(
+        arguments: arguments,
+      ),
   '/order': (context) => Order(),
   '/login': (context) => Login(),
   '/address': (context) => Address(),

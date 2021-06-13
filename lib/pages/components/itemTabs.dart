@@ -1,7 +1,7 @@
 /*
  * @Author: dezhizhang
  * @Date: 2020-12-26
- * :date last edited: 2021-06-13 21:29:10
+ * :date last edited: 2021-06-13 21:37:52
  * @Description: tabs列表组件
  * :name: /xiaozhi/lib/pages/components/itemTabs.dart
  */
@@ -19,7 +19,7 @@ class ItemTabs extends StatefulWidget {
       required this.title,
       required this.content,
       required this.isBack})
-      : super(key: key);
+      : super();
   _ItemTabs createState() =>
       _ItemTabs(this.title, this.content, this.margin, this.isBack);
 }

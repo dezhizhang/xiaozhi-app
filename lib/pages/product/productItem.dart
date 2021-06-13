@@ -1,12 +1,20 @@
+/*
+ * :file description: 
+ * :name: /xiaozhi/lib/pages/product/productItem.dart
+ * :author: 张德志
+ * :copyright: (c) 2021, Tungee
+ * :date created: 2021-05-28 17:52:05
+ * :last editor: 张德志
+ * :date last edited: 2021-06-13 21:42:24
+ */
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import '../../utils/utils.dart';
 
-
 class ProductItem extends StatefulWidget {
   var item;
-  ProductItem({Key key,this.item}):super(key: key);
+  ProductItem({this.item}) : super();
   _ProductItem createState() => _ProductItem(this.item);
 }
 
@@ -39,7 +47,6 @@ class _ProductItem extends State<ProductItem> {
                     child: Column(
                       children: <Widget>[
                         Text(
-                        
                           item.title,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,

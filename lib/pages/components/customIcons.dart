@@ -5,7 +5,7 @@
  * :copyright: (c) 2021, Tungee
  * :date created: 2021-05-28 17:52:05
  * :last editor: 张德志
- * :date last edited: 2021-06-13 21:18:49
+ * :date last edited: 2021-06-13 21:40:39
  */
 import 'package:flutter/material.dart';
 import '../../utils/utils.dart';
@@ -18,14 +18,13 @@ class CustomIcons extends StatefulWidget {
   final Color color;
   final ValueChanged cb;
   CustomIcons(
-      {required Key key,
-      required this.width,
+      {required this.width,
       required this.height,
       required this.radious,
       required this.icon,
       required this.cb,
       required this.color})
-      : super(key: key);
+      : super();
   _CustomIcons createState() => _CustomIcons(
       this.width, this.height, this.radious, this.icon, this.cb, this.color);
 }

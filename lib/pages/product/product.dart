@@ -5,7 +5,7 @@
  * :copyright: (c) 2021, Tungee
  * :date created: 2021-05-28 17:52:05
  * :last editor: 张德志
- * :date last edited: 2021-06-13 21:19:44
+ * :date last edited: 2021-06-13 21:42:08
  */
 import 'package:flutter/material.dart';
 import './productItem.dart';
@@ -17,7 +17,7 @@ import '../components/loading.dart';
 
 class Product extends StatefulWidget {
   Map arguments;
-  Product({required Key key, required this.arguments}) : super(key: key);
+  Product({required this.arguments}) : super();
   _Product createState() => _Product();
 }
 
