@@ -5,9 +5,10 @@
  * :copyright: (c) 2021, Tungee
  * :date created: 2021-06-13 20:15:50
  * :last editor: 张德志
- * :date last edited: 2021-06-13 21:59:16
+ * :date last edited: 2021-06-13 22:39:25
  */
 import 'package:flutter/material.dart';
+import 'package:date_format/date_format.dart';
 
 void main() {
   runApp(MyApp());
@@ -52,36 +53,17 @@ class HomeContent extends StatefulWidget {
 }
 
 class _HomeContent extends State<HomeContent> {
-  int sex = 1;
+  late DateTime now = DateTime.now();
+
   @override
   Widget build(BuildContext context) {
-    final List<Widget> aboutBoxChildren = <Widget>[
-      SizedBox(height: 24),
-      RichText(
-        text: TextSpan(
-          children: <TextSpan>[
-            TextSpan(
-                text: 'Flutter is Google’s UI toolkit for building beautiful, '
-                    'natively compiled applications for mobile, web, and desktop '
-                    'from a single codebase. Learn more about Flutter at '),
-            TextSpan(text: 'https://flutter.dev'),
-            TextSpan(text: '.'),
-          ],
-        ),
-      ),
-    ];
+    // TODO: implement build
     return Container(
-      child: AboutListTile(
-        applicationIcon: Image.network(
-          'http://imgguicai.oss-cn-hangzhou.aliyuncs.com/15951731012219558.jpeg',
-          fit: BoxFit.cover,
-          width: 100,
-          height: 100,
-        ),
-        applicationName: '弹框',
-        aboutBoxChildren: aboutBoxChildren,
-        child: Text('你好我是一个程序员'),
-      ),
-    );
+        child: Column(
+      children: <Widget>[
+        Text('${this.now}'),
+        Text(formatDate(DateTime.now(), [yyyy, '年', mm, ' 月', dd, '日']))
+      ],
+    ));
   }
 }
