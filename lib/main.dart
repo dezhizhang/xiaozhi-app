@@ -1,79 +1,50 @@
 /*
- * @Author: your name
- * @Date: 2021-02-24 23:52:40
- * @LastEditTime: 2021-02-25 07:54:28
- * @LastEditors: Please set LastEditors
+ * @Author: dezhizhang
+ * @Date: 2020-10-24 15:07:50
+ * :date last edited: 2021-06-13 21:16:27
+ * :last editor: 张德志
  * @Description: In User Settings Edit
- * @FilePath: /xiaozhi/lib/main.dart
+ * :name: /xiaozhi/lib/main.dart
  */
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import './routers/router.dart';
+import './provider/counter.dart';
+import './provider/cart.dart';
 
+void main() {
+  runApp(MyApp());
+}
 
+class MyApp extends StatefulWidget {
+  MyApp() : super();
+  _MyApp createState() => _MyApp();
+}
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget{
-  bool _ignoring = false;
+class _MyApp extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return IgnorePointer(
-      ignoring:_ignoring,
-      child:MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      localizationsDelegates: [
-        GlobalMaterialLocalizations.delegate, 
-        GlobalWidgetsLocalizations.delegate, 
+    return MultiProvider(
+      //配置provider
+      providers: [
+        ChangeNotifierProvider(builder: (_) => Counter()),
+        ChangeNotifierProvider(builder: (_) => Cart()),
       ],
-      supportedLocales: [
-        const Locale('zh', 'CH'),
-        const Locale('en', 'US'),
-      ],
-      locale: Locale('zh'),
-      home:Scaffold(
-        appBar: AppBar(
-          title: Text("AlertDialog"),
-        ),
-        body: Text('hello'),
+      child: MaterialApp(
+        onGenerateRoute: onGenerateRoute,
+        initialRoute: '/',
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: [
+          const Locale('zh', 'CH'),
+          const Locale('en', 'US'),
+        ],
+        theme: ThemeData(primarySwatch: Colors.pink),
       ),
-    ),
     );
   }
 }
-
- 
-
-// class MyApp extends StatelessWidget {
-//   // This widget is the root of your application.
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Flutter Demo',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       localizationsDelegates: [
-//         GlobalMaterialLocalizations.delegate, 
-//         GlobalWidgetsLocalizations.delegate, 
-//       ],
-//       supportedLocales: [
-//         const Locale('zh', 'CH'),
-//         const Locale('en', 'US'),
-//       ],
-//       locale: Locale('zh'),
-//       home:Scaffold(
-//         appBar: AppBar(
-//           title: Text("AlertDialog"),
-//         ),
-//         body: Text('hello'),
-//       ),
-//     );
-//   }
-// }
-
-

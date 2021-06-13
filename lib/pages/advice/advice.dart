@@ -1,13 +1,16 @@
-/**
- * @author:dezhi
- * @date:20210101
- * @desc:投诉建议页面
-*/
+/*
+ * :file description: 
+ * :name: /xiaozhi/lib/pages/advice/advice.dart
+ * :author: 张德志
+ * :copyright: (c) 2021, Tungee
+ * :date created: 2021-05-28 17:52:05
+ * :last editor: 张德志
+ * :date last edited: 2021-06-13 21:17:21
+ */
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-
 
 class Advice extends StatelessWidget {
   @override
@@ -21,15 +24,14 @@ class Advice extends StatelessWidget {
   }
 }
 
-
-class  HomeContent extends StatefulWidget {
+class HomeContent extends StatefulWidget {
   _HomeContent createState() => _HomeContent();
 }
 
-class _HomeContent extends State<HomeContent>  {
-  File _image;
+class _HomeContent extends State<HomeContent> {
+  late File _image;
   final picker = ImagePicker();
-  handleTaking() async{
+  handleTaking() async {
     final pickedFile = await picker.getImage(source: ImageSource.camera);
     setState(() {
       if (pickedFile != null) {
@@ -39,6 +41,7 @@ class _HomeContent extends State<HomeContent>  {
       }
     });
   }
+
   handlePhoto() async {
     final pickedFile = await picker.getImage(source: ImageSource.gallery);
     setState(() {
@@ -48,40 +51,32 @@ class _HomeContent extends State<HomeContent>  {
         print('No image selected.');
       }
     });
-  
   }
-  handleSubmit() async{
+
+  handleSubmit() async {
     FormData formData = new FormData.fromMap({
-      "name":"xiaozhi",
-      "age":25,
-       "file":await MultipartFile.fromFile("${this._image}", filename: "1.png"),
+      "name": "xiaozhi",
+      "age": 25,
+      "file": await MultipartFile.fromFile("${this._image}", filename: "1.png"),
       // "file":new UploadFileInfo(this._image, "xxx.jpg"),
     });
-    var response = await Dio().post("http://jd.itying.com/imgupload", data: formData);
+    var response =
+        await Dio().post("http://jd.itying.com/imgupload", data: formData);
     print(response);
   }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        RaisedButton(
-          child: Text('拍照'),
-          onPressed: this.handleTaking
-        ),
-        SizedBox(height:10),
+        RaisedButton(child: Text('拍照'), onPressed: this.handleTaking),
+        SizedBox(height: 10),
         RaisedButton(
           child: Text('相册选择'),
-          onPressed:handlePhoto ,
+          onPressed: handlePhoto,
         ),
-        RaisedButton(
-          child: Text('上传图片'),
-          onPressed: handleSubmit
-        )
+        RaisedButton(child: Text('上传图片'), onPressed: handleSubmit)
       ],
     );
   }
 }
-
-
-
-                            

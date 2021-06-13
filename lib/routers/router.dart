@@ -1,10 +1,10 @@
 /*
  * @Author: dezhizhang
  * @Date: 2020-10-25 17:33:26
- * @LastEditTime: 2020-12-13 20:02:23
- * @LastEditors: dezhizhang
+ * :date last edited: 2021-06-13 21:17:43
+ * :last editor: 张德志
  * @Description: 路由页面
- * @FilePath: /xiaozhi/lib/routers/router.dart
+ * :name: /xiaozhi/lib/routers/router.dart
  */
 import 'package:flutter/material.dart';
 import '../pages/tabs/tabs.dart';
@@ -31,46 +31,43 @@ import '../pages/scan/scan.dart';
 import '../pages/webview/webview.dart';
 
 final routes = {
-   
-  '/':(context) => Tabs(),
-  '/product':(context,{arguments}) => Product(arguments:arguments),
-  '/order':(context) => Order(),
-  '/login':(context) => Login(),
-  '/address':(context) => Address(),
-  '/system':(context) => System(),
-  '/serch':(context) => Search(),
-  '/coupons':(context) => Coupons(),
-  "/setting":(context) => Setting(),
-  '/integral':(context) => Integral(),
-  '/information':(context) => Information(),
-  '/addressAdd':(context) => AddressAdd(),
-  '/detail':(context) => Detal(),
-  '/goods':(context,{arguments}) => Goods(arguments:arguments),
-  '/advice':(context) => Advice(),
-  '/sale':(context) => Sale(),
-  '/chat':(context) => Chat(),
-  '/test':(context) => Test(),
-  '/video':(context) => Video(),
-  '/network':(context) => Network(),
-  '/scan':(context) => Scan(),
-  '/webview':(context) => WebView(),
-  
+  '/': (context) => Tabs(),
+  '/product': (context, {arguments}) => Product(arguments: arguments),
+  '/order': (context) => Order(),
+  '/login': (context) => Login(),
+  '/address': (context) => Address(),
+  '/system': (context) => System(),
+  '/serch': (context) => Search(),
+  '/coupons': (context) => Coupons(),
+  "/setting": (context) => Setting(),
+  '/integral': (context) => Integral(),
+  '/information': (context) => Information(),
+  '/addressAdd': (context) => AddressAdd(),
+  '/detail': (context) => Detal(),
+  '/goods': (context, {arguments}) => Goods(arguments: arguments),
+  '/advice': (context) => Advice(),
+  '/sale': (context) => Sale(),
+  '/chat': (context) => Chat(),
+  '/test': (context) => Test(),
+  '/video': (context) => Video(),
+  '/network': (context) => Network(),
+  '/scan': (context) => Scan(),
+  '/webview': (context) => WebView(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {
-  final String name = settings.name;
+  final String? name = settings.name;
   final Function pageContentBuilder = routes[name];
-  if(pageContentBuilder != null) {
-    if(settings.arguments != null) {
+  if (pageContentBuilder != null) {
+    if (settings.arguments != null) {
       final Route route = MaterialPageRoute(
-        builder: (context) => pageContentBuilder(context,arguments:settings.arguments)
-      );
+          builder: (context) =>
+              pageContentBuilder(context, arguments: settings.arguments));
       return route;
     } else {
-      final Route route = MaterialPageRoute(
-        builder: (context) => pageContentBuilder(context)
-      );
+      final Route route =
+          MaterialPageRoute(builder: (context) => pageContentBuilder(context));
       return route;
     }
-  } 
+  }
 };
